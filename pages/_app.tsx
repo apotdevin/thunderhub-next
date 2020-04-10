@@ -11,14 +11,26 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import '../styles/FontStyles.css';
 
 import withData from '../config/apolloClient';
+import { useAccount } from '../src/context/AccountContext';
+import { BitcoinFees } from '../src/components/bitcoinInfo/BitcoinFees';
+import { BitcoinPrice } from '../src/components/bitcoinInfo/BitcoinPrice';
 
 const Wrapper: React.FC = ({ children }) => {
     const { theme } = useSettings();
+    const { loggedIn } = useAccount();
+
+    const renderGetters = () => (
+        <>
+            <BitcoinPrice />
+            <BitcoinFees />
+        </>
+    );
 
     return (
         <ThemeProvider theme={{ mode: theme }}>
             <ModalProvider backgroundComponent={BaseModalBackground}>
                 <GlobalStyles />
+                {loggedIn && renderGetters()}
                 <Header />
                 {children}
                 <Footer />

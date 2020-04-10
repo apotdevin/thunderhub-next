@@ -1,5 +1,6 @@
 // import App from 'next/app';
-import React, { Suspense } from 'react';
+import React, { Suspense, Children } from 'react';
+import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 // import theme from 'styled-theming';
 // import { ContextProvider } from '../context/ContextProvider';
@@ -14,6 +15,13 @@ import { Footer } from '../src/layouts/footer/Footer';
 import { LoadingCard } from '../src/components/loading/LoadingCard';
 import EntryView from '../views/entry/Entry';
 import { SessionLogin } from '../views/entry/login/SessionLogin';
+import { ConnectionCheck } from '../src/components/connectionCheck/ConnectionCheck';
+import { StatusCheck } from '../src/components/statusCheck/StatusCheck';
+import { mediaWidths } from '../styles/Themes';
+import { Section } from '../src/components/section/Section';
+import { Navigation } from '../src/layouts/navigation/Navigation';
+import { GridWrapper } from '../src/components/gridWrapper/GridWrapper';
+import { HomeView } from '../views/home/HomeView';
 
 // const EntryView = React.lazy(() => import('../views/entry/Entry'));
 
@@ -34,11 +42,11 @@ const ContextApp: React.FC = () => {
     ) : admin !== '' && viewOnly === '' && sessionAdmin === '' ? (
         <SessionLogin />
     ) : (
-        <>
+        <GridWrapper>
             <ConnectionCheck />
             <StatusCheck />
-            {/* <ContentView /> */}
-        </>
+            <HomeView />
+        </GridWrapper>
     );
 
     // return (

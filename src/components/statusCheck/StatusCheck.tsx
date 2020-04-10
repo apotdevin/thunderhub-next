@@ -1,11 +1,11 @@
-import { useConnectionState } from 'context/ConnectionContext';
+import { useConnectionState } from '../../context/ConnectionContext';
 import { useQuery } from '@apollo/react-hooks';
-import { GET_NODE_INFO } from 'graphql/query';
-import { useAccount } from 'context/AccountContext';
-import { useStatusDispatch } from 'context/StatusContext';
+import { useAccount } from '../../context/AccountContext';
+import { useStatusDispatch } from '../../context/StatusContext';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { getErrorContent } from 'utils/error';
+import { getErrorContent } from '../../../utils/error';
+import { GET_NODE_INFO } from '../../graphql/query';
 
 export const StatusCheck = () => {
     const { connected } = useConnectionState();

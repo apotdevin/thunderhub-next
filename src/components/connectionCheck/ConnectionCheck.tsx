@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import {
     useConnectionState,
     useConnectionDispatch,
-} from 'context/ConnectionContext';
+} from '../../context/ConnectionContext';
 import { useQuery } from '@apollo/react-hooks';
-import { GET_CAN_CONNECT } from 'graphql/query';
-import { useAccount } from 'context/AccountContext';
+import { useAccount } from '../../context/AccountContext';
+import { GET_CAN_CONNECT } from '../../graphql/query';
 
 export const ConnectionCheck = () => {
     const { connected } = useConnectionState();
