@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import merge from 'lodash.merge';
-import { getAuth } from '../../utils/auth';
-import { saveAccounts } from '../../utils/storage';
+import { getAuth } from '../utils/auth';
+import { saveAccounts } from '../utils/storage';
 
 interface SingleAccountProps {
     name: string;
@@ -89,8 +89,12 @@ const AccountProvider = ({ children }: any) => {
     };
 
     const changeAccount = (changeToId: string) => {
-        const currentAccounts = JSON.parse(localStorage.getItem('accounts') || '[]');
-        const index = currentAccounts.findIndex((account: any) => account.id === changeToId);
+        const currentAccounts = JSON.parse(
+            localStorage.getItem('accounts') || '[]'
+        );
+        const index = currentAccounts.findIndex(
+            (account: any) => account.id === changeToId
+        );
 
         if (index < 0) return;
 
@@ -101,14 +105,20 @@ const AccountProvider = ({ children }: any) => {
     };
 
     const deleteAccount = (deleteId: string) => {
-        const currentAccounts = JSON.parse(localStorage.getItem('accounts') || '[]');
-        const current = currentAccounts.find((account: any) => account.id === deleteId);
+        const currentAccounts = JSON.parse(
+            localStorage.getItem('accounts') || '[]'
+        );
+        const current = currentAccounts.find(
+            (account: any) => account.id === deleteId
+        );
 
         if (!current) return;
 
         const isCurrentAccount = current.id === settings.id;
 
-        const changedAccounts = [...currentAccounts].filter((account) => account.id !== deleteId);
+        const changedAccounts = [...currentAccounts].filter(
+            (account) => account.id !== deleteId
+        );
         const length = changedAccounts.length;
 
         if (isCurrentAccount) {
@@ -128,7 +138,16 @@ const AccountProvider = ({ children }: any) => {
 
     const refreshAccount = (account?: string) => {
         const sessionAdmin = sessionStorage.getItem('session') || '';
-        const { name, host, admin, viewOnly, cert, id, accounts, loggedIn } = getAuth(account);
+        const {
+            name,
+            host,
+            admin,
+            viewOnly,
+            cert,
+            id,
+            accounts,
+            loggedIn,
+        } = getAuth(account);
 
         updateAccount((prevState: any) => {
             const newState = { ...prevState };
@@ -166,7 +185,11 @@ const AccountProvider = ({ children }: any) => {
 
     const [settings, updateAccount] = useState(accountState);
 
-    return <AccountContext.Provider value={settings}>{children}</AccountContext.Provider>;
+    return (
+        <AccountContext.Provider value={settings}>
+            {children}
+        </AccountContext.Provider>
+    );
 };
 
 const useAccount = () => useContext(AccountContext);

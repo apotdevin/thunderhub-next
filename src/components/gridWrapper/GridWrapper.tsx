@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mediaWidths } from '../../../styles/Themes';
+import { mediaWidths } from '../../styles/Themes';
 
 import { Section } from '../section/Section';
 import { Navigation } from '../../layouts/navigation/Navigation';

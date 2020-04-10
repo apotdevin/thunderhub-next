@@ -13,7 +13,7 @@ import {
     iconButtonHover,
     inverseTextColor,
     unSelectedNavButton,
-} from '../../../../styles/Themes';
+} from '../../../styles/Themes';
 
 const SelectedIcon = styled.div`
     display: flex;

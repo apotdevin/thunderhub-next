@@ -10,7 +10,7 @@ import {
     subCardColor,
     cardBorderColor,
     mediaWidths,
-} from '../../../styles/Themes';
+} from '../../styles/Themes';
 import {
     Home,
     Cpu,

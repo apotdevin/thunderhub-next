@@ -8,7 +8,7 @@ import { useSettings } from '../src/context/SettingsContext';
 import { useAccount } from '../src/context/AccountContext';
 
 import { ModalProvider, BaseModalBackground } from 'styled-react-modal';
-import { GlobalStyles } from '../styles/GlobalStyle';
+import { GlobalStyles } from '../src/styles/GlobalStyle';
 // import { ScrollToTop } from '../components/scrollToTop/ScrollToTop';
 import { Header } from '../src/layouts/header/Header';
 import { Footer } from '../src/layouts/footer/Footer';
@@ -17,7 +17,7 @@ import EntryView from '../views/entry/Entry';
 import { SessionLogin } from '../views/entry/login/SessionLogin';
 import { ConnectionCheck } from '../src/components/connectionCheck/ConnectionCheck';
 import { StatusCheck } from '../src/components/statusCheck/StatusCheck';
-import { mediaWidths } from '../styles/Themes';
+import { mediaWidths } from '../src/styles/Themes';
 import { Section } from '../src/components/section/Section';
 import { Navigation } from '../src/layouts/navigation/Navigation';
 import { GridWrapper } from '../src/components/gridWrapper/GridWrapper';

@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { headerColor, headerTextColor, fontColors, mediaWidths } from '../../../styles/Themes';
+import {
+    headerColor,
+    headerTextColor,
+    fontColors,
+    mediaWidths,
+} from '../../styles/Themes';
 import { Section } from '../../components/section/Section';
 // import { Link } from 'components/link/Link';
 // import { Emoji } from 'components/emoji/Emoji';
@@ -101,12 +106,15 @@ export const Footer = () => {
                         <Version>{`v${APP_VERSION}`}</Version>
                     </Line>
                     <SideText>
-                        Open-source lightning node manager to control and monitor your LND node.
+                        Open-source lightning node manager to control and
+                        monitor your LND node.
                     </SideText>
                     <SideText>
                         {/* Made in Munich with <Emoji symbol={'🧡'} label={'heart'} /> and <Emoji symbol={'⚡'} label={'lightning'} />. */}
                     </SideText>
-                    <CopyrightText>Copyright © 2020. All rights reserved. ThunderHub</CopyrightText>
+                    <CopyrightText>
+                        Copyright © 2020. All rights reserved. ThunderHub
+                    </CopyrightText>
                 </SideFooter>
                 {/* <RightFooter>
           <Link to={'/faq'} color={fontColors.blue}>

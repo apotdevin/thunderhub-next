@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { SingleLine, Sub4Title, Separation } from '../../generic/Styled';
 import ScaleLoader from 'react-spinners/ScaleLoader';
-import { themeColors } from '../../../../styles/Themes';
+import { themeColors } from '../../../styles/Themes';
 import { Check, XSvg } from '../../generic/Icons';
 import { ColorButton } from '../../buttons/colorButton/ColorButton';
 import { AdminCheck } from './AdminCheck';

@@ -9,7 +9,7 @@ import {
     CardTitle,
 } from '../../../../src/components/generic/Styled';
 import { ButtonRow } from './Buttons';
-import { mediaWidths, mediaDimensions } from '../../../../styles/Themes';
+import { mediaWidths, mediaDimensions } from '../../../../src/styles/Themes';
 import { useSize } from '../../../../src/hooks/UseSize';
 
 export const CardContent = styled.div`

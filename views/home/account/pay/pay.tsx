@@ -9,7 +9,7 @@ import {
 import { useMutation } from '@apollo/react-hooks';
 import { PAY_INVOICE, DECODE_REQUEST } from '../../../../src/graphql/mutation';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { SecureButton } from '../../../../src/components/buttons/secureButton/SecureButton';
 import { Input } from '../../../../src/components/input/Input';
 import { useSize } from '../../../../src/hooks/UseSize';
@@ -21,7 +21,7 @@ import {
     getNodeLink,
 } from '../../../../src/components/generic/Helpers';
 import { Price } from '../../../../src/components/price/Price';
-import { mediaDimensions } from '../../../../styles/Themes';
+import { mediaDimensions } from '../../../../src/styles/Themes';
 
 export const PayCard = ({ setOpen }: { setOpen: () => void }) => {
     const { width } = useSize();

@@ -14,10 +14,10 @@ import { useQuery } from '@apollo/react-hooks';
 import { FlowPie } from './FlowPie';
 import { InvoicePie } from './InvoicePie';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { LoadingCard } from '../../../../src/components/loading/LoadingCard';
 import { useSize } from '../../../../src/hooks/UseSize';
-import { mediaDimensions } from '../../../../styles/Themes';
+import { mediaDimensions } from '../../../../src/styles/Themes';
 import { GET_IN_OUT } from '../../../../src/graphql/query';
 // import { getWaterfall } from './Helpers';
 

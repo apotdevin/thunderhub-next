@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { SingleLine, Sub4Title } from '../../generic/Styled';
 import ScaleLoader from 'react-spinners/ScaleLoader';
-import { themeColors } from '../../../../styles/Themes';
+import { themeColors } from '../../../styles/Themes';
 import { XSvg, Check } from '../../generic/Icons';
 import { GET_CAN_ADMIN } from '../../../graphql/query';
 

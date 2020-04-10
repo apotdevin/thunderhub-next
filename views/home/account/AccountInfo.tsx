@@ -25,7 +25,7 @@ import { LoadingCard } from '../../../src/components/loading/LoadingCard';
 import { AdminSwitch } from '../../../src/components/adminSwitch/AdminSwitch';
 import { useSize } from '../../../src/hooks/UseSize';
 import { Price } from '../../../src/components/price/Price';
-import { mediaWidths, mediaDimensions } from '../../../styles/Themes';
+import { mediaWidths, mediaDimensions } from '../../../src/styles/Themes';
 import { useStatusState } from '../../../src/context/StatusContext';
 
 const Tile = styled.div`

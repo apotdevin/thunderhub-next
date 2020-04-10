@@ -9,10 +9,10 @@ import {
 } from '../../../src/components/generic/Styled';
 import { useAccount } from '../../../src/context/AccountContext';
 import styled from 'styled-components';
-import { unSelectedNavButton, mediaWidths } from '../../../styles/Themes';
+import { unSelectedNavButton, mediaWidths } from '../../../src/styles/Themes';
 import { Globe, Cpu } from '../../../src/components/generic/Icons';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../utils/error';
+import { getErrorContent } from '../../../src/utils/error';
 import { LoadingCard } from '../../../src/components/loading/LoadingCard';
 import { Price } from '../../../src/components/price/Price';
 import { GET_NETWORK_INFO } from '../../../src/graphql/query';

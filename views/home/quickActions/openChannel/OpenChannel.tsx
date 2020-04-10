@@ -10,7 +10,7 @@ import {
 import { useMutation } from '@apollo/react-hooks';
 import { ChevronRight } from '../../../../src/components/generic/Icons';
 import { OPEN_CHANNEL } from '../../../../src/graphql/mutation';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { toast } from 'react-toastify';
 import { useBitcoinState } from '../../../../src/context/BitcoinContext';
 import styled from 'styled-components';
@@ -22,7 +22,7 @@ import {
     MultiButton,
 } from '../../../../src/components/buttons/multiButton/MultiButton';
 import { Price } from '../../../../src/components/price/Price';
-import { mediaWidths, mediaDimensions } from '../../../../styles/Themes';
+import { mediaWidths, mediaDimensions } from '../../../../src/styles/Themes';
 
 const ResponsiveWrap = styled(SingleLine)`
     @media (${mediaWidths.mobile}) {

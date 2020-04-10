@@ -8,7 +8,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useAccount } from '../../../../src/context/AccountContext';
 import { CardContent } from '../forwardReport';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import {
     GitCommit,
     DownArrow,

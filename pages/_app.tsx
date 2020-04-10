@@ -4,11 +4,11 @@ import { ContextProvider } from '../src/context/ContextProvider';
 import { ThemeProvider } from 'styled-components';
 import { useSettings } from '../src/context/SettingsContext';
 import { ModalProvider, BaseModalBackground } from 'styled-react-modal';
-import { GlobalStyles } from '../styles/GlobalStyle';
+import { GlobalStyles } from '../src/styles/GlobalStyle';
 import { Header } from '../src/layouts/header/Header';
 import { Footer } from '../src/layouts/footer/Footer';
 import { ApolloProvider } from '@apollo/react-hooks';
-import '../styles/FontStyles.css';
+import '../src/styles/FontStyles.css';
 
 import withData from '../config/apolloClient';
 import { useAccount } from '../src/context/AccountContext';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Sub4Title } from '../generic/Styled';
-import { fontColors, textColor } from '../../../styles/Themes';
+import { fontColors, textColor } from '../../styles/Themes';
 
 export const Line = styled.div`
     margin: 16px 0;

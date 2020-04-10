@@ -9,7 +9,7 @@ import {
 } from '../../../src/components/generic/Styled';
 import CryptoJS from 'crypto-js';
 import { toast } from 'react-toastify';
-import { saveSessionAuth } from '../../../utils/auth';
+import { saveSessionAuth } from '../../../src/utils/auth';
 import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
 import { Input } from '../../../src/components/input/Input';
 import { Section } from '../../../src/components/section/Section';

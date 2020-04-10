@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { SingleLine } from '../../../../src/components/generic/Styled';
-import { headerColor, mediaWidths } from '../../../../styles/Themes';
+import { headerColor, mediaWidths } from '../../../../src/styles/Themes';
 
 export const Padding = styled.div`
     padding: 4px 4px 0 0;

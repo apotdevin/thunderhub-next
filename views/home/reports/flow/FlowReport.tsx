@@ -14,7 +14,7 @@ import {
     // chartColors,
     flowBarColor,
     flowBarColor2,
-} from '../../../../styles/Themes';
+} from '../../../../src/styles/Themes';
 import { getPrice } from '../../../../src/components/price/Price';
 import { usePriceState } from '../../../../src/context/PriceContext';
 // import { WaterfallProps } from '.';

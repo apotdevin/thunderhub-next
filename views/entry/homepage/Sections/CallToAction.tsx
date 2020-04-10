@@ -2,7 +2,10 @@ import React from 'react';
 import { Center } from '../../../../src/components/typography/Styled';
 import { Section } from '../../../../src/components/section/Section';
 import { Padding, StyledH2, StyledH1 } from './Sections.styled';
-import { homeBackgroundColor, homeBackgroundSecondColor } from '../../../../styles/Themes';
+import {
+    homeBackgroundColor,
+    homeBackgroundSecondColor,
+} from '../../../../src/styles/Themes';
 import { HomeButton } from '../HomePage.styled';
 import { Zap } from '../../../../src/components/generic/Icons';
 import styled from 'styled-components';
@@ -22,7 +25,9 @@ export const CallToAction = () => {
             </Section>
             <Section color={homeBackgroundSecondColor} padding={'80px 0'}>
                 <Center>
-                    <StyledH2>Ready to take control of your Lightning Node?</StyledH2>
+                    <StyledH2>
+                        Ready to take control of your Lightning Node?
+                    </StyledH2>
                 </Center>
                 <Center>
                     <Link href={'/login'}>

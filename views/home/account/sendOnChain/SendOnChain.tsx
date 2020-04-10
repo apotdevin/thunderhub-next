@@ -11,7 +11,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { PAY_ADDRESS } from '../../../../src/graphql/mutation';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { useBitcoinState } from '../../../../src/context/BitcoinContext';
 import { SecureButton } from '../../../../src/components/buttons/secureButton/SecureButton';
 import { Input } from '../../../../src/components/input/Input';
@@ -21,7 +21,7 @@ import {
     SingleButton,
 } from '../../../../src/components/buttons/multiButton/MultiButton';
 import { Price, getPrice } from '../../../../src/components/price/Price';
-import { mediaWidths, mediaDimensions } from '../../../../styles/Themes';
+import { mediaWidths, mediaDimensions } from '../../../../src/styles/Themes';
 import { useSettings } from '../../../../src/context/SettingsContext';
 import Modal from '../../../../src/components/modal/ReactModal';
 import { ColorButton } from '../../../../src/components/buttons/colorButton/ColorButton';

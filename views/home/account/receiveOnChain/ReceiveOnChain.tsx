@@ -9,7 +9,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { CREATE_ADDRESS } from '../../../../src/graphql/mutation';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { SecureButton } from '../../../../src/components/buttons/secureButton/SecureButton';
 import { useSize } from '../../../../src/hooks/UseSize';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -18,7 +18,7 @@ import {
     MultiButton,
     SingleButton,
 } from '../../../../src/components/buttons/multiButton/MultiButton';
-import { mediaDimensions } from '../../../../styles/Themes';
+import { mediaDimensions } from '../../../../src/styles/Themes';
 
 const ButtonRow = styled.div`
     width: auto;

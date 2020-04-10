@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-import { Separation, SingleLine, SubTitle, Sub4Title } from '../../generic/Styled';
+import {
+    Separation,
+    SingleLine,
+    SubTitle,
+    Sub4Title,
+} from '../../generic/Styled';
 import { AlertTriangle } from '../../generic/Icons';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../utils/error';
 import { SecureButton } from '../../buttons/secureButton/SecureButton';
 import { ColorButton } from '../../buttons/colorButton/ColorButton';
-import { MultiButton, SingleButton } from '../../buttons/multiButton/MultiButton';
+import {
+    MultiButton,
+    SingleButton,
+} from '../../buttons/multiButton/MultiButton';
 import { Input } from '../../input/Input';
 import { GET_BITCOIN_FEES } from '../../../graphql/query';
 import { CLOSE_CHANNEL } from '../../../graphql/mutation';
@@ -29,7 +37,11 @@ const CenterLine = styled(SingleLine)`
     justify-content: center;
 `;
 
-export const CloseChannel = ({ setModalOpen, channelId, channelName }: CloseChannelProps) => {
+export const CloseChannel = ({
+    setModalOpen,
+    channelId,
+    channelName,
+}: CloseChannelProps) => {
     const [isForce, setIsForce] = useState<boolean>(false);
     const [isType, setIsType] = useState<string>('none');
     const [amount, setAmount] = useState<number>(0);
@@ -70,7 +82,11 @@ export const CloseChannel = ({ setModalOpen, channelId, channelName }: CloseChan
 
     const handleOnlyClose = () => setModalOpen(false);
 
-    const renderButton = (onClick: () => void, text: string, selected: boolean) => (
+    const renderButton = (
+        onClick: () => void,
+        text: string,
+        selected: boolean
+    ) => (
         <SingleButton selected={selected} onClick={onClick}>
             {text}
         </SingleButton>
@@ -114,9 +130,17 @@ export const CloseChannel = ({ setModalOpen, channelId, channelName }: CloseChan
                 <Sub4Title>Fee:</Sub4Title>
             </SingleLine>
             <MultiButton>
-                {renderButton(() => setIsType('none'), 'Auto', isType === 'none')}
+                {renderButton(
+                    () => setIsType('none'),
+                    'Auto',
+                    isType === 'none'
+                )}
                 {renderButton(() => setIsType('fee'), 'Fee', isType === 'fee')}
-                {renderButton(() => setIsType('target'), 'Target', isType === 'target')}
+                {renderButton(
+                    () => setIsType('target'),
+                    'Target',
+                    isType === 'target'
+                )}
             </MultiButton>
             {isType === 'none' && (
                 <>
@@ -147,14 +171,20 @@ export const CloseChannel = ({ setModalOpen, channelId, channelName }: CloseChan
                 <>
                     <SingleLine>
                         <Sub4Title>
-                            {isType === 'target' ? 'Target Blocks:' : 'Fee (Sats/Byte)'}
+                            {isType === 'target'
+                                ? 'Target Blocks:'
+                                : 'Fee (Sats/Byte)'}
                         </Sub4Title>
                     </SingleLine>
                     <SingleLine>
                         <Input
-                            placeholder={isType === 'target' ? 'Blocks' : 'Sats/Byte'}
+                            placeholder={
+                                isType === 'target' ? 'Blocks' : 'Sats/Byte'
+                            }
                             type={'number'}
-                            onChange={(e) => setAmount(parseInt(e.target.value))}
+                            onChange={(e) =>
+                                setAmount(parseInt(e.target.value))
+                            }
                         />
                     </SingleLine>
                 </>
@@ -168,7 +198,11 @@ export const CloseChannel = ({ setModalOpen, channelId, channelName }: CloseChan
             </MultiButton>
             <Separation />
             <CenterLine>
-                <ColorButton withMargin={'4px'} withBorder={true} onClick={handleOnlyClose}>
+                <ColorButton
+                    withMargin={'4px'}
+                    withBorder={true}
+                    onClick={handleOnlyClose}
+                >
                     Cancel
                 </ColorButton>
                 <ColorButton

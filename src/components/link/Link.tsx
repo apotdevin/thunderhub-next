@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { textColor, linkHighlight } from '../../../styles/Themes';
+import { textColor, linkHighlight } from '../../styles/Themes';
 import { ThemeSet } from 'styled-theming';
 import RouterLink from 'next/link';
 
@@ -42,7 +42,14 @@ interface LinkProps {
     fullWidth?: boolean;
 }
 
-export const Link = ({ children, href, color, underline, inheritColor, fullWidth }: LinkProps) => {
+export const Link = ({
+    children,
+    href,
+    color,
+    underline,
+    inheritColor,
+    fullWidth,
+}: LinkProps) => {
     const props = { fontColor: color, underline, inheritColor, fullWidth };
 
     if (!href) return null;

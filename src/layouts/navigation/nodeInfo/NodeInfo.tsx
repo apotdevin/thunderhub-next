@@ -17,8 +17,8 @@ import {
 import { getTooltipType } from '../../../components/generic/Helpers';
 import { useAccount } from '../../../context/AccountContext';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
-import { textColorMap, unSelectedNavButton } from '../../../../styles/Themes';
+import { getErrorContent } from '../../../utils/error';
+import { textColorMap, unSelectedNavButton } from '../../../styles/Themes';
 import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
 import ScaleLoader from 'react-spinners/ScaleLoader';

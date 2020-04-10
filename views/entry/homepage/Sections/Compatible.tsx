@@ -2,13 +2,15 @@ import React from 'react';
 import { Center } from '../../../../src/components/typography/Styled';
 import { Section } from '../../../../src/components/section/Section';
 import { WrapSingleLine, StyledH2, StyledP } from './Sections.styled';
-import { homeBackgroundColor } from '../../../../styles/Themes';
+import { homeBackgroundColor } from '../../../../src/styles/Themes';
 
 export const Compatible = () => {
     return (
         <Section color={homeBackgroundColor} padding={'40px 0'}>
             <Center>
-                <StyledH2>Compatible with the latest LND node versions.</StyledH2>
+                <StyledH2>
+                    Compatible with the latest LND node versions.
+                </StyledH2>
             </Center>
             <WrapSingleLine>
                 <StyledP>v0.7.1-beta</StyledP>

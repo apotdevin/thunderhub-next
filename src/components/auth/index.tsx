@@ -6,7 +6,7 @@ import { QRLogin } from './views/QRLogin';
 import { ViewCheck } from './checks/ViewCheck';
 import CryptoJS from 'crypto-js';
 import { useAccount } from '../../context/AccountContext';
-import { saveUserAuth, getAccountId } from '../../../utils/auth';
+import { saveUserAuth, getAccountId } from '../../utils/auth';
 import { PasswordInput } from './views/Password';
 import { useConnectionDispatch } from '../../context/ConnectionContext';
 import { useStatusDispatch } from '../../context/StatusContext';

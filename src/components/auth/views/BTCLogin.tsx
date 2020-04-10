@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getConfigLnd } from '../../../../utils/auth';
+import { getConfigLnd } from '../../../utils/auth';
 import { toast } from 'react-toastify';
 import { Input } from '../../input/Input';
 import { Line, StyledTitle } from '../Auth.styled';

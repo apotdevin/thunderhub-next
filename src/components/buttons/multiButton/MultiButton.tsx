@@ -1,6 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { multiSelectColor, colorButtonBorder, multiButtonColor } from '../../../../styles/Themes';
+import {
+    multiSelectColor,
+    colorButtonBorder,
+    multiButtonColor,
+} from '../../../styles/Themes';
 
 interface StyledSingleProps {
     selected?: boolean;
@@ -22,7 +26,9 @@ const StyledSingleButton = styled.button`
         selected
             ? css`
                   color: white;
-                  background-color: ${buttonColor ? buttonColor : colorButtonBorder};
+                  background-color: ${buttonColor
+                      ? buttonColor
+                      : colorButtonBorder};
               `
             : ''};
 `;
@@ -34,7 +40,12 @@ interface SingleButtonProps {
     onClick?: () => void;
 }
 
-export const SingleButton = ({ children, selected, color, onClick }: SingleButtonProps) => {
+export const SingleButton = ({
+    children,
+    selected,
+    color,
+    onClick,
+}: SingleButtonProps) => {
     return (
         <StyledSingleButton
             selected={selected}

@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import { toast } from 'react-toastify';
-import { Sub4Title, NoWrapTitle, SubTitle, ResponsiveLine } from '../../generic/Styled';
+import {
+    Sub4Title,
+    NoWrapTitle,
+    SubTitle,
+    ResponsiveLine,
+} from '../../generic/Styled';
 import { Circle, ChevronRight } from '../../generic/Icons';
 import styled from 'styled-components';
 import { useAccount } from '../../../context/AccountContext';
-import { saveSessionAuth } from '../../../../utils/auth';
+import { saveSessionAuth } from '../../../utils/auth';
 import { useSettings } from '../../../context/SettingsContext';
-import { textColorMap, mediaDimensions } from '../../../../styles/Themes';
+import { textColorMap, mediaDimensions } from '../../../styles/Themes';
 import { ColorButton } from '../colorButton/ColorButton';
 import { Input } from '../../input/Input';
 import { useSize } from '../../../hooks/UseSize';
@@ -31,7 +36,13 @@ interface LoginProps {
     setModalOpen: (value: boolean) => void;
 }
 
-export const LoginModal = ({ macaroon, color, setModalOpen, callback, variables }: LoginProps) => {
+export const LoginModal = ({
+    macaroon,
+    color,
+    setModalOpen,
+    callback,
+    variables,
+}: LoginProps) => {
     const { width } = useSize();
     const { theme } = useSettings();
 
@@ -56,9 +67,16 @@ export const LoginModal = ({ macaroon, color, setModalOpen, callback, variables 
         }
     };
 
-    const renderButton = (onClick: () => void, text: string, selected: boolean) => (
+    const renderButton = (
+        onClick: () => void,
+        text: string,
+        selected: boolean
+    ) => (
         <ColorButton color={color} onClick={onClick}>
-            <Circle size={'10px'} fillcolor={selected ? textColorMap[theme] : ''} />
+            <Circle
+                size={'10px'}
+                fillcolor={selected ? textColorMap[theme] : ''}
+            />
             <RadioText>{text}</RadioText>
         </ColorButton>
     );
@@ -69,7 +87,9 @@ export const LoginModal = ({ macaroon, color, setModalOpen, callback, variables 
             <ResponsiveLine>
                 <Sub4Title>Password:</Sub4Title>
                 <Input
-                    withMargin={width <= mediaDimensions.mobile ? '0' : '0 0 0 16px'}
+                    withMargin={
+                        width <= mediaDimensions.mobile ? '0' : '0 0 0 16px'
+                    }
                     type={'password'}
                     onChange={(e) => setPass(e.target.value)}
                 />
@@ -77,8 +97,16 @@ export const LoginModal = ({ macaroon, color, setModalOpen, callback, variables 
             <ResponsiveLine>
                 <NoWrapTitle>Don't ask me again this session:</NoWrapTitle>
                 <ButtonRow>
-                    {renderButton(() => setStoreSession(true), 'Yes', storeSession)}
-                    {renderButton(() => setStoreSession(false), 'No', !storeSession)}
+                    {renderButton(
+                        () => setStoreSession(true),
+                        'Yes',
+                        storeSession
+                    )}
+                    {renderButton(
+                        () => setStoreSession(false),
+                        'No',
+                        !storeSession
+                    )}
                 </ButtonRow>
             </ResponsiveLine>
             <ColorButton

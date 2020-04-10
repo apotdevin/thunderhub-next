@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { css } from 'styled-components';
-import { cardColor, mediaWidths, themeColors } from '../../../styles/Themes';
+import { cardColor, mediaWidths, themeColors } from '../../styles/Themes';
 import ReactModal from 'styled-react-modal';
 
 interface ModalProps {
@@ -39,11 +39,20 @@ const StyleModalSmall = ReactModal.styled`
         background-color: ${themeColors.white};
 `;
 
-const Modal = ({ children, isOpen, noMinWidth = false, closeCallback }: ModalProps) => {
+const Modal = ({
+    children,
+    isOpen,
+    noMinWidth = false,
+    closeCallback,
+}: ModalProps) => {
     const Styled = noMinWidth ? StyleModalSmall : StyleModal;
 
     return (
-        <Styled isOpen={isOpen} onBackgroundClick={closeCallback} onEscapeKeydown={closeCallback}>
+        <Styled
+            isOpen={isOpen}
+            onBackgroundClick={closeCallback}
+            onEscapeKeydown={closeCallback}
+        >
             {children}
         </Styled>
     );

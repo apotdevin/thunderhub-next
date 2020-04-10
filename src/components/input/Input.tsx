@@ -5,7 +5,7 @@ import {
     colorButtonBorder,
     inputBackgroundColor,
     inputBorderColor,
-} from '../../../styles/Themes';
+} from '../../styles/Themes';
 
 interface InputProps {
     color?: string;

@@ -6,7 +6,7 @@ import {
     themeColors,
     mediaWidths,
     mediaDimensions,
-} from '../../../styles/Themes';
+} from '../../styles/Themes';
 import { HomeButton } from '../../../views/entry/homepage/HomePage.styled';
 // import { Link } from 'react-router-dom';
 import { useAccount } from '../../context/AccountContext';

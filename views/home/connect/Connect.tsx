@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useAccount } from '../../../src/context/AccountContext';
 import { GET_CONNECT_INFO } from '../../../src/graphql/query';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../utils/error';
+import { getErrorContent } from '../../../src/utils/error';
 import { LoadingCard } from '../../../src/components/loading/LoadingCard';
 import {
     CardWithTitle,
@@ -17,7 +17,7 @@ import {
 import { Radio, Copy } from '../../../src/components/generic/Icons';
 import styled from 'styled-components';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import { mediaWidths } from '../../../styles/Themes';
+import { mediaWidths } from '../../../src/styles/Themes';
 
 const Key = styled.div`
     overflow: hidden;

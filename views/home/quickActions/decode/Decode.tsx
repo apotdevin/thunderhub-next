@@ -9,14 +9,14 @@ import { renderLine } from '../../../../src/components/generic/Helpers';
 import { useMutation } from '@apollo/react-hooks';
 import { useAccount } from '../../../../src/context/AccountContext';
 import { DECODE_REQUEST } from '../../../../src/graphql/mutation';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { toast } from 'react-toastify';
 import { getNodeLink } from '../../../../src/components/generic/Helpers';
 import { ColorButton } from '../../../../src/components/buttons/colorButton/ColorButton';
 import { Input } from '../../../../src/components/input/Input';
 import { useSize } from '../../../../src/hooks/UseSize';
 import { Price } from '../../../../src/components/price/Price';
-import { mediaDimensions } from '../../../../styles/Themes';
+import { mediaDimensions } from '../../../../src/styles/Themes';
 
 export const DecodeCard = ({ color }: { color: string }) => {
     const { width } = useSize();

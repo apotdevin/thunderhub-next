@@ -19,7 +19,7 @@ import {
     chartAxisColor,
     liquidityBarColor,
     mediaDimensions,
-} from '../../../../styles/Themes';
+} from '../../../../src/styles/Themes';
 import { LoadingCard } from '../../../../src/components/loading/LoadingCard';
 import { getPrice } from '../../../../src/components/price/Price';
 import { useSize } from '../../../../src/hooks/UseSize';

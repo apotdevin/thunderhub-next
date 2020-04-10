@@ -4,7 +4,7 @@ import { SubTitle } from '../../generic/Styled';
 import { AlertTriangle } from '../../generic/Icons';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../utils/error';
 import { SecureButton } from '../../buttons/secureButton/SecureButton';
 import { ColorButton } from '../../buttons/colorButton/ColorButton';
 import { REMOVE_PEER } from '../../../graphql/mutation';
@@ -22,7 +22,11 @@ const WarningCard = styled.div`
     align-items: center;
 `;
 
-export const RemovePeerModal = ({ setModalOpen, publicKey, peerAlias }: RemovePeerProps) => {
+export const RemovePeerModal = ({
+    setModalOpen,
+    publicKey,
+    peerAlias,
+}: RemovePeerProps) => {
     const [removePeer, { loading }] = useMutation(REMOVE_PEER, {
         onCompleted: (data) => {
             toast.success('Peer Removed');

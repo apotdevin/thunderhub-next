@@ -9,7 +9,7 @@ import {
     Text,
 } from '../HomePage.styled';
 import { Zap } from '../../../../src/components/generic/Icons';
-import { headerColor, inverseTextColor } from '../../../../styles/Themes';
+import { headerColor, inverseTextColor } from '../../../../src/styles/Themes';
 // import { Link } from 'react-router-dom';
 import { Section } from '../../../../src/components/section/Section';
 import {

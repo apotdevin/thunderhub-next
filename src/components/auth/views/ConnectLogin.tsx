@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getAuthLnd, getBase64CertfromDerFormat } from '../../../../utils/auth';
+import { getAuthLnd, getBase64CertfromDerFormat } from '../../../utils/auth';
 import { Input } from '../../input/Input';
 import { Line, StyledTitle } from '../Auth.styled';
 import { RiskCheckboxAndConfirm } from './Checkboxes';

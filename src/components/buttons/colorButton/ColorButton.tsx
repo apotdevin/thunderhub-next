@@ -9,9 +9,9 @@ import {
     colorButtonBorder,
     colorButtonBorderTwo,
     hoverTextColor,
-} from '../../../../styles/Themes';
+} from '../../../styles/Themes';
 import { ChevronRight } from '../../generic/Icons';
-import { themeColors } from '../../../../styles/Themes';
+import { themeColors } from '../../../styles/Themes';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 
 interface GeneralProps {
@@ -67,7 +67,9 @@ const BorderButton = styled(GeneralButton)`
             !selected
                 ? css`
                       border: 1px solid ${colorButtonBackground};
-                      background-color: ${borderColor ? borderColor : colorButtonBorder};
+                      background-color: ${borderColor
+                          ? borderColor
+                          : colorButtonBorder};
                       color: ${hoverTextColor};
                   `
                 : ''};
@@ -117,7 +119,11 @@ export const ColorButton = ({
 }: ColorButtonProps) => {
     if (disabled && !loading) {
         return (
-            <DisabledButton withMargin={withMargin} fullWidth={fullWidth} buttonWidth={width}>
+            <DisabledButton
+                withMargin={withMargin}
+                fullWidth={fullWidth}
+                buttonWidth={width}
+            >
                 {children}
                 {arrow && renderArrow()}
             </DisabledButton>
@@ -126,7 +132,11 @@ export const ColorButton = ({
 
     if (loading) {
         return (
-            <DisabledButton withMargin={withMargin} fullWidth={fullWidth} buttonWidth={width}>
+            <DisabledButton
+                withMargin={withMargin}
+                fullWidth={fullWidth}
+                buttonWidth={width}
+            >
                 <ScaleLoader height={16} color={themeColors.blue2} />
             </DisabledButton>
         );

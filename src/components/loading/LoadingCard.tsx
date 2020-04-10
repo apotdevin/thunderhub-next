@@ -2,7 +2,7 @@ import React from 'react';
 import { CardWithTitle, CardTitle, SubTitle, Card } from '../generic/Styled';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import styled from 'styled-components';
-import { themeColors } from '../../../styles/Themes';
+import { themeColors } from '../../styles/Themes';
 
 const Loading = styled.div`
     width: 100%;

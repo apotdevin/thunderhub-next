@@ -4,7 +4,7 @@ import { useAccount } from '../../context/AccountContext';
 import { useStatusDispatch } from '../../context/StatusContext';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../utils/error';
+import { getErrorContent } from '../../utils/error';
 import { GET_NODE_INFO } from '../../graphql/query';
 
 export const StatusCheck = () => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import QrReader from 'react-qr-reader';
 import Modal from '../../modal/ReactModal';
 import { toast } from 'react-toastify';
-import { getQRConfig } from '../../../../utils/auth';
+import { getQRConfig } from '../../../utils/auth';
 import { Line, QRTextWrapper } from '../Auth.styled';
 import sortBy from 'lodash.sortby';
 import { LoadingBar } from '../../loadingBar/LoadingBar';

@@ -14,10 +14,10 @@ import {
     chartAxisColor,
     chartBarColor,
     chartGridColor,
-} from '../../../../styles/Themes';
+} from '../../../../src/styles/Themes';
 import { CardContent } from '../forwardReport';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { LoadingCard } from '../../../../src/components/loading/LoadingCard';
 import { getPrice } from '../../../../src/components/price/Price';
 import { usePriceState } from '../../../../src/context/PriceContext';

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { ThemeSet } from 'styled-theming';
-import { backgroundColor, mediaWidths } from '../../../styles/Themes';
+import { backgroundColor, mediaWidths } from '../../styles/Themes';
 
 interface FullWidthProps {
     padding?: string;

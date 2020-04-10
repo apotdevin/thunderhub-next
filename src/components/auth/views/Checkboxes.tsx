@@ -2,7 +2,7 @@ import React from 'react';
 import { Checkbox } from '../../checkbox/Checkbox';
 import { CheckboxText, StyledContainer, FixedWidth } from '../Auth.styled';
 import { AlertCircle } from '../../generic/Icons';
-import { fontColors } from '../../../../styles/Themes';
+import { fontColors } from '../../../styles/Themes';
 import { ColorButton } from '../../buttons/colorButton/ColorButton';
 
 type CheckboxProps = {

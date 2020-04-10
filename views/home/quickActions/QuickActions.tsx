@@ -8,7 +8,7 @@ import {
 } from '../../../src/components/generic/Styled';
 import styled from 'styled-components';
 import { XSvg, Layers, GitBranch } from '../../../src/components/generic/Icons';
-import { unSelectedNavButton } from '../../../styles/Themes';
+import { unSelectedNavButton } from '../../../src/styles/Themes';
 import { DecodeCard } from './decode/Decode';
 import { OpenChannelCard } from './openChannel/OpenChannel';
 import { AdminSwitch } from '../../../src/components/adminSwitch/AdminSwitch';

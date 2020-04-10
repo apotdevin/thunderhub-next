@@ -7,12 +7,20 @@ import {
     SingleLine,
 } from '../../../../src/components/generic/Styled';
 import styled from 'styled-components';
-import { Eye, Send, Key, Server, Sliders, Users } from '../../../../src/components/generic/Icons';
-import { cardColor, mediaWidths } from '../../../../styles/Themes';
+import {
+    Eye,
+    Send,
+    Key,
+    Server,
+    Sliders,
+    Users,
+} from '../../../../src/components/generic/Icons';
+import { cardColor, mediaWidths } from '../../../../src/styles/Themes';
 import { Section } from '../../../../src/components/section/Section';
 
 const Padding = styled.div`
-    padding: ${({ padding }: { padding?: string }) => (padding ? padding : '16px')};
+    padding: ${({ padding }: { padding?: string }) =>
+        padding ? padding : '16px'};
 `;
 
 const DetailCard = styled(Card)`

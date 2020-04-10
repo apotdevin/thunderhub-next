@@ -8,14 +8,14 @@ import { CREATE_INVOICE } from '../../../../src/graphql/mutation';
 import { Copy } from '../../../../src/components/generic/Icons';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../../utils/error';
+import { getErrorContent } from '../../../../src/utils/error';
 import { SecureButton } from '../../../../src/components/buttons/secureButton/SecureButton';
 import QRCode from 'qrcode.react';
 import { ColorButton } from '../../../../src/components/buttons/colorButton/ColorButton';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { Input } from '../../../../src/components/input/Input';
 import { useSize } from '../../../../src/hooks/UseSize';
-import { mediaWidths, mediaDimensions } from '../../../../styles/Themes';
+import { mediaWidths, mediaDimensions } from '../../../../src/styles/Themes';
 
 const Responsive = styled.div`
     display: flex;

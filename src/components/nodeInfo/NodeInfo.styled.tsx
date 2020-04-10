@@ -6,7 +6,7 @@ import {
     buttonBorderColor,
     textColor,
     mediaWidths,
-} from '../../../styles/Themes';
+} from '../../styles/Themes';
 
 const arrowCSS = css`
     background-color: ${inverseTextColor};

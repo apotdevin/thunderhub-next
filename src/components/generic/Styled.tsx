@@ -11,7 +11,7 @@ import {
     inverseTextColor,
     separationColor,
     mediaWidths,
-} from '../../../styles/Themes';
+} from '../../styles/Themes';
 import { ThemeSet } from 'styled-theming';
 
 export const CardWithTitle = styled.div`
@@ -47,7 +47,8 @@ interface SeparationProps {
 
 export const Separation = styled.div`
     height: ${({ height }: SeparationProps) => (height ? height : '1')}px;
-    background-color: ${({ lineColor }: SeparationProps) => lineColor ?? separationColor};
+    background-color: ${({ lineColor }: SeparationProps) =>
+        lineColor ?? separationColor};
     width: 100%;
     margin: 16px 0;
 `;
@@ -63,7 +64,8 @@ export const SubCard = styled.div`
     padding: ${({ padding }) => (padding ? padding : '16px')};
     background: ${subCardColor};
     border: 1px solid ${cardBorderColor};
-    border-left: ${({ color }: SubCardProps) => (color ? `2px solid ${color}` : '')};
+    border-left: ${({ color }: SubCardProps) =>
+        color ? `2px solid ${color}` : ''};
 
     &:hover {
         box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.1);
@@ -91,7 +93,8 @@ export const SubTitle = styled.h4`
         css`
             color: ${subtitleColor};
         `}
-    font-weight: ${({ fontWeight }: SubTitleProps) => (fontWeight ? fontWeight : '500')};
+    font-weight: ${({ fontWeight }: SubTitleProps) =>
+        fontWeight ? fontWeight : '500'};
 `;
 
 export const InverseSubtitle = styled(SubTitle)`
@@ -168,7 +171,8 @@ interface ColorProps {
 }
 export const ColorButton = styled(SimpleButton)`
     color: ${({ selected }) => (selected ? textColor : chartLinkColor)};
-    border: ${({ selected, color }: ColorProps) => (selected ? `1px solid ${color}` : '')};
+    border: ${({ selected, color }: ColorProps) =>
+        selected ? `1px solid ${color}` : ''};
 
     &:hover {
         border: 1px solid ${({ color }: ColorProps) => color};

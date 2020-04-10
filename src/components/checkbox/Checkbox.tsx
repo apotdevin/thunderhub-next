@@ -4,7 +4,7 @@ import {
     colorButtonBackground,
     buttonBorderColor,
     themeColors,
-} from '../../../styles/Themes';
+} from '../../styles/Themes';
 
 const StyledContainer = styled.div`
     display: flex;

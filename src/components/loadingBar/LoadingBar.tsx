@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { progressBackground } from '../../../styles/Themes';
+import { progressBackground } from '../../styles/Themes';
 
 const Progress = styled.div`
     width: 100%;

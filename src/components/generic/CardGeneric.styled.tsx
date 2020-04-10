@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mediaWidths, cardColor, cardBorderColor } from '../../../styles/Themes';
+import { mediaWidths, cardColor, cardBorderColor } from '../../styles/Themes';
 
 export const StatusDot = styled.div`
     margin: 0 2px;
