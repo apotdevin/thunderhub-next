@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import { Card, CardProps } from 'components/generic/Styled';
 import { fontColors, mediaWidths, textColor } from '../../styles/Themes';
-import { Card, CardProps } from '../generic/CardGeneric.styled';
+import { Card, CardProps } from '../generic/CardGeneric';
 
 export const Center = styled.div`
     display: flex;

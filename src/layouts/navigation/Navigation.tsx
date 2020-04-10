@@ -146,7 +146,7 @@ export const Navigation = ({ isBurger, setOpen }: NavigationProps) => {
         NavIcon: any,
         open: boolean = true
     ) => (
-        <Link href={'link'}>
+        <Link href={link}>
             <NavButton isOpen={sidebar} selected={pathname === link}>
                 <NavIcon />
                 {open && <NavSeparation>{title}</NavSeparation>}
@@ -155,7 +155,7 @@ export const Navigation = ({ isBurger, setOpen }: NavigationProps) => {
     );
 
     const renderBurgerNav = (title: string, link: string, NavIcon: any) => (
-        <Link href="link">
+        <Link href={link}>
             <BurgerNav
                 selected={pathname === link}
                 onClick={() => setOpen && setOpen(false)}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SmallLink, DarkSubTitle, OverflowText, SingleLine } from './Styled';
-import { StatusDot, DetailLine } from './CardGeneric.styled';
+import { StatusDot, DetailLine } from './CardGeneric';
 import { format, formatDistanceStrict } from 'date-fns';
 import { XSvg } from './Icons';
 

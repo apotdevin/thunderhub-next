@@ -7,11 +7,11 @@ import {
     mediaWidths,
 } from '../../styles/Themes';
 import { Section } from '../../components/section/Section';
-// import { Link } from 'components/link/Link';
-// import { Emoji } from 'components/emoji/Emoji';
+import { Link } from '../../components/link/Link';
+import { Emoji } from '../../components/emoji/Emoji';
 import { useAccount } from '../../context/AccountContext';
-// import { Link as RouterLink } from 'react-router-dom';
-// import { HomeButton } from 'views/entry/homepage/HomePage.styled';
+import RouterLink from 'next/link';
+import { HomeButton } from '../../../views/entry/homepage/HomePage.styled';
 import { Zap } from '../../components/generic/Icons';
 
 const FooterStyle = styled.div`
@@ -72,13 +72,13 @@ const CopyrightText = styled(SideText)`
     color: ${fontColors.blue};
 `;
 
-// const StyledRouter = styled(RouterLink)`
-//     margin-top: 12px;
+const StyledRouter = styled.div`
+    margin-top: 16px;
 
-//     ${HomeButton} {
-//         font-size: 14px;
-//     }
-// `;
+    ${HomeButton} {
+        font-size: 14px;
+    }
+`;
 
 const Line = styled.div`
     display: flex;
@@ -110,37 +110,47 @@ export const Footer = () => {
                         monitor your LND node.
                     </SideText>
                     <SideText>
-                        {/* Made in Munich with <Emoji symbol={'🧡'} label={'heart'} /> and <Emoji symbol={'⚡'} label={'lightning'} />. */}
+                        Made in Munich with{' '}
+                        <Emoji symbol={'🧡'} label={'heart'} /> and{' '}
+                        <Emoji symbol={'⚡'} label={'lightning'} />.
                     </SideText>
                     <CopyrightText>
                         Copyright © 2020. All rights reserved. ThunderHub
                     </CopyrightText>
                 </SideFooter>
-                {/* <RightFooter>
-          <Link to={'/faq'} color={fontColors.blue}>
-            FAQ
-          </Link>
-          <Link href={'https://github.com/apotdevin/thunderhub'} color={fontColors.blue}>
-            Github
-          </Link>
-          <Link href={'https://twitter.com/thunderhubio'} color={fontColors.blue}>
-            Twitter
-          </Link>
-          <Link to={'/terms'} color={fontColors.blue}>
-            Terms of Use
-          </Link>
-          <Link to={'/privacy'} color={fontColors.blue}>
-            Privacy Policy
-          </Link>
-          {!loggedIn && (
-            <StyledRouter to="/login" style={{ textDecoration: 'none' }}>
-              <HomeButton>
-                <Zap fillcolor={'white'} color={'white'} />
-                LOGIN
-              </HomeButton>
-            </StyledRouter>
-          )}
-        </RightFooter> */}
+                <RightFooter>
+                    <Link href={'/faq'} color={fontColors.blue}>
+                        FAQ
+                    </Link>
+                    <Link
+                        href={'github.com/apotdevin/thunderhub'}
+                        color={fontColors.blue}
+                    >
+                        Github
+                    </Link>
+                    <Link
+                        href={'twitter.com/thunderhubio'}
+                        color={fontColors.blue}
+                    >
+                        Twitter
+                    </Link>
+                    <Link href={'/terms'} color={fontColors.blue}>
+                        Terms of Use
+                    </Link>
+                    <Link href={'/privacy'} color={fontColors.blue}>
+                        Privacy Policy
+                    </Link>
+                    {!loggedIn && (
+                        <RouterLink href="/login">
+                            <StyledRouter>
+                                <HomeButton>
+                                    <Zap fillcolor={'white'} color={'white'} />
+                                    LOGIN
+                                </HomeButton>
+                            </StyledRouter>
+                        </RouterLink>
+                    )}
+                </RightFooter>
             </FooterStyle>
         </Section>
     );

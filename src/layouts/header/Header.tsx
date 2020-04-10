@@ -18,9 +18,9 @@ import {
     Zap,
     Circle,
 } from '../../components/generic/Icons';
-// import { BurgerMenu } from 'components/burgerMenu/BurgerMenu';
-// import { useSize } from 'hooks/UseSize';
-// import { useTransition, animated } from 'react-spring';
+import { BurgerMenu } from '../../components/burgerMenu/BurgerMenu';
+import { useSize } from '../../hooks/UseSize';
+import { useTransition, animated } from 'react-spring';
 import { Section } from '../../components/section/Section';
 import { useStatusState } from '../../context/StatusContext';
 import Link from 'next/link';
@@ -68,42 +68,55 @@ const LinkWrapper = styled.div`
     }
 `;
 
-// const AnimatedBurger = animated(MenuIcon);
-// const AnimatedClose = animated(XSvg);
+const AnimatedBurger = animated(MenuIcon);
+const AnimatedClose = animated(XSvg);
 
 export const Header = () => {
-    //   const { width } = useSize();
+    const { width } = useSize();
     const { loggedIn } = useAccount();
     const [open, setOpen] = useState(false);
     const { syncedToChain } = useStatusState();
 
-    // const transitions = useTransition(open, null, {
-    //     from: { position: 'absolute', opacity: 0 },
-    //     enter: { opacity: 1 },
-    //     leave: { opacity: 0 },
-    // });
+    const transitions = useTransition(open, null, {
+        from: { position: 'absolute', opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+    });
 
-    //   const renderLoggedIn = () => {
-    //     if (width <= mediaDimensions.mobile) {
-    //       return (
-    //         <IconWrapper onClick={() => setOpen((prev) => !prev)}>
-    //           {transitions.map(({ item, key, props }) =>
-    //             item ? (
-    //               <AnimatedClose key={key} style={props} size={'24px'} />
-    //             ) : (
-    //               <AnimatedBurger key={key} style={props} size={'24px'} />
-    //             )
-    //           )}
-    //         </IconWrapper>
-    //       );
-    //     } else {
-    //       return <Circle size={'12px'} strokeWidth={'0'} fillcolor={syncedToChain ? '#95de64' : '#ff7875'} />;
-    //     }
-    //   };
+    const renderLoggedIn = () => {
+        if (width <= mediaDimensions.mobile) {
+            return (
+                <IconWrapper onClick={() => setOpen((prev) => !prev)}>
+                    {transitions.map(({ item, key, props }) =>
+                        item ? (
+                            <AnimatedClose
+                                key={key}
+                                style={props}
+                                size={'24px'}
+                            />
+                        ) : (
+                            <AnimatedBurger
+                                key={key}
+                                style={props}
+                                size={'24px'}
+                            />
+                        )
+                    )}
+                </IconWrapper>
+            );
+        } else {
+            return (
+                <Circle
+                    size={'12px'}
+                    strokeWidth={'0'}
+                    fillcolor={syncedToChain ? '#95de64' : '#ff7875'}
+                />
+            );
+        }
+    };
 
     const renderLoggedOut = () => (
         <>
-            {/* <Link href="/faq" style={{ textDecoration: 'none' }}> */}
             <Link href="/faq">
                 <LinkWrapper>Faq</LinkWrapper>
             </Link>
@@ -121,8 +134,10 @@ export const Header = () => {
         </>
     );
 
-    //   const HeaderWrapper = width <= mediaDimensions.mobile && !loggedIn ? ResponsiveLine : SingleLine;
-    const HeaderWrapper = ResponsiveLine;
+    const HeaderWrapper =
+        width <= mediaDimensions.mobile && !loggedIn
+            ? ResponsiveLine
+            : SingleLine;
 
     return (
         <>
@@ -133,22 +148,27 @@ export const Header = () => {
             >
                 <HeaderStyle>
                     <HeaderWrapper>
-                        {/* <Link to="/" style={{ textDecoration: 'none' }}> */}
                         <Link href="/">
-                            {/* <HeaderTitle withPadding={width <= mediaDimensions.mobile && !loggedIn}> */}
-                            <HeaderTitle>
+                            <HeaderTitle
+                                withPadding={
+                                    width <= mediaDimensions.mobile && !loggedIn
+                                }
+                            >
                                 <IconPadding>
                                     <Cpu color={'white'} />
                                 </IconPadding>
                                 ThunderHub
                             </HeaderTitle>
                         </Link>
-                        {/* <SingleLine>{loggedIn ? renderLoggedIn() : renderLoggedOut()}</SingleLine> */}
-                        <SingleLine>{renderLoggedOut()}</SingleLine>
+                        <SingleLine>
+                            {loggedIn ? renderLoggedIn() : renderLoggedOut()}
+                        </SingleLine>
                     </HeaderWrapper>
                 </HeaderStyle>
             </Section>
-            {/* {open && width <= mediaDimensions.mobile && <BurgerMenu open={open} setOpen={setOpen} />} */}
+            {open && width <= mediaDimensions.mobile && (
+                <BurgerMenu open={open} setOpen={setOpen} />
+            )}
         </>
     );
 };

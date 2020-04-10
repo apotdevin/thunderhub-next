@@ -23,7 +23,18 @@ const ContentStyle = styled.div`
     grid-area: content;
 `;
 
-export const GridWrapper: React.FC = ({ children }) => {
+interface GridWrapperProps {
+    without?: boolean;
+}
+
+export const GridWrapper: React.FC<GridWrapperProps> = ({
+    children,
+    without = false,
+}) => {
+    if (without) {
+        return <>{children}</>;
+    }
+
     return (
         <Section padding={'16px 0 32px'}>
             <Container>
