@@ -1,38 +1,45 @@
 import App from 'next/app';
 import React from 'react';
-import { ContextProvider } from '../context/ContextProvider';
+import { ContextProvider } from '../src/context/ContextProvider';
 import { ThemeProvider } from 'styled-components';
-import { useSettings } from '../context/SettingsContext';
+import { useSettings } from '../src/context/SettingsContext';
 import { ModalProvider, BaseModalBackground } from 'styled-react-modal';
 import { GlobalStyles } from '../styles/GlobalStyle';
-import { Header } from '../layouts/header/Header';
-import { Footer } from '../layouts/footer/Footer';
+import { Header } from '../src/layouts/header/Header';
+import { Footer } from '../src/layouts/footer/Footer';
+import { ApolloProvider } from '@apollo/react-hooks';
 import '../styles/FontStyles.css';
 
-const Wrapper: React.FC = ({ children }) => {
-  const { theme } = useSettings();
+import withData from '../config/apolloClient';
 
-  return (
-    <ThemeProvider theme={{ mode: theme }}>
-      <ModalProvider backgroundComponent={BaseModalBackground}>
-        <GlobalStyles />
-        <Header />
-        {children}
-        <Footer />
-      </ModalProvider>
-    </ThemeProvider>
-  );
+const Wrapper: React.FC = ({ children }) => {
+    const { theme } = useSettings();
+
+    return (
+        <ThemeProvider theme={{ mode: theme }}>
+            <ModalProvider backgroundComponent={BaseModalBackground}>
+                <GlobalStyles />
+                <Header />
+                {children}
+                <Footer />
+            </ModalProvider>
+        </ThemeProvider>
+    );
 };
 
-export default class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <ContextProvider>
-        <Wrapper>
-          <Component {...pageProps} />
-        </Wrapper>
-      </ContextProvider>
-    );
-  }
+class MyApp extends App<any> {
+    render() {
+        const { Component, pageProps, apollo } = this.props;
+        return (
+            <ApolloProvider client={apollo}>
+                <ContextProvider>
+                    <Wrapper>
+                        <Component {...pageProps} />
+                    </Wrapper>
+                </ContextProvider>
+            </ApolloProvider>
+        );
+    }
 }
+
+export default withData(MyApp);

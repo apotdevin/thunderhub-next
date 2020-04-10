@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { useAccount } from '../../../context/AccountContext';
+import { useAccount } from '../../../src/context/AccountContext';
 import {
     SingleLine,
     Sub4Title,
     CardWithTitle,
     Card,
     SubTitle,
-} from '../../../components/generic/Styled';
+} from '../../../src/components/generic/Styled';
 import CryptoJS from 'crypto-js';
 import { toast } from 'react-toastify';
 import { saveSessionAuth } from '../../../utils/auth';
-import { ColorButton } from '../../../components/buttons/colorButton/ColorButton';
+import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
 import { Input } from 'components/input/Input';
 import { Section } from 'components/section/Section';
 
