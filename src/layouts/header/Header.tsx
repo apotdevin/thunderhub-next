@@ -11,7 +11,13 @@ import { HomeButton } from '../../../views/entry/homepage/HomePage.styled';
 // import { Link } from 'react-router-dom';
 import { useAccount } from '../../context/AccountContext';
 import { SingleLine, ResponsiveLine } from '../../components/generic/Styled';
-import { Cpu, MenuIcon, XSvg, Zap, Circle } from '../../components/generic/Icons';
+import {
+    Cpu,
+    MenuIcon,
+    XSvg,
+    Zap,
+    Circle,
+} from '../../components/generic/Icons';
 // import { BurgerMenu } from 'components/burgerMenu/BurgerMenu';
 // import { useSize } from 'hooks/UseSize';
 // import { useTransition, animated } from 'react-spring';
@@ -54,7 +60,8 @@ const IconWrapper = styled.div`
 
 const LinkWrapper = styled.div`
     color: ${headerTextColor};
-    margin: ${({ last }: { last?: boolean }) => (last ? '0 16px 0 4px' : '0 4px')};
+    margin: ${({ last }: { last?: boolean }) =>
+        last ? '0 16px 0 4px' : '0 4px'};
 
     :hover {
         color: ${themeColors.blue2};
@@ -119,18 +126,23 @@ export const Header = () => {
 
     return (
         <>
-            <Section withColor={true} color={headerColor} textColor={headerTextColor}>
+            <Section
+                withColor={true}
+                color={headerColor}
+                textColor={headerTextColor}
+            >
                 <HeaderStyle>
                     <HeaderWrapper>
                         {/* <Link to="/" style={{ textDecoration: 'none' }}> */}
-                        {/* <HeaderTitle withPadding={width <= mediaDimensions.mobile && !loggedIn}> */}
-                        <HeaderTitle>
-                            <IconPadding>
-                                <Cpu color={'white'} />
-                            </IconPadding>
-                            ThunderHub
-                        </HeaderTitle>
-                        {/* </Link> */}
+                        <Link href="/">
+                            {/* <HeaderTitle withPadding={width <= mediaDimensions.mobile && !loggedIn}> */}
+                            <HeaderTitle>
+                                <IconPadding>
+                                    <Cpu color={'white'} />
+                                </IconPadding>
+                                ThunderHub
+                            </HeaderTitle>
+                        </Link>
                         {/* <SingleLine>{loggedIn ? renderLoggedIn() : renderLoggedOut()}</SingleLine> */}
                         <SingleLine>{renderLoggedOut()}</SingleLine>
                     </HeaderWrapper>

@@ -11,8 +11,8 @@ import CryptoJS from 'crypto-js';
 import { toast } from 'react-toastify';
 import { saveSessionAuth } from '../../../utils/auth';
 import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
-import { Input } from 'components/input/Input';
-import { Section } from 'components/section/Section';
+import { Input } from '../../../src/components/input/Input';
+import { Section } from '../../../src/components/section/Section';
 
 export const SessionLogin = () => {
     const { name, admin, refreshAccount } = useAccount();

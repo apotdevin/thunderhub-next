@@ -1,14 +1,13 @@
 import React from 'react';
-// import { text } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs';
 import { Link } from './Link';
 
 export default {
-  title: 'Link',
+    title: 'Link',
 };
 
 export const Default = () => {
-  // const linkText = text('Link Text', 'This is a link');
+    const linkText = text('Link Text', 'This is a link');
 
-  // return <Link to={'google.com'}>{linkText}</Link>;
-  return <></>;
+    return <Link href={'google.com'}>{linkText}</Link>;
 };

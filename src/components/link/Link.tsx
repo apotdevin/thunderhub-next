@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { textColor, linkHighlight } from '../../../styles/Themes';
 import { ThemeSet } from 'styled-theming';
-// import { Link as RouterLink } from 'react-router-dom';
 import RouterLink from 'next/link';
 
 interface StyledProps {
@@ -12,7 +11,7 @@ interface StyledProps {
     fullWidth?: boolean;
 }
 
-const styledCss = css`
+const StyledALink = styled.a`
     color: ${({ fontColor, inheritColor }: StyledProps) =>
         inheritColor ? 'inherit' : fontColor ?? textColor};
     text-decoration: none;
@@ -34,15 +33,6 @@ const styledCss = css`
     }
 `;
 
-// const StyledLink = styled<StyledProps>(({ inheritColor, fontColor, underline, fullWidth, ...rest }) => (
-//   <RouterLink {...(rest as any)} />
-//   // <RouterLink {...rest} />
-// ))(() => styledCss);
-
-const StyledALink = styled.a`
-    ${styledCss}
-`;
-
 interface LinkProps {
     children: any;
     href?: string;
@@ -57,19 +47,9 @@ export const Link = ({ children, href, color, underline, inheritColor, fullWidth
 
     if (!href) return null;
 
-    // if (to) {
-    //   return (
-    //     //   <StyledLink to={to} {...props}>
-    //     <StyledLink href={to} {...props}>
-    //       {children}
-    //     </StyledLink>
-    //   );
-    // } else {
     return (
         <RouterLink href={href}>
-            <StyledALink href={href} {...props}>
-                {children}
-            </StyledALink>
+            <StyledALink {...props}>{children}</StyledALink>
         </RouterLink>
     );
     // }

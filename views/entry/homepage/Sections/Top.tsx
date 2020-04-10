@@ -1,11 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
-import { Headline, LeftHeadline, StyledImage, HomeButton, Title, Text } from '../HomePage.styled';
+import {
+    Headline,
+    LeftHeadline,
+    StyledImage,
+    HomeButton,
+    Title,
+    Text,
+} from '../HomePage.styled';
 import { Zap } from '../../../../src/components/generic/Icons';
 import { headerColor, inverseTextColor } from '../../../../styles/Themes';
 // import { Link } from 'react-router-dom';
 import { Section } from '../../../../src/components/section/Section';
-import { FullWidth, Padding, SlantedWrapper, SlantedEdge } from './Sections.styled';
+import {
+    FullWidth,
+    Padding,
+    SlantedWrapper,
+    SlantedEdge,
+} from './Sections.styled';
 
 export const TopSection = () => {
     return (
@@ -16,19 +28,24 @@ export const TopSection = () => {
                         <Title>Control The Power of Lightning</Title>
                         <FullWidth>
                             <Text>
-                                Take full control of your lightning node for quick monitoring and
-                                management inside your browser.
+                                Take full control of your lightning node for
+                                quick monitoring and management inside your
+                                browser.
                             </Text>
                         </FullWidth>
                         <FullWidth>
                             {/* <Link href="/login" style={{ textDecoration: 'none' }}> */}
-                            <HomeButton>
-                                <Padding>
-                                    <Zap fillcolor={'white'} color={'white'} />
-                                </Padding>
-                                Control The Lightning
-                            </HomeButton>
-                            {/* </Link> */}
+                            <Link href="/login">
+                                <HomeButton>
+                                    <Padding>
+                                        <Zap
+                                            fillcolor={'white'}
+                                            color={'white'}
+                                        />
+                                    </Padding>
+                                    Control The Lightning
+                                </HomeButton>
+                            </Link>
                         </FullWidth>
                     </LeftHeadline>
                     <StyledImage />
