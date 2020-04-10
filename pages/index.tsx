@@ -21,12 +21,14 @@ import { mediaWidths } from '../src/styles/Themes';
 import { Section } from '../src/components/section/Section';
 import { Navigation } from '../src/layouts/navigation/Navigation';
 import { GridWrapper } from '../src/components/gridWrapper/GridWrapper';
-import { HomeView } from '../views/home/HomeView';
+import { useRouter } from 'next/router';
+// import { HomeView } from './home/HomeView';
 
 // const EntryView = React.lazy(() => import('../views/entry/Entry'));
 
 const ContextApp: React.FC = () => {
     // const { theme } = useSettings();
+    const { push } = useRouter();
     const { loggedIn, admin, viewOnly, sessionAdmin } = useAccount();
 
     // console.log('Initial user:', { loggedIn, admin, viewOnly, sessionAdmin });
@@ -37,16 +39,18 @@ const ContextApp: React.FC = () => {
     //     return <EntryView/>
     // } else
 
+    if (loggedIn) {
+        if (admin === '' || viewOnly !== '' || sessionAdmin !== '') {
+            push('/home');
+        }
+    }
+
     return !loggedIn && admin === '' ? (
         <EntryView />
     ) : admin !== '' && viewOnly === '' && sessionAdmin === '' ? (
         <SessionLogin />
     ) : (
-        <GridWrapper>
-            <ConnectionCheck />
-            <StatusCheck />
-            <HomeView />
-        </GridWrapper>
+        <GridWrapper>{/* <HomeView /> */}</GridWrapper>
     );
 
     // return (

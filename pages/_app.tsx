@@ -10,7 +10,7 @@ import { Footer } from '../src/layouts/footer/Footer';
 import { ApolloProvider } from '@apollo/react-hooks';
 import '../src/styles/FontStyles.css';
 
-import withData from '../config/apolloClient';
+import withApollo from '../config/apolloClient';
 import { useAccount } from '../src/context/AccountContext';
 import { BitcoinFees } from '../src/components/bitcoinInfo/BitcoinFees';
 import { BitcoinPrice } from '../src/components/bitcoinInfo/BitcoinPrice';
@@ -54,4 +54,4 @@ class MyApp extends App<any> {
     }
 }
 
-export default withData(MyApp);
+export default withApollo(MyApp);
