@@ -68,39 +68,39 @@ export const NodeCard = ({ account, accountId }: NodeCardProps) => {
     }
     if (loading || !data || !data.getNodeInfo || !data.getChannelBalance) {
       return <ScaleLoader height={20} color={themeColors.blue3} />;
-    } else {
-      const {
-        active_channels_count,
-        closed_channels_count,
-        alias,
-        pending_channels_count,
-        is_synced_to_chain,
-      } = data.getNodeInfo;
-
-      const { confirmedBalance, pendingBalance } = data.getChannelBalance;
-
-      const chainBalance = data.getChainBalance;
-      const pendingChainBalance = data.getPendingChainBalance;
-
-      return (
-        <>
-          <StatusLine>{getStatusDot(is_synced_to_chain)}</StatusLine>
-          <div>{alias}</div>
-          <ResponsiveLine>
-            <DarkSubTitle>Lightning</DarkSubTitle>
-            <Price amount={confirmedBalance + pendingBalance} />
-          </ResponsiveLine>
-          <ResponsiveLine>
-            <DarkSubTitle>Bitcoin</DarkSubTitle>
-            <Price amount={chainBalance + pendingChainBalance} />
-          </ResponsiveLine>
-          <ResponsiveLine>
-            <DarkSubTitle>Channels</DarkSubTitle>
-            <div>{`${active_channels_count} / ${pending_channels_count} / ${closed_channels_count}`}</div>
-          </ResponsiveLine>
-        </>
-      );
     }
+
+    const {
+      active_channels_count,
+      closed_channels_count,
+      alias,
+      pending_channels_count,
+      is_synced_to_chain,
+    } = data.getNodeInfo;
+
+    const { confirmedBalance, pendingBalance } = data.getChannelBalance;
+
+    const chainBalance = data.getChainBalance;
+    const pendingChainBalance = data.getPendingChainBalance;
+
+    return (
+      <>
+        <StatusLine>{getStatusDot(is_synced_to_chain)}</StatusLine>
+        <div>{alias}</div>
+        <ResponsiveLine>
+          <DarkSubTitle>Lightning</DarkSubTitle>
+          <Price amount={confirmedBalance + pendingBalance} />
+        </ResponsiveLine>
+        <ResponsiveLine>
+          <DarkSubTitle>Bitcoin</DarkSubTitle>
+          <Price amount={chainBalance + pendingChainBalance} />
+        </ResponsiveLine>
+        <ResponsiveLine>
+          <DarkSubTitle>Channels</DarkSubTitle>
+          <div>{`${active_channels_count} / ${pending_channels_count} / ${closed_channels_count}`}</div>
+        </ResponsiveLine>
+      </>
+    );
   };
 
   return (

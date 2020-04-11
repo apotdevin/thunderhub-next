@@ -99,11 +99,11 @@ export const ViewCheck = ({
     }
     if (adminChecked && !viewOnly && admin) {
       return 'Connect (Admin-Only)';
-    } else if (!adminChecked && viewOnly) {
-      return 'Connect (View-Only)';
-    } else {
-      return 'Connect';
     }
+    if (!adminChecked && viewOnly) {
+      return 'Connect (View-Only)';
+    }
+    return 'Connect';
   };
 
   const renderButton = () => (

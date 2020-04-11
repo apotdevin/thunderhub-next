@@ -41,11 +41,11 @@ export const getStatusDot = (status: boolean, type: string) => {
     ) : (
       <StatusDot color="#ff4d4f" />
     );
-  } else if (type === 'opening') {
-    return status ? <StatusDot color="#13c2c2" /> : null;
-  } else {
-    return status ? <StatusDot color="#ff4d4f" /> : null;
   }
+  if (type === 'opening') {
+    return status ? <StatusDot color="#13c2c2" /> : null;
+  }
+  return status ? <StatusDot color="#ff4d4f" /> : null;
 };
 
 export const renderLine = (

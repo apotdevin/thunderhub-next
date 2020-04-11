@@ -42,10 +42,10 @@ export const getValue = ({
       ? getValueString(value)
       : numeral(value).format('0,0');
     return `${breakAmount} sats`;
-  } else {
-    const amountInFiat = (value / 100000000) * price;
-    return `${symbol}${numeral(amountInFiat).format('0,0.00')}`;
   }
+
+  const amountInFiat = (value / 100000000) * price;
+  return `${symbol}${numeral(amountInFiat).format('0,0.00')}`;
 };
 
 export const getPercent = (
