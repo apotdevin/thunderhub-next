@@ -72,34 +72,36 @@ const TransactionsView = () => {
               />
             );
           })}
-        </Card>
-        <ColorButton
-          loading={fetching}
-          disabled={fetching}
-          onClick={() => {
-            setFetching(true);
-            fetchMore({
-              variables: { auth, token },
-              updateQuery: (prev, { fetchMoreResult: result }) => {
-                if (!result) return prev;
-                const newToken = result.getResume.token || '';
-                const prevEntries = JSON.parse(prev.getResume.resume);
-                const newEntries = JSON.parse(result.getResume.resume);
+          <ColorButton
+            fullWidth={true}
+            withMargin={'16px 0 0'}
+            loading={fetching}
+            disabled={fetching}
+            onClick={() => {
+              setFetching(true);
+              fetchMore({
+                variables: { auth, token },
+                updateQuery: (prev, { fetchMoreResult: result }) => {
+                  if (!result) return prev;
+                  const newToken = result.getResume.token || '';
+                  const prevEntries = JSON.parse(prev.getResume.resume);
+                  const newEntries = JSON.parse(result.getResume.resume);
 
-                setFetching(false);
-                return {
-                  getResume: {
-                    token: newToken,
-                    resume: JSON.stringify([...prevEntries, ...newEntries]),
-                    __typename: 'getResumeType',
-                  },
-                };
-              },
-            });
-          }}
-        >
-          Show More
-        </ColorButton>
+                  setFetching(false);
+                  return {
+                    getResume: {
+                      token: newToken,
+                      resume: JSON.stringify([...prevEntries, ...newEntries]),
+                      __typename: 'getResumeType',
+                    },
+                  };
+                },
+              });
+            }}
+          >
+            Show More
+          </ColorButton>
+        </Card>
       </CardWithTitle>
     </>
   );

@@ -67,7 +67,12 @@ const TradingView = () => {
   });
 
   if (error) {
-    return null;
+    return (
+      <CardWithTitle>
+        <SubTitle>P2P Trading</SubTitle>
+        <Card bottom={'16px'}>Failed to connect with HodlHodl.</Card>
+      </CardWithTitle>
+    );
   }
 
   if (loading || !data || !data.getOffers) {

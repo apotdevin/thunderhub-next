@@ -8,8 +8,6 @@ import { GlobalStyles } from '../src/styles/GlobalStyle';
 import { Header } from '../src/layouts/header/Header';
 import { Footer } from '../src/layouts/footer/Footer';
 import { ApolloProvider } from '@apollo/react-hooks';
-import '../src/styles/FontStyles.css';
-
 import withApollo from '../config/apolloClient';
 import { useAccount } from '../src/context/AccountContext';
 import { BitcoinFees } from '../src/components/bitcoinInfo/BitcoinFees';
@@ -21,6 +19,11 @@ import {
   LoadingView,
   ErrorView,
 } from '../src/components/stateViews/StateCards';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../src/styles/FontStyles.css';
+
+toast.configure({ draggable: false });
 
 const withoutGrid = ['/', '/login', '/faq', '/privacy', '/terms'];
 

@@ -32,7 +32,7 @@ export const TopSection = () => {
               </Text>
             </FullWidth>
             <FullWidth>
-              <Link to="/login">
+              <Link to="/login" underline={'transparent'}>
                 <HomeButton>
                   <Padding>
                     <Zap fillcolor={'white'} color={'white'} />

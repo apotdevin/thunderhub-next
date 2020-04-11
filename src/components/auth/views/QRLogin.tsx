@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import QrReader from 'react-qr-reader';
+import QrReader from 'react-qr-reader';
 import Modal from '../../modal/ReactModal';
 import { toast } from 'react-toastify';
 import { getQRConfig } from '../../../utils/auth';
@@ -27,7 +27,7 @@ type QRLoginProps = {
   }) => void;
 };
 
-export const QRLogin = ({ handleSet }: QRLoginProps) => {
+const QRLogin = ({ handleSet }: QRLoginProps) => {
   const [qrData, setQrData] = useState<any>([]);
   const [modalOpen, setModalOpen] = useState(true);
   const [modalClosed, setModalClosed] = useState('none');
@@ -140,13 +140,15 @@ export const QRLogin = ({ handleSet }: QRLoginProps) => {
             percent={missing ? 100 * ((total - missing.length) / total) : 0}
           />
         </Line>
-        {/* <QrReader
-                    delay={500}
-                    onError={handleError}
-                    onScan={handleScan}
-                    style={{ width: '100%' }}
-                /> */}
+        <QrReader
+          delay={500}
+          onError={handleError}
+          onScan={handleScan}
+          style={{ width: '100%' }}
+        />
       </Modal>
     </>
   );
 };
+
+export default QRLogin;

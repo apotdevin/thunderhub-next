@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import { LoginForm } from './views/NormalLogin';
 import { ConnectLoginForm } from './views/ConnectLogin';
 import { BTCLoginForm } from './views/BTCLogin';
-import { QRLogin } from './views/QRLogin';
 import { ViewCheck } from './checks/ViewCheck';
 import CryptoJS from 'crypto-js';
 import { useAccount } from '../../context/AccountContext';
@@ -12,9 +11,16 @@ import { useConnectionDispatch } from '../../context/ConnectionContext';
 import { useStatusDispatch } from '../../context/StatusContext';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import { LoadingCard } from '../loading/LoadingCard';
 
 const PasswordInput = dynamic(() => import('./views/Password'), {
   ssr: false,
+  loading: () => <LoadingCard noCard={true} />,
+});
+
+const QRLogin = dynamic(() => import('./views/QRLogin'), {
+  ssr: false,
+  loading: () => <LoadingCard noCard={true} />,
 });
 
 type AuthProps = {
