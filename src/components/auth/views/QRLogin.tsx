@@ -71,7 +71,7 @@ export const QRLogin = ({ handleSet }: QRLoginProps) => {
 
         if (missing && missing.length >= 0 && missing.includes(parsed.index)) {
           const remaining = missing.filter((value: number) => {
-            const number = parseInt(parsed.index);
+            const number = Number(parsed.index);
             return value !== number;
           });
           const data = [...qrData, parsed];

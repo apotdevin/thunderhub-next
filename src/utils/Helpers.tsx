@@ -27,7 +27,7 @@ export const getValue = ({
 }: GetNumberProps): string => {
   let value: number = 0;
   if (typeof amount === 'string') {
-    value = parseInt(amount);
+    value = Number(amount);
   } else {
     value = amount;
   }

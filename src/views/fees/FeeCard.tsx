@@ -82,7 +82,7 @@ export const FeeCard = ({
               placeholder={'Sats'}
               color={textColorMap[theme]}
               type={textColorMap[theme]}
-              onChange={e => setBaseFee(parseInt(e.target.value))}
+              onChange={e => setBaseFee(Number(e.target.value))}
             />
           </ResponsiveLine>
           <ResponsiveLine>
@@ -93,7 +93,7 @@ export const FeeCard = ({
               placeholder={'Sats/Million'}
               color={textColorMap[theme]}
               type={'number'}
-              onChange={e => setFeeRate(parseInt(e.target.value))}
+              onChange={e => setFeeRate(Number(e.target.value))}
             />
           </ResponsiveLine>
           <SecureButton

@@ -137,7 +137,7 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
             placeholder={'Sats'}
             withMargin={'0 0 0 8px'}
             type={'number'}
-            onChange={e => setTokens(parseInt(e.target.value))}
+            onChange={e => setTokens(Number(e.target.value))}
           />
         </SingleLine>
       )}
@@ -186,7 +186,7 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
               placeholder={type === 'target' ? 'Blocks' : 'Sats/Byte'}
               type={'number'}
               withMargin={'0 0 0 8px'}
-              onChange={e => setAmount(parseInt(e.target.value))}
+              onChange={e => setAmount(Number(e.target.value))}
             />
           </>
         )}

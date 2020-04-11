@@ -183,7 +183,7 @@ const BalanceView = () => {
             placeholder={'Sats'}
             type={'number'}
             onChange={e => {
-              setAmount(parseInt(e.target.value));
+              setAmount(Number(e.target.value));
             }}
             withMargin={'0 0 8px'}
           />
@@ -202,7 +202,7 @@ const BalanceView = () => {
             placeholder={'Sats (Leave empty to search all routes)'}
             type={'number'}
             onChange={e => {
-              setMaxFee(parseInt(e.target.value));
+              setMaxFee(Number(e.target.value));
             }}
             withMargin={'0 0 24px'}
           />

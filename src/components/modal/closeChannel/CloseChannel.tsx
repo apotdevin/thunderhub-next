@@ -170,7 +170,7 @@ export const CloseChannel = ({
             <Input
               placeholder={isType === 'target' ? 'Blocks' : 'Sats/Byte'}
               type={'number'}
-              onChange={e => setAmount(parseInt(e.target.value))}
+              onChange={e => setAmount(Number(e.target.value))}
             />
           </SingleLine>
         </>

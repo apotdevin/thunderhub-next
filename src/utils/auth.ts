@@ -52,7 +52,7 @@ export const saveSessionAuth = (sessionAdmin: string) =>
 export const getAuth = (account?: string) => {
   const accounts = JSON.parse(localStorage.getItem('accounts') || '[]');
   const currentActive = Math.max(
-    parseInt(account ?? (localStorage.getItem('active') || '0')),
+    Number(account ?? (localStorage.getItem('active') || '0')),
     0
   );
   const sessionAdmin = sessionStorage.getItem('session') || '';

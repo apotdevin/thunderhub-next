@@ -18,7 +18,7 @@ export const reduceForwardArray = (list: ListProps) => {
         };
       });
       reducedOrder.push({
-        period: parseInt(key),
+        period: Number(key),
         amount: element.length,
         ...reducedArray,
       });
@@ -37,7 +37,7 @@ export const reduceInOutArray = (list: InOutListProps) => {
         tokens: a.tokens + b.tokens,
       }));
       reducedOrder.push({
-        period: parseInt(key),
+        period: Number(key),
         amount: element.length,
         tokens: reducedArray.tokens,
       });

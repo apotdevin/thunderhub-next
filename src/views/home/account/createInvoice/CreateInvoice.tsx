@@ -93,7 +93,7 @@ export const CreateInvoiceCard = ({ color }: { color: string }) => {
         withMargin={width <= mediaDimensions.mobile ? '0 0 16px' : '0 0 0 24px'}
         color={color}
         type={'number'}
-        onChange={e => setAmount(parseInt(e.target.value))}
+        onChange={e => setAmount(Number(e.target.value))}
       />
       <SecureButton
         callback={createInvoice}

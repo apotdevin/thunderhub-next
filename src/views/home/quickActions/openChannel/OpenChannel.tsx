@@ -97,7 +97,7 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
           color={color}
           withMargin={width <= mediaDimensions.mobile ? '' : '0 0 0 8px'}
           type={'number'}
-          onChange={e => setSize(parseInt(e.target.value))}
+          onChange={e => setSize(Number(e.target.value))}
         />
       </ResponsiveLine>
       <Separation />
@@ -140,7 +140,7 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
             placeholder={'Sats/Byte'}
             color={color}
             type={'number'}
-            onChange={e => setFee(parseInt(e.target.value))}
+            onChange={e => setFee(Number(e.target.value))}
           />
           // </MultiButton>
         )}

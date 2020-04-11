@@ -77,7 +77,7 @@ const FeesView = () => {
                   <Input
                     placeholder={'Sats'}
                     type={'number'}
-                    onChange={e => setBaseFee(parseInt(e.target.value))}
+                    onChange={e => setBaseFee(Number(e.target.value))}
                   />
                 </ResponsiveLine>
                 <ResponsiveLine>
@@ -85,7 +85,7 @@ const FeesView = () => {
                   <Input
                     placeholder={'Sats/Million'}
                     type={'number'}
-                    onChange={e => setFeeRate(parseInt(e.target.value))}
+                    onChange={e => setFeeRate(Number(e.target.value))}
                   />
                 </ResponsiveLine>
                 <RightAlign>
