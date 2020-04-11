@@ -51,7 +51,7 @@ export const getPeers = {
             } catch (error) {
               return { ...peer, partner_node_info: {} };
             }
-          }),
+          })
         );
 
       const peerList = await getPeerList();

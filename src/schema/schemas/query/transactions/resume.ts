@@ -47,7 +47,7 @@ export const getResume = {
               date: payment.created_at,
               ...payment,
             };
-          }),
+          })
         );
       payments = await getMappedPayments();
     } catch (error) {
@@ -91,22 +91,22 @@ export const getResume = {
 
     const filteredPayments = withInvoices
       ? payments.filter((payment) => {
-        const last =
+          const last =
             compareDesc(new Date(lastInvoiceDate), new Date(payment.date)) ===
             1;
-        const first = params.token
+          const first = params.token
             ? compareDesc(
                 new Date(payment.date),
-                new Date(firstInvoiceDate),
+                new Date(firstInvoiceDate)
               ) === 1
             : true;
-        return last && first;
-      })
+          return last && first;
+        })
       : payments;
 
     const resumeArray = sortBy(
       [...invoices, ...filteredPayments],
-      'date',
+      'date'
     ).reverse();
 
     return {

@@ -3,7 +3,8 @@ import numeral from 'numeral';
 const getValueString = (amount: number): string => {
   if (amount >= 100000) {
     return `${amount / 1000000}m`;
-  }  if (amount >= 1000) {
+  }
+  if (amount >= 1000) {
     return `${amount / 1000}k`;
   }
   return `${amount}`;
@@ -35,7 +36,8 @@ export const getValue = ({
     if (!value) return '₿0.0';
     const amountInBtc = value / 100000000;
     return `₿${amountInBtc}`;
-  }  if (currency === 'sat') {
+  }
+  if (currency === 'sat') {
     const breakAmount = breakNumber
       ? getValueString(value)
       : numeral(value).format('0,0');
@@ -49,7 +51,7 @@ export const getValue = ({
 export const getPercent = (
   local: number,
   remote: number,
-  withDecimals?: boolean,
+  withDecimals?: boolean
 ): number => {
   const total = remote + local;
   const percent = (local / total) * 100;

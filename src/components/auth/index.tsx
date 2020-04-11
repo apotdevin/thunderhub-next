@@ -53,7 +53,7 @@ export const Auth = ({ type, status, callback, setStatus }: AuthProps) => {
       host ?? '',
       viewOnly ?? '',
       admin ?? '',
-      cert ?? '',
+      cert ?? ''
     );
 
     const accountExists =

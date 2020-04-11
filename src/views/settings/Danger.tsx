@@ -100,7 +100,8 @@ export const DangerView = () => {
           })}
         </MultiButton>
       );
-    }  if (accounts.length === 1) {
+    }
+    if (accounts.length === 1) {
       return (
         <ColorButton
           color={'red'}

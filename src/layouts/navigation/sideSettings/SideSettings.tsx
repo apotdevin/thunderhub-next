@@ -98,7 +98,7 @@ export const SideSettings = ({
     value: string,
     text: string,
     on: boolean = false,
-    Icon?: any,
+    Icon?: any
   ) => (
     <SelectedIcon
       selected={
@@ -133,28 +133,27 @@ export const SideSettings = ({
               getNextValue(themeArray, theme),
               '',
               true,
-              themeMap[getNextValue(themeArray, theme)],
+              themeMap[getNextValue(themeArray, theme)]
             )}
           </IconRow>
         </>
       );
-    } 
-      return (
-        <>
-          <Separation lineColor={unSelectedNavButton} />
-          <IconRow>
-            {renderIcon('currency', 'sat', 'S')}
-            {renderIcon('currency', 'btc', '₿')}
-            {renderIcon('currency', 'EUR', '€')}
-            {renderIcon('currency', 'USD', '$')}
-          </IconRow>
-          <IconRow>
-            {renderIcon('theme', 'light', '', false, Sun)}
-            {renderIcon('theme', 'dark', '', false, Moon)}
-          </IconRow>
-        </>
-      );
-    
+    }
+    return (
+      <>
+        <Separation lineColor={unSelectedNavButton} />
+        <IconRow>
+          {renderIcon('currency', 'sat', 'S')}
+          {renderIcon('currency', 'btc', '₿')}
+          {renderIcon('currency', 'EUR', '€')}
+          {renderIcon('currency', 'USD', '$')}
+        </IconRow>
+        <IconRow>
+          {renderIcon('theme', 'light', '', false, Sun)}
+          {renderIcon('theme', 'dark', '', false, Moon)}
+        </IconRow>
+      </>
+    );
   };
 
   if (isBurger) {

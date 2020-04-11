@@ -21,5 +21,5 @@ export default withApollo(
       cache: new InMemoryCache()
         //  rehydrate the cache using the initial data passed from the server:
         .restore(initialState || {}),
-    }),
+    })
 );

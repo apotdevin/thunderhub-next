@@ -48,7 +48,7 @@ export const AddPeer = () => {
   const renderButton = (
     onClick: () => void,
     text: string,
-    selected: boolean,
+    selected: boolean
   ) => (
     <SingleButton selected={selected} onClick={onClick}>
       {text}

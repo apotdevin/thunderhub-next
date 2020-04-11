@@ -84,7 +84,7 @@ export const OfferFilters = ({ offerFilters }: FilterProps) => {
   const renderButton = (
     onClick: () => void,
     text: string,
-    selected: boolean,
+    selected: boolean
   ) => (
     <SingleButton selected={selected} onClick={onClick}>
       {text}
@@ -107,7 +107,7 @@ export const OfferFilters = ({ offerFilters }: FilterProps) => {
       if (currentFilters.hasOwnProperty(key)) {
         const element = currentFilters[key];
         activeFilters.push(
-          renderLine(key, element, `${key}-${element}`, () => handleRemove(key)),
+          renderLine(key, element, `${key}-${element}`, () => handleRemove(key))
         );
       }
     }
@@ -172,7 +172,7 @@ export const OfferFilters = ({ offerFilters }: FilterProps) => {
                   });
                 },
                 'Asc',
-                filterState.sort.direction === 'asc',
+                filterState.sort.direction === 'asc'
               )}
               {renderButton(
                 () => {
@@ -182,7 +182,7 @@ export const OfferFilters = ({ offerFilters }: FilterProps) => {
                   });
                 },
                 'Desc',
-                filterState.sort.direction !== 'asc',
+                filterState.sort.direction !== 'asc'
               )}
             </MultiButton>
           </ResponsiveLine>

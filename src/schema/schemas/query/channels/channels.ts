@@ -68,7 +68,7 @@ export const getChannels = {
                 ...nodeInfo,
               },
             };
-          }),
+          })
         );
 
       const channels = await getChannelList();

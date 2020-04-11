@@ -41,7 +41,7 @@ ButtonProps) => {
     setFn: (text: string) => void,
     array: string[],
     mapped: string[],
-    index: number,
+    index: number
   ) => {
     return (
       <ColorButton

@@ -65,7 +65,7 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
   const renderButton = (
     onClick: () => void,
     text: string,
-    selected: boolean,
+    selected: boolean
   ) => (
     <SingleButton selected={selected} onClick={onClick}>
       {text}
@@ -118,12 +118,12 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
               setFee(fast);
             },
             'Auto',
-            type === 'none',
+            type === 'none'
           )}
           {renderButton(
             () => setType('fee'),
             'Fee (Sats/Byte)',
-            type === 'fee',
+            type === 'fee'
           )}
         </MultiButton>
       </SingleLine>
@@ -149,18 +149,18 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
             {renderButton(
               () => setFee(fast),
               `Fastest (${fast} sats)`,
-              fee === fast,
+              fee === fast
             )}
             {halfHour !== fast &&
               renderButton(
                 () => setFee(halfHour),
                 `Half Hour (${halfHour} sats)`,
-                fee === halfHour,
+                fee === halfHour
               )}
             {renderButton(
               () => setFee(hour),
               `Hour (${hour} sats)`,
-              fee === hour,
+              fee === hour
             )}
           </MultiButton>
         )}

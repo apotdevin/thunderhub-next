@@ -55,7 +55,7 @@ export const getChannelFees = {
 
             const fees = channelFees.channels.find(
               (channelFee) =>
-                channelFee.transaction_id === channel.transaction_id,
+                channelFee.transaction_id === channel.transaction_id
             );
             if (!fees) return;
             const {
@@ -73,7 +73,7 @@ export const getChannelFees = {
               transactionId: transaction_id,
               transactionVout: transaction_vout,
             };
-          }),
+          })
         );
 
       const consolidated = await getConsolidated();

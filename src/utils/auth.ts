@@ -39,11 +39,11 @@ export const getAccountId = (
   host: string = '',
   viewOnly: string = '',
   admin: string = '',
-  cert: string = '',
+  cert: string = ''
 ) =>
   uuidv5(
     `${host}-${viewOnly}-${admin !== '' ? 1 : 0}-${cert}`,
-    THUNDERHUB_NAMESPACE,
+    THUNDERHUB_NAMESPACE
   );
 
 export const saveSessionAuth = (sessionAdmin: string) =>
@@ -53,7 +53,7 @@ export const getAuth = (account?: string) => {
   const accounts = JSON.parse(localStorage.getItem('accounts') || '[]');
   const currentActive = Math.max(
     parseInt(account ?? (localStorage.getItem('active') || '0')),
-    0,
+    0
   );
   const sessionAdmin = sessionStorage.getItem('session') || '';
 
@@ -81,7 +81,7 @@ export const getAuth = (account?: string) => {
     id ??
     uuidv5(
       `${host}-${viewOnly}-${admin !== '' ? 1 : 0}-${cert}`,
-      THUNDERHUB_NAMESPACE,
+      THUNDERHUB_NAMESPACE
     );
   const loggedIn = host !== '' && (viewOnly !== '' || sessionAdmin !== '');
 

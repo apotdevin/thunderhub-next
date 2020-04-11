@@ -85,7 +85,7 @@ export const CloseChannel = ({
   const renderButton = (
     onClick: () => void,
     text: string,
-    selected: boolean,
+    selected: boolean
   ) => (
     <SingleButton selected={selected} onClick={onClick}>
       {text}
@@ -143,18 +143,18 @@ export const CloseChannel = ({
             {renderButton(
               () => setAmount(fast),
               `Fastest (${fast} sats)`,
-              amount === fast,
+              amount === fast
             )}
             {halfHour !== fast &&
               renderButton(
                 () => setAmount(halfHour),
                 `Half Hour (${halfHour} sats)`,
-                amount === halfHour,
+                amount === halfHour
               )}
             {renderButton(
               () => setAmount(hour),
               `Hour (${hour} sats)`,
-              amount === hour,
+              amount === hour
             )}
           </MultiButton>
         </>

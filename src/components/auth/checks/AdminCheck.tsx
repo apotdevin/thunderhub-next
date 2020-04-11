@@ -28,7 +28,8 @@ export const AdminCheck = ({ host, admin, cert, setChecked }: AdminProps) => {
   const content = () => {
     if (loading) {
       return <ScaleLoader height={20} color={themeColors.blue3} />;
-    }  if (data?.adminCheck) {
+    }
+    if (data?.adminCheck) {
       return <Check />;
     }
     return <XSvg />;

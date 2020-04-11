@@ -83,11 +83,11 @@ export const getForwards = {
         array.map(async (forward) => {
           const inNodeAlias = await getNodeAlias(
             forward.incoming_channel,
-            publicKey,
+            publicKey
           );
           const outNodeAlias = await getNodeAlias(
             forward.outgoing_channel,
-            publicKey,
+            publicKey
           );
           return {
             incoming_alias: inNodeAlias.alias,
@@ -96,7 +96,7 @@ export const getForwards = {
             outgoing_color: outNodeAlias.color,
             ...forward,
           };
-        }),
+        })
       );
 
     try {

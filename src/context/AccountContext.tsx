@@ -90,10 +90,10 @@ const AccountProvider = ({ children }: any) => {
 
   const changeAccount = (changeToId: string) => {
     const currentAccounts = JSON.parse(
-      localStorage.getItem('accounts') || '[]',
+      localStorage.getItem('accounts') || '[]'
     );
     const index = currentAccounts.findIndex(
-      (account: any) => account.id === changeToId,
+      (account: any) => account.id === changeToId
     );
 
     if (index < 0) return;
@@ -106,10 +106,10 @@ const AccountProvider = ({ children }: any) => {
 
   const deleteAccount = (deleteId: string) => {
     const currentAccounts = JSON.parse(
-      localStorage.getItem('accounts') || '[]',
+      localStorage.getItem('accounts') || '[]'
     );
     const current = currentAccounts.find(
-      (account: any) => account.id === deleteId,
+      (account: any) => account.id === deleteId
     );
 
     if (!current) return;
@@ -117,7 +117,7 @@ const AccountProvider = ({ children }: any) => {
     const isCurrentAccount = current.id === settings.id;
 
     const changedAccounts = [...currentAccounts].filter(
-      (account) => account.id !== deleteId,
+      (account) => account.id !== deleteId
     );
     const length = changedAccounts.length;
 
@@ -126,7 +126,7 @@ const AccountProvider = ({ children }: any) => {
       localStorage.setItem('active', `${length - 1}`);
     } else {
       const newIndex = changedAccounts.findIndex(
-        (account: any) => account.id === settings.id,
+        (account: any) => account.id === settings.id
       );
       localStorage.setItem('active', `${newIndex}`);
     }

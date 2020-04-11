@@ -42,7 +42,7 @@ export const getPendingChannels = {
       const pendingChannels: PendingChannelListProps = await getLnPendingChannels(
         {
           lnd,
-        },
+        }
       );
 
       const channels = pendingChannels.pending_channels.map(async (channel) => {

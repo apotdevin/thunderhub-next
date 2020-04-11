@@ -49,7 +49,7 @@ export const PayCard = ({ setOpen }: { setOpen: () => void }) => {
     DECODE_REQUEST,
     {
       onError: (error) => toast.error(getErrorContent(error)),
-    },
+    }
   );
 
   useEffect(() => {

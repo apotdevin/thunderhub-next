@@ -25,9 +25,8 @@ export const getCountries = {
       if (json) {
         const { countries } = json;
         return countries;
-      } 
-        throw new Error('Problem getting HodlHodl countries.');
-      
+      }
+      throw new Error('Problem getting HodlHodl countries.');
     } catch (error) {
       params.logger &&
         logger.error('Error getting HodlHodl countries: %o', error);

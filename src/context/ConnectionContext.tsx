@@ -49,7 +49,7 @@ const useConnectionState = () => {
   const context = useContext(StateContext);
   if (context === undefined) {
     throw new Error(
-      'useConnectionState must be used within a ConnectionProvider',
+      'useConnectionState must be used within a ConnectionProvider'
     );
   }
   return context;
@@ -59,7 +59,7 @@ const useConnectionDispatch = () => {
   const context = useContext(DispatchContext);
   if (context === undefined) {
     throw new Error(
-      'useConnectionDispatch must be used within a ConnectionProvider',
+      'useConnectionDispatch must be used within a ConnectionProvider'
     );
   }
   return context;

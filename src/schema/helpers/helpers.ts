@@ -28,10 +28,10 @@ export const getAuthLnd = (auth: {
   const params =
     encodedCert !== ''
       ? {
-        cert,
-        macaroon,
-        socket,
-      }
+          cert,
+          macaroon,
+          socket,
+        }
       : { macaroon, socket };
 
   const { lnd } = authenticatedLndGrpc(params);

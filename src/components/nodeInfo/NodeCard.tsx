@@ -65,12 +65,8 @@ export const NodeCard = ({ account, accountId }: NodeCardProps) => {
           </SingleLine>
         </>
       );
-    }  if (
-      loading ||
-      !data ||
-      !data.getNodeInfo ||
-      !data.getChannelBalance
-    ) {
+    }
+    if (loading || !data || !data.getNodeInfo || !data.getChannelBalance) {
       return <ScaleLoader height={20} color={themeColors.blue3} />;
     } else {
       const {

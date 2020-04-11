@@ -102,14 +102,14 @@ export const BalanceRoute = ({
             {renderLine('Total Tokens', <Price amount={route.tokens} />)}
             {renderLine(
               'Fee %',
-              `${getPercent(route.fee, route.tokens - route.fee, true)} %`,
+              `${getPercent(route.fee, route.tokens - route.fee, true)} %`
             )}
             {renderLine('Fee', `${route.fee} sats`)}
             {renderLine('Confidence', route.confidence)}
             {renderLine('Hops', route.hops.length)}
             <Separation />
             {route.hops.map((hop: any, index: number) =>
-              renderLine(`${index + 1}`, renderHop(hop, index), index),
+              renderLine(`${index + 1}`, renderHop(hop, index), index)
             )}
           </SubCard>
         </>

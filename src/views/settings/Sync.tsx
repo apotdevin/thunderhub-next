@@ -131,7 +131,7 @@ export const SyncSettings = () => {
           <ColorButton
             onClick={() =>
               setState((prev: string) =>
-                prev !== 'none' ? 'none' : 'generate',
+                prev !== 'none' ? 'none' : 'generate'
               )
             }
           >
@@ -154,7 +154,7 @@ const QRLoop = ({ connection }: { connection: string }) => {
       index,
       total: length,
       auth: value,
-    }),
+    })
   );
 
   const [count, setCount] = useState(0);

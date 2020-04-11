@@ -2,7 +2,7 @@ import { PeriodProps, WaterfallProps } from '.';
 
 export const getWaterfall = (
   invoices: PeriodProps[],
-  payments: PeriodProps[],
+  payments: PeriodProps[]
 ): WaterfallProps[] => {
   const initialInvoicePeriod = invoices[0]?.period;
   const initialPaymentPeriod = payments[0]?.period;

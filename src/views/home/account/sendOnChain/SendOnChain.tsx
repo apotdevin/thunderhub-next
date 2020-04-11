@@ -80,9 +80,8 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
   const feeFormat = (amount: number) => {
     if (type === 'fee' || type === 'none') {
       return format({ amount });
-    } 
-      return `${amount} blocks`;
-    
+    }
+    return `${amount} blocks`;
   };
 
   const typeAmount =
@@ -97,7 +96,7 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
   const renderButton = (
     onClick: () => void,
     text: string,
-    selected: boolean,
+    selected: boolean
   ) => (
     <SingleButton selected={selected} onClick={onClick}>
       {text}
@@ -152,7 +151,7 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
               setAmount(fast);
             },
             'Auto',
-            type === 'none',
+            type === 'none'
           )}
           {renderButton(
             () => {
@@ -160,7 +159,7 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
               setAmount(0);
             },
             'Fee (Sats/Byte)',
-            type === 'fee',
+            type === 'fee'
           )}
           {renderButton(
             () => {
@@ -168,7 +167,7 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
               setAmount(0);
             },
             'Target Confirmations',
-            type === 'target',
+            type === 'target'
           )}
         </MultiButton>
       </SingleLine>
@@ -196,18 +195,18 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
             {renderButton(
               () => setAmount(fast),
               `Fastest (${fast} sats)`,
-              amount === fast,
+              amount === fast
             )}
             {halfHour !== fast &&
               renderButton(
                 () => setAmount(halfHour),
                 `Half Hour (${halfHour} sats)`,
-                amount === halfHour,
+                amount === halfHour
               )}
             {renderButton(
               () => setAmount(hour),
               `Hour (${hour} sats)`,
-              amount === hour,
+              amount === hour
             )}
           </MultiButton>
         )}
@@ -232,7 +231,7 @@ export const SendOnChainCard = ({ setOpen }: { setOpen: () => void }) => {
         {renderLine('Address:', address)}
         {renderLine(
           'Fee:',
-          type === 'target' ? `${amount} Blocks` : `${amount} Sats/Byte`,
+          type === 'target' ? `${amount} Blocks` : `${amount} Sats/Byte`
         )}
         <SecureButton
           callback={payAddress}

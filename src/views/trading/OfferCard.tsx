@@ -93,7 +93,7 @@ export const OfferCard = ({
         (method: {
           payment_method_name: string;
           payment_method_type: string;
-        }) => `${method.payment_method_name} (${method.payment_method_type})`,
+        }) => `${method.payment_method_name} (${method.payment_method_type})`
       );
 
       return methods.join(', ');
@@ -179,7 +179,7 @@ export const OfferCard = ({
         {renderLine('Price:', format(price))}
         {renderLine(
           'Min/Max amount:',
-          `${format(min_amount, '0a')}/${format(max_amount, '0a')}`,
+          `${format(min_amount, '0a')}/${format(max_amount, '0a')}`
         )}
       </MainInfo>
       {index === indexOpen && renderDetails()}

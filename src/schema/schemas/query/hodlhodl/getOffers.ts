@@ -38,16 +38,15 @@ export const getOffers = {
       const paramString = getHodlParams(fullParams);
 
       const response = await fetch(
-        `${appUrls.hodlhodl}/v1/offers${paramString}`,
+        `${appUrls.hodlhodl}/v1/offers${paramString}`
       );
       const json = await response.json();
 
       if (json) {
         const { offers } = json;
         return offers;
-      } 
-        throw new Error('Problem getting HodlHodl offers.');
-      
+      }
+      throw new Error('Problem getting HodlHodl offers.');
     } catch (error) {
       params.logger && logger.error('Error getting HodlHodl offers: %o', error);
       throw new Error('Problem getting HodlHodl offers.');

@@ -66,14 +66,14 @@ export const PaymentsCard = ({
         <Separation />
         {renderLine(
           'Created:',
-          `${getDateDif(created_at)} ago (${getFormatDate(created_at)})`,
+          `${getDateDif(created_at)} ago (${getFormatDate(created_at)})`
         )}
         {renderLine('Destination Node:', getNodeLink(destination))}
         {renderLine('Fee:', formatFee)}
         {renderLine('Fee msats:', `${fee_mtokens} millisats`)}
         {renderLine('Hops:', hops.length)}
         {hops.map((hop: any, index: number) =>
-          renderLine(`Hop ${index + 1}:`, hop),
+          renderLine(`Hop ${index + 1}:`, hop)
         )}
         {renderLine('Id:', id)}
         {renderLine('Is Outgoing:', is_outgoing ? 'true' : 'false')}

@@ -102,7 +102,7 @@ export const PendingCard = ({
         {renderLine('Transaction Fee:', getTransactionLink(transaction_fee))}
         {renderLine(
           'Close Transaction Id:',
-          getTransactionLink(close_transaction_id),
+          getTransactionLink(close_transaction_id)
         )}
         {renderLine('Local Reserve:', local_reserve)}
         {renderLine('Remote Reserve:', remote_reserve)}
@@ -111,7 +111,7 @@ export const PendingCard = ({
         {renderLine('Channels:', channelCount)}
         {renderLine(
           'Last Update:',
-          `${getDateDif(updated_at)} ago (${getFormatDate(updated_at)})`,
+          `${getDateDif(updated_at)} ago (${getFormatDate(updated_at)})`
         )}
       </>
     );

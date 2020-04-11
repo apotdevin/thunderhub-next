@@ -61,17 +61,16 @@ const TransactionsView = () => {
                   indexOpen={indexOpen}
                 />
               );
-            } 
-              return (
-                <PaymentsCard
-                  payment={entry}
-                  key={index}
-                  index={index + 1}
-                  setIndexOpen={setIndexOpen}
-                  indexOpen={indexOpen}
-                />
-              );
-            
+            }
+            return (
+              <PaymentsCard
+                payment={entry}
+                key={index}
+                index={index + 1}
+                setIndexOpen={setIndexOpen}
+                indexOpen={indexOpen}
+              />
+            );
           })}
         </Card>
         <ColorButton
