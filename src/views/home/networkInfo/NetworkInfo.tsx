@@ -8,7 +8,7 @@ import {
     Separation,
 } from '../../../components/generic/Styled';
 import { useAccount } from '../../../context/AccountContext';
-import styled from '../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { unSelectedNavButton, mediaWidths } from '../../../styles/Themes';
 import { Globe, Cpu } from '../../../components/generic/Icons';
 import { toast } from 'react-toastify';

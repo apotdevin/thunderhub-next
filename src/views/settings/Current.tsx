@@ -4,10 +4,10 @@ import {
     SubTitle,
     Card,
     Sub4Title,
-} from '../../src/components/generic/Styled';
-import styled from '../channels/channels/node_modules/styled-components';
-import { chartLinkColor, colorButtonBackground } from '../../src/styles/Themes';
-import { useAccount } from '../../src/context/AccountContext';
+} from '../../components/generic/Styled';
+import styled from 'styled-components';
+import { chartLinkColor, colorButtonBackground } from '../../styles/Themes';
+import { useAccount } from '../../context/AccountContext';
 
 const CurrentField = styled.textarea`
     width: 100%;

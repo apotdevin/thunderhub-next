@@ -7,7 +7,7 @@ import {
 } from '../../../../components/generic/Styled';
 import { useMutation } from '@apollo/react-hooks';
 import { CREATE_ADDRESS } from '../../../../graphql/mutation';
-import styled from '../../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { getErrorContent } from '../../../../utils/error';
 import { SecureButton } from '../../../../components/buttons/secureButton/SecureButton';

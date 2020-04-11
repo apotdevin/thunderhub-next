@@ -6,20 +6,20 @@ import {
     SingleLine,
     SimpleButton,
     Sub4Title,
-} from '../../src/components/generic/Styled';
-import { deleteStorage } from '../../src/utils/storage';
-import { useAccount } from '../../src/context/AccountContext';
-import styled from '../channels/channels/node_modules/styled-components';
-import { deleteAccountPermissions } from '../../src/utils/storage';
-import { textColor, fontColors } from '../../src/styles/Themes';
-import { ColorButton } from '../../src/components/buttons/colorButton/ColorButton';
+} from '../../components/generic/Styled';
+import { deleteStorage } from '../../utils/storage';
+import { useAccount } from '../../context/AccountContext';
+import styled from 'styled-components';
+import { deleteAccountPermissions } from '../../utils/storage';
+import { textColor, fontColors } from '../../styles/Themes';
+import { ColorButton } from '../../components/buttons/colorButton/ColorButton';
 import {
     MultiButton,
     SingleButton,
-} from '../../src/components/buttons/multiButton/MultiButton';
-import { AlertCircle } from '../../src/components/generic/Icons';
-import { useConnectionDispatch } from '../../src/context/ConnectionContext';
-import { useStatusDispatch } from '../../src/context/StatusContext';
+} from '../../components/buttons/multiButton/MultiButton';
+import { AlertCircle } from '../../components/generic/Icons';
+import { useConnectionDispatch } from '../../context/ConnectionContext';
+import { useStatusDispatch } from '../../context/StatusContext';
 import { useRouter } from 'next/router';
 
 export const ButtonRow = styled.div`

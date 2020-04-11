@@ -15,7 +15,7 @@ import {
     getTooltipType,
     getNodeLink,
 } from '../../components/generic/Helpers';
-import styled from '../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { DownArrow, UpArrow } from '../../components/generic/Icons';
 import {
     Progress,
@@ -25,7 +25,7 @@ import {
 } from '../../components/generic/CardGeneric';
 import { getPercent } from '../../utils/Helpers';
 import { useSettings } from '../../context/SettingsContext';
-import ReactTooltip from '../channels/channels/node_modules/react-tooltip';
+import ReactTooltip from 'react-tooltip';
 import { usePriceState } from '../../context/PriceContext';
 import { getPrice } from '../../components/price/Price';
 import { AdminSwitch } from '../../components/adminSwitch/AdminSwitch';

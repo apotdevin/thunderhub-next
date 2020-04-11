@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from '../channels/channels/node_modules/styled-components';
-import { themeColors, subCardColor } from '../../src/styles/Themes';
+import styled from 'styled-components';
+import { themeColors, subCardColor } from '../../styles/Themes';
 
 interface MethodProps {
     id: string;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
+import { ColorButton } from '../../../components/buttons/colorButton/ColorButton';
 import { OfferModalBox } from '../OfferCard.styled';
-import { Input } from '../../../src/components/input/Input';
-import { Sub4Title } from '../../../src/components/generic/Styled';
+import { Input } from '../../../components/input/Input';
+import { Sub4Title } from '../../../components/generic/Styled';
 
 interface FilteredProps {
     searchable: boolean;

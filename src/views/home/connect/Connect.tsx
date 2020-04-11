@@ -15,7 +15,7 @@ import {
     ColorButton,
 } from '../../../components/generic/Styled';
 import { Radio, Copy } from '../../../components/generic/Icons';
-import styled from '../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { mediaWidths } from '../../../styles/Themes';
 

@@ -14,7 +14,7 @@ import {
     DownArrow,
     UpArrow,
 } from '../../../../components/generic/Icons';
-import styled from '../../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { LoadingCard } from '../../../../components/loading/LoadingCard';
 import { getPrice } from '../../../../components/price/Price';
 import { useSettings } from '../../../../context/SettingsContext';

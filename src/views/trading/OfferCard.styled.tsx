@@ -1,6 +1,6 @@
-import styled from '../channels/channels/node_modules/styled-components';
-import { unSelectedNavButton, mediaWidths } from '../../src/styles/Themes';
-import { ChevronRight } from '../../src/components/generic/Icons';
+import styled from 'styled-components';
+import { unSelectedNavButton, mediaWidths } from '../../styles/Themes';
+import { ChevronRight } from '../../components/generic/Icons';
 
 export const TradesAmount = styled.div`
     font-size: 14px;

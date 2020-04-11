@@ -13,7 +13,7 @@ import { OPEN_CHANNEL } from '../../../../graphql/mutation';
 import { getErrorContent } from '../../../../utils/error';
 import { toast } from 'react-toastify';
 import { useBitcoinState } from '../../../../context/BitcoinContext';
-import styled from '../../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { SecureButton } from '../../../../components/buttons/secureButton/SecureButton';
 import { Input } from '../../../../components/input/Input';
 import { useSize } from '../../../../hooks/UseSize';

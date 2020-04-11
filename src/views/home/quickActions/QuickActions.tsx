@@ -6,7 +6,7 @@ import {
     CardTitle,
     ColorButton,
 } from '../../../components/generic/Styled';
-import styled from '../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { XSvg, Layers, GitBranch } from '../../../components/generic/Icons';
 import { unSelectedNavButton } from '../../../styles/Themes';
 import { DecodeCard } from './decode/Decode';

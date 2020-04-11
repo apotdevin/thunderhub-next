@@ -1,4 +1,4 @@
-import styled from '../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 
 export const ColLine = styled.div`
     display: flex;

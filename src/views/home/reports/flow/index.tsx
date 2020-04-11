@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import styled, {
-    css,
-} from '../../../channels/channels/node_modules/styled-components';
+import styled, { css } from 'styled-components';
 import {
     CardWithTitle,
     SubTitle,

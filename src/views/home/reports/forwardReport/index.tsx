@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ForwardReport } from './ForwardReport';
 import { ForwardChannelsReport } from './ForwardChannelReport';
-import styled from '../../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import {
     CardWithTitle,
     SubTitle,

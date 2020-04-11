@@ -10,7 +10,7 @@ import {
 } from './NodeInfo.styled';
 import { QuestionIcon } from '../generic/Icons';
 import styled from 'styled-components';
-import ReactTooltip from '../../views/channels/channels/node_modules/react-tooltip';
+import ReactTooltip from 'react-tooltip';
 import { useSettings } from '../../context/SettingsContext';
 import { getTooltipType } from '../generic/Helpers';
 

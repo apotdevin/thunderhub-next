@@ -15,7 +15,7 @@ import { ColorButton } from '../../components/buttons/colorButton/ColorButton';
 import { XSvg } from '../../components/generic/Icons';
 import { useAccount } from '../../context/AccountContext';
 import QRCode from 'qrcode.react';
-import styled from '../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { useInterval } from '../../hooks/UseInterval';
 import Modal from '../../components/modal/ReactModal';
 import { themeColors } from '../../styles/Themes';

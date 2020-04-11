@@ -6,7 +6,7 @@ import {
 import { useMutation } from '@apollo/react-hooks';
 import { CREATE_INVOICE } from '../../../../graphql/mutation';
 import { Copy } from '../../../../components/generic/Icons';
-import styled from '../../../channels/channels/node_modules/styled-components';
+import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { getErrorContent } from '../../../../utils/error';
 import { SecureButton } from '../../../../components/buttons/secureButton/SecureButton';
