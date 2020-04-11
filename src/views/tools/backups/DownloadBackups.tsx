@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
-import {
-    DarkSubTitle,
-    SingleLine,
-} from '../../../src/components/generic/Styled';
-import { saveToPc } from '../../../src/utils/Helpers';
+import { DarkSubTitle, SingleLine } from '../../../components/generic/Styled';
+import { saveToPc } from '../../../utils/Helpers';
 import { useLazyQuery } from '@apollo/react-hooks';
-import { GET_BACKUPS } from '../../../src/graphql/query';
-import { useAccount } from '../../../src/context/AccountContext';
+import { GET_BACKUPS } from '../../../graphql/query';
+import { useAccount } from '../../../context/AccountContext';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../src/utils/error';
-import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
+import { getErrorContent } from '../../../utils/error';
+import { ColorButton } from '../../../components/buttons/colorButton/ColorButton';
 
 export const DownloadBackups = () => {
     const { name, host, viewOnly, cert, sessionAdmin } = useAccount();

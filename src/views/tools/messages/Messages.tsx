@@ -3,7 +3,7 @@ import {
     CardWithTitle,
     SubTitle,
     Card,
-} from '../../../src/components/generic/Styled';
+} from '../../../components/generic/Styled';
 import styled from 'styled-components';
 import { SignMessage } from './SignMessage';
 import { VerifyMessage } from './VerifyMessage';

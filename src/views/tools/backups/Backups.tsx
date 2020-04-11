@@ -8,15 +8,12 @@ import {
     Sub4Title,
     ResponsiveLine,
     DarkSubTitle,
-} from '../../../src/components/generic/Styled';
+} from '../../../components/generic/Styled';
 import { DownloadBackups } from './DownloadBackups';
 import { VerifyBackups } from './VerifyBackups';
 import { RecoverFunds } from './RecoverFunds';
-import { AdminSwitch } from '../../../src/components/adminSwitch/AdminSwitch';
-import {
-    getDateDif,
-    getFormatDate,
-} from '../../../src/components/generic/Helpers';
+import { AdminSwitch } from '../../../components/adminSwitch/AdminSwitch';
+import { getDateDif, getFormatDate } from '../../../components/generic/Helpers';
 
 export const BackupsView = () => {
     const [lastDate, setLastDate] = useState('');

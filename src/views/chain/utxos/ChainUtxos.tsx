@@ -3,13 +3,13 @@ import {
     SubTitle,
     Card,
     CardWithTitle,
-} from '../../../src/components/generic/Styled';
-import { useAccount } from '../../../src/context/AccountContext';
-import { GET_UTXOS } from '../../../src/graphql/query';
+} from '../../../components/generic/Styled';
+import { useAccount } from '../../../context/AccountContext';
+import { GET_UTXOS } from '../../../graphql/query';
 import { useQuery } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../src/utils/error';
-import { LoadingCard } from '../../../src/components/loading/LoadingCard';
+import { getErrorContent } from '../../../utils/error';
+import { LoadingCard } from '../../../components/loading/LoadingCard';
 import { UtxoCard } from './UtxoCard';
 
 export const ChainUtxos = () => {

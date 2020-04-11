@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useAccount } from '../../../src/context/AccountContext';
+import { useAccount } from '../../../context/AccountContext';
 import { useLazyQuery } from '@apollo/react-hooks';
-import { SIGN_MESSAGE } from '../../../src/graphql/query';
+import { SIGN_MESSAGE } from '../../../graphql/query';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../src/utils/error';
+import { getErrorContent } from '../../../utils/error';
 import {
     SingleLine,
     DarkSubTitle,
     Separation,
-} from '../../../src/components/generic/Styled';
-import { XSvg, Copy } from '../../../src/components/generic/Icons';
-import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
+} from '../../../components/generic/Styled';
+import { XSvg, Copy } from '../../../components/generic/Icons';
+import { ColorButton } from '../../../components/buttons/colorButton/ColorButton';
 import { NoWrap } from './Messages';
-import { Input } from '../../../src/components/input/Input';
-import { SecureButton } from '../../../src/components/buttons/secureButton/SecureButton';
+import { Input } from '../../../components/input/Input';
+import { SecureButton } from '../../../components/buttons/secureButton/SecureButton';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import { AdminSwitch } from '../../../src/components/adminSwitch/AdminSwitch';
+import { AdminSwitch } from '../../../components/adminSwitch/AdminSwitch';
 import { Column, WrapRequest } from '../Tools.styled';
 
 export const SignMessage = () => {

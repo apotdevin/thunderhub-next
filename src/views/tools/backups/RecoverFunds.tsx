@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
-import { RECOVER_FUNDS } from '../../../src/graphql/query';
+import { RECOVER_FUNDS } from '../../../graphql/query';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../src/utils/error';
-import {
-    SingleLine,
-    DarkSubTitle,
-} from '../../../src/components/generic/Styled';
-import { XSvg } from '../../../src/components/generic/Icons';
-import { SecureButton } from '../../../src/components/buttons/secureButton/SecureButton';
-import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
-import { Input } from '../../../src/components/input/Input';
+import { getErrorContent } from '../../../utils/error';
+import { SingleLine, DarkSubTitle } from '../../../components/generic/Styled';
+import { XSvg } from '../../../components/generic/Icons';
+import { SecureButton } from '../../../components/buttons/secureButton/SecureButton';
+import { ColorButton } from '../../../components/buttons/colorButton/ColorButton';
+import { Input } from '../../../components/input/Input';
 import { NoWrap } from '../Tools.styled';
 
 export const RecoverFunds = () => {

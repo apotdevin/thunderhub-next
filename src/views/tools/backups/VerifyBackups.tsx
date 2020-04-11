@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useAccount } from '../../../src/context/AccountContext';
+import { useAccount } from '../../../context/AccountContext';
 import { useLazyQuery } from '@apollo/react-hooks';
-import { VERIFY_BACKUPS } from '../../../src/graphql/query';
+import { VERIFY_BACKUPS } from '../../../graphql/query';
 import { toast } from 'react-toastify';
-import { getErrorContent } from '../../../src/utils/error';
+import { getErrorContent } from '../../../utils/error';
 import {
     SingleLine,
     DarkSubTitle,
     Separation,
-} from '../../../src/components/generic/Styled';
-import { XSvg } from '../../../src/components/generic/Icons';
-import { ColorButton } from '../../../src/components/buttons/colorButton/ColorButton';
-import { Input } from '../../../src/components/input/Input';
+} from '../../../components/generic/Styled';
+import { XSvg } from '../../../components/generic/Icons';
+import { ColorButton } from '../../../components/buttons/colorButton/ColorButton';
+import { Input } from '../../../components/input/Input';
 import { NoWrap } from '../Tools.styled';
 
 export const VerifyBackups = () => {
