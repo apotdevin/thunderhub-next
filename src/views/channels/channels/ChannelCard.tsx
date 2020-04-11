@@ -24,8 +24,6 @@ import {
   getFormatDate,
   getDateDif,
   renderLine,
-} from '../../../components/generic/Helpers';
-import {
   getTransactionLink,
   getNodeLink,
 } from '../../../components/generic/Helpers';
@@ -102,7 +100,7 @@ export const ChannelCard = ({
     alias,
     capacity: node_capacity,
     channel_count,
-    color: nodeColor,
+    color: node_color,
     updated_at,
   } = partner_node_info;
 
@@ -173,7 +171,7 @@ export const ChannelCard = ({
   };
 
   return (
-    <SubCard color={nodeColor} key={`${index}-${id}`}>
+    <SubCard color={node_color} key={`${index}-${id}`}>
       <MainInfo onClick={() => handleClick()}>
         <StatusLine>
           {getStatusDot(is_active, 'active')}

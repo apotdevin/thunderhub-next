@@ -10,8 +10,8 @@ import {
 import {
   getTransactionLink,
   renderLine,
+  getNodeLink,
 } from '../../../components/generic/Helpers';
-import { getNodeLink } from '../../../components/generic/Helpers';
 import styled from 'styled-components';
 import { Price } from '../../../components/price/Price';
 

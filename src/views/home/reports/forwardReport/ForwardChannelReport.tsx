@@ -97,7 +97,7 @@ export const ForwardChannelsReport = ({ isTime, isType, color }: Props) => {
       return [];
     }
     if (lengthMissing > 0) {
-      for (let i = 0; i < lengthMissing; i++) {
+      for (let i = 0; i < lengthMissing; i += 1) {
         array.push({
           aliasIn: '-',
           aliasOut: '-',

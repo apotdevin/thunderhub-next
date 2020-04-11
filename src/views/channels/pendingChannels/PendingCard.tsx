@@ -24,8 +24,8 @@ import {
   renderLine,
   getDateDif,
   getFormatDate,
+  getNodeLink,
 } from '../../../components/generic/Helpers';
-import { getNodeLink } from '../../../components/generic/Helpers';
 import { getPrice } from '../../../components/price/Price';
 import { usePriceState } from '../../../context/PriceContext';
 

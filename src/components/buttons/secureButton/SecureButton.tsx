@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Modal from '../../modal/ReactModal';
 import { LoginModal } from './LoginModal';
 import { useAccount } from '../../../context/AccountContext';
-import { ColorButton } from '../colorButton/ColorButton';
-import { ColorButtonProps } from '../colorButton/ColorButton';
+import { ColorButton, ColorButtonProps } from '../colorButton/ColorButton';
 
 interface SecureButtonProps extends ColorButtonProps {
   callback: any;

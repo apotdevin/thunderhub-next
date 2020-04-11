@@ -9,9 +9,9 @@ import {
   colorButtonBorder,
   colorButtonBorderTwo,
   hoverTextColor,
+  themeColors,
 } from '../../../styles/Themes';
 import { ChevronRight } from '../../generic/Icons';
-import { themeColors } from '../../../styles/Themes';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 
 interface GeneralProps {

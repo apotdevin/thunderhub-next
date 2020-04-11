@@ -5,13 +5,15 @@ import {
   Separation,
   ResponsiveLine,
 } from '../../../../components/generic/Styled';
-import { renderLine } from '../../../../components/generic/Helpers';
+import {
+  renderLine,
+  getNodeLink,
+} from '../../../../components/generic/Helpers';
 import { useMutation } from '@apollo/react-hooks';
 import { useAccount } from '../../../../context/AccountContext';
 import { DECODE_REQUEST } from '../../../../graphql/mutation';
 import { getErrorContent } from '../../../../utils/error';
 import { toast } from 'react-toastify';
-import { getNodeLink } from '../../../../components/generic/Helpers';
 import { ColorButton } from '../../../../components/buttons/colorButton/ColorButton';
 import { Input } from '../../../../components/input/Input';
 import { useSize } from '../../../../hooks/UseSize';

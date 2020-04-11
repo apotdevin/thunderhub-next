@@ -7,10 +7,9 @@ import {
   SimpleButton,
   Sub4Title,
 } from '../../components/generic/Styled';
-import { deleteStorage } from '../../utils/storage';
+import { deleteStorage, deleteAccountPermissions } from '../../utils/storage';
 import { useAccount } from '../../context/AccountContext';
 import styled from 'styled-components';
-import { deleteAccountPermissions } from '../../utils/storage';
 import { textColor, fontColors } from '../../styles/Themes';
 import { ColorButton } from '../../components/buttons/colorButton/ColorButton';
 import {

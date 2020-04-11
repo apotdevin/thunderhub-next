@@ -42,7 +42,7 @@ export const Rating = ({
     color,
   };
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i += 1) {
     if (i < amount) {
       stars.push(
         <StyledStar key={i} {...starConfig} fillcolor={themeColors.blue3} />

@@ -19,7 +19,7 @@ export const getWaterfall = (
   let previousAmount = 0;
   let previousTokens = 0;
 
-  for (let i = initialPeriod; i <= lastPeriod; i++) {
+  for (let i = initialPeriod; i <= lastPeriod; i += 1) {
     const currentInvoice = invoices.find(invoice => invoice.period === i) ?? {
       period: undefined,
       amount: 0,
