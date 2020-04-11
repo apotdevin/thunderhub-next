@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-// import { Link, useLocation } from 'react-router-dom';
 import { NodeInfo } from './nodeInfo/NodeInfo';
 import { SideSettings } from './sideSettings/SideSettings';
 import {
@@ -70,27 +69,24 @@ interface NavProps {
     isOpen?: boolean;
 }
 
-const NavButton = styled(({ isOpen, ...rest }) => <a {...rest} />)(
-    () => css`
-        padding: 4px;
-        border-radius: 4px;
-        background: ${({ selected }: NavProps) =>
-            selected && navBackgroundColor};
-        display: flex;
-        align-items: center;
-        ${({ isOpen }: NavProps) => !isOpen && 'justify-content: center'};
-        width: 100%;
-        text-decoration: none;
-        margin: 4px 0;
-        color: ${({ selected }: NavProps) =>
-            selected ? navTextColor : unSelectedNavButton};
+const NavButton = styled.a`
+    padding: 4px;
+    border-radius: 4px;
+    background: ${({ selected }: NavProps) => selected && navBackgroundColor};
+    display: flex;
+    align-items: center;
+    ${({ isOpen }: NavProps) => !isOpen && 'justify-content: center'};
+    width: 100%;
+    text-decoration: none;
+    margin: 4px 0;
+    color: ${({ selected }: NavProps) =>
+        selected ? navTextColor : unSelectedNavButton};
 
-        &:hover {
-            color: ${navTextColor};
-            background: ${navBackgroundColor};
-        }
-    `
-);
+    &:hover {
+        color: ${navTextColor};
+        background: ${navBackgroundColor};
+    }
+`;
 
 const BurgerRow = styled.div`
     display: flex;
@@ -102,21 +98,19 @@ const BurgerRow = styled.div`
     padding: 16px;
 `;
 
-const BurgerNav = styled(({ selectedColor, ...rest }) => <a {...rest} />)(
-    () => css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 16px 16px 8px;
-        border-radius: 4px;
-        text-decoration: none;
-        background: ${({ selected }: NavProps) => selected && subCardColor};
-        ${({ isOpen }: NavProps) => !isOpen && 'justify-content: center'};
-        color: ${({ selected }: NavProps) =>
-            selected ? navTextColor : unSelectedNavButton};
-    `
-);
+const BurgerNav = styled.a`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 16px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    background: ${({ selected }: NavProps) => selected && subCardColor};
+    ${({ isOpen }: NavProps) => !isOpen && 'justify-content: center'};
+    color: ${({ selected }: NavProps) =>
+        selected ? navTextColor : unSelectedNavButton};
+`;
 
 const HOME = '/';
 const PEERS = '/peers';
