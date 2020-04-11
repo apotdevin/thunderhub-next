@@ -7,7 +7,7 @@ import {
     Sub4Title,
 } from '../../generic/Styled';
 import { AlertTriangle } from '../../generic/Icons';
-import styled from 'styled-components';
+import styled from '../../../views/channels/channels/node_modules/styled-components';
 import { toast } from 'react-toastify';
 import { getErrorContent } from '../../../utils/error';
 import { SecureButton } from '../../buttons/secureButton/SecureButton';
