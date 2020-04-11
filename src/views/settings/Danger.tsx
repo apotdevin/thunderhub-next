@@ -156,6 +156,7 @@ export const DangerView = () => {
               onClick={() => {
                 deleteStorage();
                 refreshAccount();
+                push('/');
               }}
             >
               Delete All

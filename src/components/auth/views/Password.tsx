@@ -13,7 +13,7 @@ interface PasswordProps {
   loading: boolean;
 }
 
-export const PasswordInput = ({
+const PasswordInput = ({
   isPass = '',
   setPass,
   callback,
@@ -45,3 +45,5 @@ export const PasswordInput = ({
     </>
   );
 };
+
+export default PasswordInput;

@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server-micro';
-import { thunderHubSchema } from '../../src/schema/schemas';
-import { getIp } from '../../src/schema/helpers/helpers';
+import { thunderHubSchema } from '../../src/api/schemas';
+import { getIp } from '../../src/api/helpers/helpers';
 import Cors from 'micro-cors';
 
 const cors = Cors({

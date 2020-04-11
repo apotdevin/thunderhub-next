@@ -107,16 +107,16 @@ export const Header = () => {
 
   const renderLoggedOut = () => (
     <>
-      <Link to="/faq">
+      <Link underline={'transaparent'} to="/faq">
         <LinkWrapper>Faq</LinkWrapper>
       </Link>
-      <Link to="/terms">
+      <Link underline={'transaparent'} to="/terms">
         <LinkWrapper>Terms</LinkWrapper>
       </Link>
-      <Link to="/privacy">
+      <Link underline={'transaparent'} to="/privacy">
         <LinkWrapper last={true}>Privacy</LinkWrapper>
       </Link>
-      <Link to="/login">
+      <Link underline={'transaparent'} to="/login">
         <HomeButton>
           <Zap fillcolor={'white'} color={'white'} />
         </HomeButton>

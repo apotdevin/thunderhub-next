@@ -20,9 +20,9 @@ export const ConnectionCheck = () => {
     cert,
   };
 
-  useEffect(() => {
-    !loggedIn && push('/');
-  }, [loggedIn]);
+  // useEffect(() => {
+  //   !loggedIn && push('/');
+  // }, [loggedIn]);
 
   const { data, loading } = useQuery(GET_CAN_CONNECT, {
     variables: { auth },

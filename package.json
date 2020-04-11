@@ -10,7 +10,8 @@
     "tslint": "tslint -p . -c tslint.json",
     "prettier": "prettier --write **/*.{ts,tsx,js,css,html}",
     "release": "standard-version",
-    "release:test": "standard-version --dry-run"
+    "release:test": "standard-version --dry-run",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "base64url": "^3.0.1",
     "crypto-js": "^4.0.0",
     "date-fns": "^2.12.0",
+    "dotenv": "^8.2.0",
     "graphql": "^15.0.0",
     "graphql-iso-date": "^3.6.1",
     "graphql-rate-limit": "^2.0.1",
@@ -57,12 +59,14 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@next/bundle-analyzer": "^9.3.4",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.34",
     "babel-plugin-inline-react-svg": "^1.1.1",
     "babel-plugin-styled-components": "^1.10.7",
+    "cross-env": "^7.0.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.3",
     "prettier": "^2.0.4",

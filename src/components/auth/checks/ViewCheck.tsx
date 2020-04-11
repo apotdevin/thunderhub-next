@@ -106,25 +106,6 @@ export const ViewCheck = ({
     return 'Connect';
   };
 
-  const renderButton = () => (
-    <ColorButton
-      fullWidth={true}
-      withMargin={'16px 0 0'}
-      disabled={loading}
-      loading={loading}
-      arrow={confirmed}
-      onClick={() => {
-        if (confirmed) {
-          handleConnect();
-        } else {
-          callback();
-        }
-      }}
-    >
-      {renderTitle()}
-    </ColorButton>
-  );
-
   const renderText = () => (
     <Text>
       Failed to connect to node. Please verify the information provided.
@@ -147,7 +128,22 @@ export const ViewCheck = ({
           setChecked={setAdminChecked}
         />
       )}
-      {renderButton()}
+      <ColorButton
+        fullWidth={true}
+        withMargin={'16px 0 0'}
+        disabled={loading}
+        loading={loading}
+        arrow={confirmed}
+        onClick={() => {
+          if (confirmed) {
+            handleConnect();
+          } else {
+            callback();
+          }
+        }}
+      >
+        {renderTitle()}
+      </ColorButton>
     </>
   );
 };

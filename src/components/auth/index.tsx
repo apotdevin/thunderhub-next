@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { LoginForm } from './views/NormalLogin';
 import { ConnectLoginForm } from './views/ConnectLogin';
 import { BTCLoginForm } from './views/BTCLogin';
@@ -7,11 +8,14 @@ import { ViewCheck } from './checks/ViewCheck';
 import CryptoJS from 'crypto-js';
 import { useAccount } from '../../context/AccountContext';
 import { saveUserAuth, getAccountId } from '../../utils/auth';
-import { PasswordInput } from './views/Password';
 import { useConnectionDispatch } from '../../context/ConnectionContext';
 import { useStatusDispatch } from '../../context/StatusContext';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+
+const PasswordInput = dynamic(() => import('./views/Password'), {
+  ssr: false,
+});
 
 type AuthProps = {
   type: string;

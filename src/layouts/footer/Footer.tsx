@@ -91,8 +91,6 @@ const Version = styled.div`
   margin-left: 8px;
 `;
 
-const APP_VERSION = process.env.REACT_APP_VERSION || '0.0.0';
-
 export const Footer = () => {
   const { loggedIn } = useAccount();
   return (
@@ -103,7 +101,7 @@ export const Footer = () => {
             <Link to={'/'}>
               <Title>ThunderHub</Title>
             </Link>
-            <Version>{`v${APP_VERSION}`}</Version>
+            <Version>{'0.3.0'}</Version>
           </Line>
           <SideText>
             Open-source lightning node manager to control and monitor your LND

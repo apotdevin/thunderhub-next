@@ -24,19 +24,8 @@ type Dispatch = (action: ActionType) => void;
 const StateContext = createContext<State | undefined>(undefined);
 const DispatchContext = createContext<Dispatch | undefined>(undefined);
 
-const stateReducer = (state: State, action: ActionType): State => {
-  switch (action.type) {
-    case 'connected':
-      return action.state || initialState;
-    case 'disconnected':
-      return initialState;
-    default:
-      return initialState;
-  }
-};
-
 const initialState = {
-  loading: true,
+  loading: false,
   alias: '',
   syncedToChain: false,
   version: '',
@@ -47,6 +36,17 @@ const initialState = {
   chainPending: 0,
   channelBalance: 0,
   channelPending: 0,
+};
+
+const stateReducer = (state: State, action: ActionType): State => {
+  switch (action.type) {
+    case 'connected':
+      return action.state || initialState;
+    case 'disconnected':
+      return initialState;
+    default:
+      return initialState;
+  }
 };
 
 const StatusProvider = ({ children }: any) => {

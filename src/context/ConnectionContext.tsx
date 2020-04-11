@@ -20,16 +20,19 @@ const stateReducer = (state: State, action: ActionType) => {
     case 'connected':
       return { connected: true, loading: false, error: false };
     case 'loading':
-    case 'disconnected':
       return { connected: false, loading: true, error: false };
-    default:
+    case 'disconnected':
+      return { connected: false, loading: false, error: false };
+    case 'error':
       return { connected: false, loading: false, error: true };
+    default:
+      return { connected: false, loading: false, error: false };
   }
 };
 
 const initialState = {
   connected: false,
-  loading: true,
+  loading: false,
   error: false,
 };
 

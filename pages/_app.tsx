@@ -16,6 +16,11 @@ import { BitcoinFees } from '../src/components/bitcoinInfo/BitcoinFees';
 import { BitcoinPrice } from '../src/components/bitcoinInfo/BitcoinPrice';
 import { GridWrapper } from '../src/components/gridWrapper/GridWrapper';
 import { useRouter } from 'next/router';
+import { useConnectionState } from '../src/context/ConnectionContext';
+import {
+  LoadingView,
+  ErrorView,
+} from '../src/components/stateViews/StateCards';
 
 const withoutGrid = ['/', '/login', '/faq', '/privacy', '/terms'];
 
@@ -23,8 +28,15 @@ const Wrapper: React.FC = ({ children }) => {
   const { theme } = useSettings();
   const { loggedIn } = useAccount();
   const { pathname } = useRouter();
+  const { connected, loading, error } = useConnectionState();
 
   const isInArray = withoutGrid.includes(pathname);
+
+  const renderContent = () => {
+    if (loading) return <LoadingView />;
+    if (error) return <ErrorView />;
+    return <>{children}</>;
+  };
 
   const renderGetters = () => (
     <>
@@ -39,7 +51,7 @@ const Wrapper: React.FC = ({ children }) => {
         <GlobalStyles />
         {loggedIn && renderGetters()}
         <Header />
-        <GridWrapper without={isInArray}>{children}</GridWrapper>
+        <GridWrapper without={isInArray}>{renderContent()}</GridWrapper>
         <Footer />
       </ModalProvider>
     </ThemeProvider>
