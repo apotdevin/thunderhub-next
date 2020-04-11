@@ -89,20 +89,18 @@ export const getResume = {
       throw new Error(getErrorMsg(error));
     }
 
+    const filterArray = payment => {
+      const last =
+        compareDesc(new Date(lastInvoiceDate), new Date(payment.date)) === 1;
+      const first = params.token
+        ? compareDesc(new Date(payment.date), new Date(firstInvoiceDate)) === 1
+        : true;
+      return last && first;
+    };
+
     const filteredPayments = withInvoices
-      ? payments.filter(payment => {
-          const last =
-            compareDesc(new Date(lastInvoiceDate), new Date(payment.date)) ===
-            1;
-          const first = params.token
-            ? compareDesc(
-                new Date(payment.date),
-                new Date(firstInvoiceDate)
-              ) === 1
-            : true;
-          return last && first;
-        })
-      : payments;
+      ? payments
+      : payments.filter(filterArray);
 
     const resumeArray = sortBy(
       [...invoices, ...filteredPayments],

@@ -71,10 +71,10 @@ export const NodeCard = ({ account, accountId }: NodeCardProps) => {
     }
 
     const {
-      active_channels_count,
-      closed_channels_count,
+      active_channels_count: active,
+      closed_channels_count: closed,
       alias,
-      pending_channels_count,
+      pending_channels_count: pending,
       is_synced_to_chain,
     } = data.getNodeInfo;
 
@@ -97,7 +97,7 @@ export const NodeCard = ({ account, accountId }: NodeCardProps) => {
         </ResponsiveLine>
         <ResponsiveLine>
           <DarkSubTitle>Channels</DarkSubTitle>
-          <div>{`${active_channels_count} / ${pending_channels_count} / ${closed_channels_count}`}</div>
+          <div>{`${active} / ${pending} / ${closed}`}</div>
         </ResponsiveLine>
       </>
     );

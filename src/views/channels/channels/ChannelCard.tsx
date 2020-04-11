@@ -98,9 +98,9 @@ export const ChannelCard = ({
 
   const {
     alias,
-    capacity: node_capacity,
+    capacity: partnerNodeCapacity,
     channel_count,
-    color: node_color,
+    color: nodeColor,
     updated_at,
   } = partner_node_info;
 
@@ -113,7 +113,7 @@ export const ChannelCard = ({
   const commitWeight = format({ amount: commit_transaction_weight });
   const localReserve = format({ amount: local_reserve });
   const remoteReserve = format({ amount: remote_reserve });
-  const nodeCapacity = format({ amount: node_capacity });
+  const nodeCapacity = format({ amount: partnerNodeCapacity });
 
   const handleClick = () => {
     if (indexOpen === index) {
@@ -171,7 +171,7 @@ export const ChannelCard = ({
   };
 
   return (
-    <SubCard color={node_color} key={`${index}-${id}`}>
+    <SubCard color={nodeColor} key={`${index}-${id}`}>
       <MainInfo onClick={() => handleClick()}>
         <StatusLine>
           {getStatusDot(is_active, 'active')}
