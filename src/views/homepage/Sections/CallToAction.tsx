@@ -9,7 +9,7 @@ import {
 import { HomeButton } from '../HomePage.styled';
 import { Zap } from '../../../components/generic/Icons';
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from '../../../components/link/Link';
 
 const CallToActionButton = styled(HomeButton)`
   margin: 16px 0 0;
@@ -28,7 +28,7 @@ export const CallToAction = () => {
           <StyledH2>Ready to take control of your Lightning Node?</StyledH2>
         </Center>
         <Center>
-          <Link href={'/login'}>
+          <Link to={'/login'}>
             <CallToActionButton>
               <Padding>
                 <Zap fillcolor={'white'} color={'white'} />

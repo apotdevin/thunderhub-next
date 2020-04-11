@@ -100,9 +100,9 @@ export const Footer = () => {
       <FooterStyle>
         <SideFooter>
           <Line>
-            {/* <RouterLink to="/" style={{ textDecoration: 'none' }}> */}
-            <Title>ThunderHub</Title>
-            {/* </RouterLink> */}
+            <Link to={'/'}>
+              <Title>ThunderHub</Title>
+            </Link>
             <Version>{`v${APP_VERSION}`}</Version>
           </Line>
           <SideText>
@@ -118,7 +118,7 @@ export const Footer = () => {
           </CopyrightText>
         </SideFooter>
         <RightFooter>
-          <Link href={'/faq'} color={fontColors.blue}>
+          <Link to={'/faq'} color={fontColors.blue}>
             FAQ
           </Link>
           <Link
@@ -130,10 +130,10 @@ export const Footer = () => {
           <Link href={'twitter.com/thunderhubio'} color={fontColors.blue}>
             Twitter
           </Link>
-          <Link href={'/terms'} color={fontColors.blue}>
+          <Link to={'/terms'} color={fontColors.blue}>
             Terms of Use
           </Link>
-          <Link href={'/privacy'} color={fontColors.blue}>
+          <Link to={'/privacy'} color={fontColors.blue}>
             Privacy Policy
           </Link>
           {!loggedIn && (

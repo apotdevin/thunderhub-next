@@ -17,7 +17,7 @@ import { BitcoinPrice } from '../src/components/bitcoinInfo/BitcoinPrice';
 import { GridWrapper } from '../src/components/gridWrapper/GridWrapper';
 import { useRouter } from 'next/router';
 
-const withoutGrid = ['/faq', '/privacy', '/terms'];
+const withoutGrid = ['/', '/login', '/faq', '/privacy', '/terms'];
 
 const Wrapper: React.FC = ({ children }) => {
   const { theme } = useSettings();
@@ -39,7 +39,7 @@ const Wrapper: React.FC = ({ children }) => {
         <GlobalStyles />
         {loggedIn && renderGetters()}
         <Header />
-        <GridWrapper without={!loggedIn && isInArray}>{children}</GridWrapper>
+        <GridWrapper without={isInArray}>{children}</GridWrapper>
         <Footer />
       </ModalProvider>
     </ThemeProvider>

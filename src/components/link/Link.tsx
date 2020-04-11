@@ -12,6 +12,7 @@ interface StyledProps {
 }
 
 const StyledALink = styled.a`
+  cursor: pointer;
   color: ${({ fontColor, inheritColor }: StyledProps) =>
     inheritColor ? 'inherit' : fontColor ?? textColor};
   text-decoration: none;
@@ -36,6 +37,7 @@ const StyledALink = styled.a`
 interface LinkProps {
   children: any;
   href?: string;
+  to?: string;
   color?: string | ThemeSet;
   underline?: string | ThemeSet;
   inheritColor?: boolean;
@@ -45,6 +47,7 @@ interface LinkProps {
 export const Link = ({
   children,
   href,
+  to,
   color,
   underline,
   inheritColor,
@@ -52,10 +55,18 @@ export const Link = ({
 }: LinkProps) => {
   const props = { fontColor: color, underline, inheritColor, fullWidth };
 
-  if (!href) return null;
+  if (!href && !to) return null;
+
+  if (href) {
+    return (
+      <StyledALink href={href} {...props}>
+        {children}
+      </StyledALink>
+    );
+  }
 
   return (
-    <RouterLink href={href}>
+    <RouterLink href={to}>
       <StyledALink {...props}>{children}</StyledALink>
     </RouterLink>
   );

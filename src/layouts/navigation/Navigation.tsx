@@ -25,8 +25,8 @@ import {
 } from '../../components/generic/Icons';
 import { useSettings } from '../../context/SettingsContext';
 import { useConnectionState } from '../../context/ConnectionContext';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Link } from '../../components/link/Link';
 
 const NavigationStyle = styled.div`
   grid-area: nav;
@@ -69,7 +69,7 @@ interface NavProps {
   isOpen?: boolean;
 }
 
-const NavButton = styled.a`
+const NavButton = styled.div`
   padding: 4px;
   border-radius: 4px;
   background: ${({ selected }: NavProps) => selected && navBackgroundColor};
@@ -112,7 +112,7 @@ const BurgerNav = styled.a`
     selected ? navTextColor : unSelectedNavButton};
 `;
 
-const HOME = '/';
+const HOME = '/home';
 const PEERS = '/peers';
 const CHANNEL = '/channels';
 const BALANCE = '/balance';
@@ -140,7 +140,7 @@ export const Navigation = ({ isBurger, setOpen }: NavigationProps) => {
     NavIcon: any,
     open: boolean = true
   ) => (
-    <Link href={link}>
+    <Link to={link}>
       <NavButton isOpen={sidebar} selected={pathname === link}>
         <NavIcon />
         {open && <NavSeparation>{title}</NavSeparation>}
@@ -149,7 +149,7 @@ export const Navigation = ({ isBurger, setOpen }: NavigationProps) => {
   );
 
   const renderBurgerNav = (title: string, link: string, NavIcon: any) => (
-    <Link href={link}>
+    <Link to={link}>
       <BurgerNav
         selected={pathname === link}
         onClick={() => setOpen && setOpen(false)}

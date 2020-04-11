@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import {
   Headline,
   LeftHeadline,
@@ -10,7 +9,6 @@ import {
 } from '../HomePage.styled';
 import { Zap } from '../../../components/generic/Icons';
 import { headerColor, inverseTextColor } from '../../../styles/Themes';
-// import { Link } from 'react-router-dom';
 import { Section } from '../../../components/section/Section';
 import {
   FullWidth,
@@ -18,6 +16,7 @@ import {
   SlantedWrapper,
   SlantedEdge,
 } from './Sections.styled';
+import { Link } from '../../../components/link/Link';
 
 export const TopSection = () => {
   return (
@@ -33,8 +32,7 @@ export const TopSection = () => {
               </Text>
             </FullWidth>
             <FullWidth>
-              {/* <Link href="/login" style={{ textDecoration: 'none' }}> */}
-              <Link href="/login">
+              <Link to="/login">
                 <HomeButton>
                   <Padding>
                     <Zap fillcolor={'white'} color={'white'} />

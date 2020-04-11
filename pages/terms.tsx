@@ -20,7 +20,7 @@ const TermsView = () => {
         <Question>1. Terms</Question>
         <Text>
           ThunderHub ("us", "we", or "our") provides the website{' '}
-          <Link href={'/'} {...props}>
+          <Link to={'/'} {...props}>
             https://thunderhub.io
           </Link>{' '}
           (the "Site"). Your use of or access to the site is subject to the
@@ -78,7 +78,7 @@ const TermsView = () => {
           incorporated by this reference into these Terms. You agree to the
           collection, use, storage, and disclosure of your data in accordance
           with our{' '}
-          <Link href={'/privacy'} {...props}>
+          <Link to={'/privacy'} {...props}>
             Privacy Policy
           </Link>
           .

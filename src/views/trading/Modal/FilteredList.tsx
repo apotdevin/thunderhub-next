@@ -10,7 +10,7 @@ interface FilteredProps {
   handleClick: any;
 }
 
-interface FilteredProps {
+interface FilteredOptionsProps {
   name: string;
   title: string;
 }
@@ -21,7 +21,9 @@ export const FilteredList = ({
   handleClick,
 }: FilteredProps) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [filteredOptions, setOptions] = useState<FilteredProps[]>(options);
+  const [filteredOptions, setOptions] = useState<FilteredOptionsProps[]>(
+    options
+  );
 
   useEffect(() => {
     const filtered = options.filter(

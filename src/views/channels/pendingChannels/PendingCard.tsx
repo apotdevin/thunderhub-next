@@ -123,7 +123,7 @@ export const PendingCard = ({
         {renderLine('Node Public Key:', getNodeLink(partner_public_key))}
         {renderLine('Transaction Id:', getTransactionLink(transaction_id))}
         {renderLine('Transaction Vout:', transaction_vout)}
-        {renderLine('Transaction Fee:', getTransactionLink(transaction_fee))}
+        {renderLine('Transaction Fee:', transaction_fee)}
         {renderLine(
           'Close Transaction Id:',
           getTransactionLink(close_transaction_id)

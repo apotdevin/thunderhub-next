@@ -8,7 +8,6 @@ import {
   mediaDimensions,
 } from '../../styles/Themes';
 import { HomeButton } from '../../views/homepage/HomePage.styled';
-// import { Link } from 'react-router-dom';
 import { useAccount } from '../../context/AccountContext';
 import { SingleLine, ResponsiveLine } from '../../components/generic/Styled';
 import {
@@ -23,7 +22,7 @@ import { useSize } from '../../hooks/UseSize';
 import { useTransition, animated } from 'react-spring';
 import { Section } from '../../components/section/Section';
 import { useStatusState } from '../../context/StatusContext';
-import Link from 'next/link';
+import { Link } from '../../components/link/Link';
 
 const HeaderStyle = styled.div`
   padding: 16px 0;
@@ -108,16 +107,16 @@ export const Header = () => {
 
   const renderLoggedOut = () => (
     <>
-      <Link href="/faq">
+      <Link to="/faq">
         <LinkWrapper>Faq</LinkWrapper>
       </Link>
-      <Link href="/terms">
+      <Link to="/terms">
         <LinkWrapper>Terms</LinkWrapper>
       </Link>
-      <Link href="/privacy">
+      <Link to="/privacy">
         <LinkWrapper last={true}>Privacy</LinkWrapper>
       </Link>
-      <Link href="/login">
+      <Link to="/login">
         <HomeButton>
           <Zap fillcolor={'white'} color={'white'} />
         </HomeButton>
@@ -133,7 +132,7 @@ export const Header = () => {
       <Section withColor={true} color={headerColor} textColor={headerTextColor}>
         <HeaderStyle>
           <HeaderWrapper>
-            <Link href="/">
+            <Link to={loggedIn ? '/home' : '/'} underline={'transparent'}>
               <HeaderTitle
                 withPadding={width <= mediaDimensions.mobile && !loggedIn}
               >

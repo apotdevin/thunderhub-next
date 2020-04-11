@@ -45,7 +45,7 @@ const PrivacyView = () => {
           This Privacy Policy describes our policies and procedures regarding
           our collection and use of your information in connection with your
           access and use of{' '}
-          <Link href={'/'} {...props}>
+          <Link to={'/'} {...props}>
             https://thunderhub.io
           </Link>{' '}
           (the "Site"). By using this service, you acknowledge and agree to this
