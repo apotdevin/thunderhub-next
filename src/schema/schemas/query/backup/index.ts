@@ -3,7 +3,7 @@ import { verifyBackups } from './verifyBackups';
 import { recoverFunds } from './recoverFunds';
 
 export const backupQueries = {
-    getBackups,
-    verifyBackups,
-    recoverFunds,
+  getBackups,
+  verifyBackups,
+  recoverFunds,
 };

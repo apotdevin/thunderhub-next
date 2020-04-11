@@ -6,33 +6,33 @@ import { getErrorMsg, getAuthLnd } from '../../../helpers/helpers';
 import { defaultParams } from '../../../helpers/defaultProps';
 
 interface AddressProps {
-    address: string;
+  address: string;
 }
 
 export const createAddress = {
-    type: GraphQLString,
-    args: {
-        ...defaultParams,
-        nested: { type: GraphQLBoolean },
-    },
-    resolve: async (root: any, params: any, context: any) => {
-        await requestLimiter(context.ip, 'getAddress');
+  type: GraphQLString,
+  args: {
+    ...defaultParams,
+    nested: { type: GraphQLBoolean },
+  },
+  resolve: async (root: any, params: any, context: any) => {
+    await requestLimiter(context.ip, 'getAddress');
 
-        const lnd = getAuthLnd(params.auth);
+    const lnd = getAuthLnd(params.auth);
 
-        const format = params.nested ? 'np2wpkh' : 'p2wpkh';
+    const format = params.nested ? 'np2wpkh' : 'p2wpkh';
 
-        try {
-            const address: AddressProps = await createChainAddress({
-                lnd,
-                is_unused: true,
-                format,
-            });
+    try {
+      const address: AddressProps = await createChainAddress({
+        lnd,
+        is_unused: true,
+        format,
+      });
 
-            return address.address;
-        } catch (error) {
-            params.logger && logger.error('Error creating address: %o', error);
-            throw new Error(getErrorMsg(error));
-        }
-    },
+      return address.address;
+    } catch (error) {
+      params.logger && logger.error('Error creating address: %o', error);
+      throw new Error(getErrorMsg(error));
+    }
+  },
 };

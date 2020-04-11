@@ -6,23 +6,29 @@ const combinedFormat =
   envConfig.env === 'development'
     ? format.combine(
         format.label({
-          label: path.basename(process && process.mainModule ? process.mainModule.filename : ''),
+          label: path.basename(
+            process && process.mainModule ? process.mainModule.filename : ''
+          ),
         }),
         format.splat(),
         format.colorize(),
         format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
         format.printf(
-          (info: any) => `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
+          (info: any) =>
+            `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
         )
       )
     : format.combine(
         format.label({
-          label: path.basename(process && process.mainModule ? process.mainModule.filename : ''),
+          label: path.basename(
+            process && process.mainModule ? process.mainModule.filename : ''
+          ),
         }),
         format.splat(),
         format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
         format.printf(
-          (info: any) => `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
+          (info: any) =>
+            `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
         )
       );
 

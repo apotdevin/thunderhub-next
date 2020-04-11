@@ -5,59 +5,59 @@ import { ThemeSet } from 'styled-theming';
 import RouterLink from 'next/link';
 
 interface StyledProps {
-    fontColor?: string | ThemeSet;
-    underline?: string | ThemeSet;
-    inheritColor?: boolean;
-    fullWidth?: boolean;
+  fontColor?: string | ThemeSet;
+  underline?: string | ThemeSet;
+  inheritColor?: boolean;
+  fullWidth?: boolean;
 }
 
 const StyledALink = styled.a`
-    color: ${({ fontColor, inheritColor }: StyledProps) =>
-        inheritColor ? 'inherit' : fontColor ?? textColor};
-    text-decoration: none;
-    ${({ fullWidth }: StyledProps) =>
-        fullWidth &&
-        css`
-            width: 100%;
-        `};
+  color: ${({ fontColor, inheritColor }: StyledProps) =>
+    inheritColor ? 'inherit' : fontColor ?? textColor};
+  text-decoration: none;
+  ${({ fullWidth }: StyledProps) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `};
 
-    :hover {
-        background: linear-gradient(
-            to bottom,
-            ${({ underline }: StyledProps) => underline ?? linkHighlight} 0%,
-            ${({ underline }: StyledProps) => underline ?? linkHighlight} 100%
-        );
-        background-position: 0 100%;
-        background-size: 2px 2px;
-        background-repeat: repeat-x;
-    }
+  :hover {
+    background: linear-gradient(
+      to bottom,
+      ${({ underline }: StyledProps) => underline ?? linkHighlight} 0%,
+      ${({ underline }: StyledProps) => underline ?? linkHighlight} 100%
+    );
+    background-position: 0 100%;
+    background-size: 2px 2px;
+    background-repeat: repeat-x;
+  }
 `;
 
 interface LinkProps {
-    children: any;
-    href?: string;
-    color?: string | ThemeSet;
-    underline?: string | ThemeSet;
-    inheritColor?: boolean;
-    fullWidth?: boolean;
+  children: any;
+  href?: string;
+  color?: string | ThemeSet;
+  underline?: string | ThemeSet;
+  inheritColor?: boolean;
+  fullWidth?: boolean;
 }
 
 export const Link = ({
-    children,
-    href,
-    color,
-    underline,
-    inheritColor,
-    fullWidth,
+  children,
+  href,
+  color,
+  underline,
+  inheritColor,
+  fullWidth,
 }: LinkProps) => {
-    const props = { fontColor: color, underline, inheritColor, fullWidth };
+  const props = { fontColor: color, underline, inheritColor, fullWidth };
 
-    if (!href) return null;
+  if (!href) return null;
 
-    return (
-        <RouterLink href={href}>
-            <StyledALink {...props}>{children}</StyledALink>
-        </RouterLink>
-    );
-    // }
+  return (
+    <RouterLink href={href}>
+      <StyledALink {...props}>{children}</StyledALink>
+    </RouterLink>
+  );
+  // }
 };

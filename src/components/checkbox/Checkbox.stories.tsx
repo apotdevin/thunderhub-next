@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Checkbox } from './Checkbox';
 
 export default {
-    title: 'Checkbox',
+  title: 'Checkbox',
 };
 
 export const Default = () => {
-    const [checked, set] = useState<boolean>(false);
+  const [checked, set] = useState<boolean>(false);
 
-    return (
-        <Checkbox checked={checked} onChange={set}>
-            This is a checkbox
-        </Checkbox>
-    );
+  return (
+    <Checkbox checked={checked} onChange={set}>
+      This is a checkbox
+    </Checkbox>
+  );
 };

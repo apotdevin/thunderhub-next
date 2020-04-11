@@ -9,37 +9,37 @@ import { getErrorContent } from '../../../utils/error';
 import { ColorButton } from '../../../components/buttons/colorButton/ColorButton';
 
 export const DownloadBackups = () => {
-    const { name, host, viewOnly, cert, sessionAdmin } = useAccount();
-    const auth = {
-        host,
-        macaroon: viewOnly !== '' ? viewOnly : sessionAdmin,
-        cert,
-    };
+  const { name, host, viewOnly, cert, sessionAdmin } = useAccount();
+  const auth = {
+    host,
+    macaroon: viewOnly !== '' ? viewOnly : sessionAdmin,
+    cert,
+  };
 
-    const [getBackups, { data, loading }] = useLazyQuery(GET_BACKUPS, {
-        variables: { auth },
-        onError: (error) => toast.error(getErrorContent(error)),
-    });
+  const [getBackups, { data, loading }] = useLazyQuery(GET_BACKUPS, {
+    variables: { auth },
+    onError: (error) => toast.error(getErrorContent(error)),
+  });
 
-    useEffect(() => {
-        if (!loading && data && data.getBackups) {
-            saveToPc(data.getBackups, `Backup-${name}`);
-            localStorage.setItem('lastBackup', new Date().toString());
-            toast.success('Downloaded');
-        }
-    }, [data, loading, name]);
+  useEffect(() => {
+    if (!loading && data && data.getBackups) {
+      saveToPc(data.getBackups, `Backup-${name}`);
+      localStorage.setItem('lastBackup', new Date().toString());
+      toast.success('Downloaded');
+    }
+  }, [data, loading, name]);
 
-    return (
-        <SingleLine>
-            <DarkSubTitle>Backup All Channels</DarkSubTitle>
-            <ColorButton
-                withMargin={'4px 0'}
-                disabled={loading}
-                onClick={() => getBackups()}
-                loading={loading}
-            >
-                Download
-            </ColorButton>
-        </SingleLine>
-    );
+  return (
+    <SingleLine>
+      <DarkSubTitle>Backup All Channels</DarkSubTitle>
+      <ColorButton
+        withMargin={'4px 0'}
+        disabled={loading}
+        onClick={() => getBackups()}
+        loading={loading}
+      >
+        Download
+      </ColorButton>
+    </SingleLine>
+  );
 };

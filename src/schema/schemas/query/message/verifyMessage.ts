@@ -6,28 +6,28 @@ import { getAuthLnd, getErrorMsg } from '../../../helpers/helpers';
 import { logger } from '../../../helpers/logger';
 
 export const verifyMessage = {
-    type: GraphQLString,
-    args: {
-        ...defaultParams,
-        message: { type: new GraphQLNonNull(GraphQLString) },
-        signature: { type: new GraphQLNonNull(GraphQLString) },
-    },
-    resolve: async (root: any, params: any, context: any) => {
-        await requestLimiter(context.ip, 'verifyMessage');
+  type: GraphQLString,
+  args: {
+    ...defaultParams,
+    message: { type: new GraphQLNonNull(GraphQLString) },
+    signature: { type: new GraphQLNonNull(GraphQLString) },
+  },
+  resolve: async (root: any, params: any, context: any) => {
+    await requestLimiter(context.ip, 'verifyMessage');
 
-        const lnd = getAuthLnd(params.auth);
+    const lnd = getAuthLnd(params.auth);
 
-        try {
-            const message: { signed_by: string } = await verifyLnMessage({
-                lnd,
-                message: params.message,
-                signature: params.signature,
-            });
+    try {
+      const message: { signed_by: string } = await verifyLnMessage({
+        lnd,
+        message: params.message,
+        signature: params.signature,
+      });
 
-            return message.signed_by;
-        } catch (error) {
-            params.logger && logger.error('Error verifying message: %o', error);
-            throw new Error(getErrorMsg(error));
-        }
-    },
+      return message.signed_by;
+    } catch (error) {
+      params.logger && logger.error('Error verifying message: %o', error);
+      throw new Error(getErrorMsg(error));
+    }
+  },
 };

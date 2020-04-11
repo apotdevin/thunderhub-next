@@ -1,28 +1,28 @@
 export interface InOutProps {
-    tokens: number;
+  tokens: number;
 }
 
 export interface InOutListProps {
-    [key: string]: InOutProps[];
+  [key: string]: InOutProps[];
 }
 
 export interface PaymentProps {
-    created_at: string;
-    is_confirmed: boolean;
-    tokens: number;
+  created_at: string;
+  is_confirmed: boolean;
+  tokens: number;
 }
 
 export interface PaymentsProps {
-    payments: PaymentProps[];
+  payments: PaymentProps[];
 }
 
 export interface InvoiceProps {
-    created_at: string;
-    is_confirmed: boolean;
-    received: number;
+  created_at: string;
+  is_confirmed: boolean;
+  received: number;
 }
 
 export interface InvoicesProps {
-    invoices: InvoiceProps[];
-    next: string;
+  invoices: InvoiceProps[];
+  next: string;
 }

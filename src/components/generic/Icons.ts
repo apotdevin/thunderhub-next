@@ -63,7 +63,8 @@ const GenericStyles = css`
   width: ${({ size }: IconProps) => (size ? size : '18px')};
   color: ${({ color }: IconProps) => (color ? color : '')};
   fill: ${({ fillcolor }: IconProps) => (fillcolor ? fillcolor : '')};
-  stroke-width: ${({ strokeWidth }: IconProps) => (strokeWidth ? strokeWidth : '2px')};
+  stroke-width: ${({ strokeWidth }: IconProps) =>
+    strokeWidth ? strokeWidth : '2px'};
 `;
 
 const styleIcon = (icon: FunctionComponent) =>

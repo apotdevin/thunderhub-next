@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import {
-    headerColor,
-    headerTextColor,
-    themeColors,
-    mediaWidths,
-    mediaDimensions,
+  headerColor,
+  headerTextColor,
+  themeColors,
+  mediaWidths,
+  mediaDimensions,
 } from '../../styles/Themes';
 import { HomeButton } from '../../views/homepage/HomePage.styled';
 // import { Link } from 'react-router-dom';
 import { useAccount } from '../../context/AccountContext';
 import { SingleLine, ResponsiveLine } from '../../components/generic/Styled';
 import {
-    Cpu,
-    MenuIcon,
-    XSvg,
-    Zap,
-    Circle,
+  Cpu,
+  MenuIcon,
+  XSvg,
+  Zap,
+  Circle,
 } from '../../components/generic/Icons';
 import { BurgerMenu } from '../../components/burgerMenu/BurgerMenu';
 import { useSize } from '../../hooks/UseSize';
@@ -26,149 +26,133 @@ import { useStatusState } from '../../context/StatusContext';
 import Link from 'next/link';
 
 const HeaderStyle = styled.div`
-    padding: 16px 0;
+  padding: 16px 0;
 `;
 
 const IconPadding = styled.div`
-    padding-right: 6px;
-    margin-bottom: -4px;
+  padding-right: 6px;
+  margin-bottom: -4px;
 `;
 
 const HeaderTitle = styled.div`
-    color: ${headerTextColor};
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: ${headerTextColor};
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    ${({ withPadding }: { withPadding: boolean }) =>
-        withPadding &&
-        css`
-            @media (${mediaWidths.mobile}) {
-                margin-bottom: 16px;
-            }
-        `}
+  ${({ withPadding }: { withPadding: boolean }) =>
+    withPadding &&
+    css`
+      @media (${mediaWidths.mobile}) {
+        margin-bottom: 16px;
+      }
+    `}
 `;
 
 const IconWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
 `;
 
 const LinkWrapper = styled.div`
-    color: ${headerTextColor};
-    margin: ${({ last }: { last?: boolean }) =>
-        last ? '0 16px 0 4px' : '0 4px'};
+  color: ${headerTextColor};
+  margin: ${({ last }: { last?: boolean }) =>
+    last ? '0 16px 0 4px' : '0 4px'};
 
-    :hover {
-        color: ${themeColors.blue2};
-    }
+  :hover {
+    color: ${themeColors.blue2};
+  }
 `;
 
 const AnimatedBurger = animated(MenuIcon);
 const AnimatedClose = animated(XSvg);
 
 export const Header = () => {
-    const { width } = useSize();
-    const { loggedIn } = useAccount();
-    const [open, setOpen] = useState(false);
-    const { syncedToChain } = useStatusState();
+  const { width } = useSize();
+  const { loggedIn } = useAccount();
+  const [open, setOpen] = useState(false);
+  const { syncedToChain } = useStatusState();
 
-    const transitions = useTransition(open, null, {
-        from: { position: 'absolute', opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
-    });
+  const transitions = useTransition(open, null, {
+    from: { position: 'absolute', opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
 
-    const renderLoggedIn = () => {
-        if (width <= mediaDimensions.mobile) {
-            return (
-                <IconWrapper onClick={() => setOpen((prev) => !prev)}>
-                    {transitions.map(({ item, key, props }) =>
-                        item ? (
-                            <AnimatedClose
-                                key={key}
-                                style={props}
-                                size={'24px'}
-                            />
-                        ) : (
-                            <AnimatedBurger
-                                key={key}
-                                style={props}
-                                size={'24px'}
-                            />
-                        )
-                    )}
-                </IconWrapper>
-            );
-        } else {
-            return (
-                <Circle
-                    size={'12px'}
-                    strokeWidth={'0'}
-                    fillcolor={syncedToChain ? '#95de64' : '#ff7875'}
-                />
-            );
-        }
-    };
+  const renderLoggedIn = () => {
+    if (width <= mediaDimensions.mobile) {
+      return (
+        <IconWrapper onClick={() => setOpen((prev) => !prev)}>
+          {transitions.map(({ item, key, props }) =>
+            item ? (
+              <AnimatedClose key={key} style={props} size={'24px'} />
+            ) : (
+              <AnimatedBurger key={key} style={props} size={'24px'} />
+            )
+          )}
+        </IconWrapper>
+      );
+    } else {
+      return (
+        <Circle
+          size={'12px'}
+          strokeWidth={'0'}
+          fillcolor={syncedToChain ? '#95de64' : '#ff7875'}
+        />
+      );
+    }
+  };
 
-    const renderLoggedOut = () => (
-        <>
-            <Link href="/faq">
-                <LinkWrapper>Faq</LinkWrapper>
+  const renderLoggedOut = () => (
+    <>
+      <Link href="/faq">
+        <LinkWrapper>Faq</LinkWrapper>
+      </Link>
+      <Link href="/terms">
+        <LinkWrapper>Terms</LinkWrapper>
+      </Link>
+      <Link href="/privacy">
+        <LinkWrapper last={true}>Privacy</LinkWrapper>
+      </Link>
+      <Link href="/login">
+        <HomeButton>
+          <Zap fillcolor={'white'} color={'white'} />
+        </HomeButton>
+      </Link>
+    </>
+  );
+
+  const HeaderWrapper =
+    width <= mediaDimensions.mobile && !loggedIn ? ResponsiveLine : SingleLine;
+
+  return (
+    <>
+      <Section withColor={true} color={headerColor} textColor={headerTextColor}>
+        <HeaderStyle>
+          <HeaderWrapper>
+            <Link href="/">
+              <HeaderTitle
+                withPadding={width <= mediaDimensions.mobile && !loggedIn}
+              >
+                <IconPadding>
+                  <Cpu color={'white'} />
+                </IconPadding>
+                ThunderHub
+              </HeaderTitle>
             </Link>
-            <Link href="/terms">
-                <LinkWrapper>Terms</LinkWrapper>
-            </Link>
-            <Link href="/privacy">
-                <LinkWrapper last={true}>Privacy</LinkWrapper>
-            </Link>
-            <Link href="/login">
-                <HomeButton>
-                    <Zap fillcolor={'white'} color={'white'} />
-                </HomeButton>
-            </Link>
-        </>
-    );
-
-    const HeaderWrapper =
-        width <= mediaDimensions.mobile && !loggedIn
-            ? ResponsiveLine
-            : SingleLine;
-
-    return (
-        <>
-            <Section
-                withColor={true}
-                color={headerColor}
-                textColor={headerTextColor}
-            >
-                <HeaderStyle>
-                    <HeaderWrapper>
-                        <Link href="/">
-                            <HeaderTitle
-                                withPadding={
-                                    width <= mediaDimensions.mobile && !loggedIn
-                                }
-                            >
-                                <IconPadding>
-                                    <Cpu color={'white'} />
-                                </IconPadding>
-                                ThunderHub
-                            </HeaderTitle>
-                        </Link>
-                        <SingleLine>
-                            {loggedIn ? renderLoggedIn() : renderLoggedOut()}
-                        </SingleLine>
-                    </HeaderWrapper>
-                </HeaderStyle>
-            </Section>
-            {open && width <= mediaDimensions.mobile && (
-                <BurgerMenu open={open} setOpen={setOpen} />
-            )}
-        </>
-    );
+            <SingleLine>
+              {loggedIn ? renderLoggedIn() : renderLoggedOut()}
+            </SingleLine>
+          </HeaderWrapper>
+        </HeaderStyle>
+      </Section>
+      {open && width <= mediaDimensions.mobile && (
+        <BurgerMenu open={open} setOpen={setOpen} />
+      )}
+    </>
+  );
 };

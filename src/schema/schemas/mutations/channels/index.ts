@@ -3,7 +3,7 @@ import { openChannel } from './openChannel';
 import { updateFees } from './updateFees';
 
 export const channels = {
-    closeChannel,
-    openChannel,
-    updateFees,
+  closeChannel,
+  openChannel,
+  updateFees,
 };

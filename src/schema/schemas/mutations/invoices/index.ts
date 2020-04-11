@@ -5,9 +5,9 @@ import { decodeRequest } from './decode';
 import { payViaRoute } from './payViaRoute';
 
 export const invoices = {
-    parsePayment,
-    pay,
-    createInvoice,
-    decodeRequest,
-    payViaRoute,
+  parsePayment,
+  pay,
+  createInvoice,
+  decodeRequest,
+  payViaRoute,
 };

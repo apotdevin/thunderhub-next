@@ -1,6 +1,7 @@
 {
     "extends": ["tslint-config-airbnb", "tslint-react-hooks"],
     "rules": {
+        "indent": [true, "spaces", 4],
         "import-name": false,
         "align": false,
         "function-name": [

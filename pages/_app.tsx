@@ -17,14 +17,14 @@ import { BitcoinPrice } from '../src/components/bitcoinInfo/BitcoinPrice';
 import { GridWrapper } from '../src/components/gridWrapper/GridWrapper';
 import { useRouter } from 'next/router';
 
-const withGrid = ['/home', '/peers'];
+const withoutGrid = ['/faq', '/privacy', '/terms'];
 
 const Wrapper: React.FC = ({ children }) => {
     const { theme } = useSettings();
     const { loggedIn } = useAccount();
     const { pathname } = useRouter();
 
-    const isInArray = withGrid.includes(pathname);
+    const isInArray = withoutGrid.includes(pathname);
 
     const renderGetters = () => (
         <>
@@ -39,7 +39,7 @@ const Wrapper: React.FC = ({ children }) => {
                 <GlobalStyles />
                 {loggedIn && renderGetters()}
                 <Header />
-                <GridWrapper without={!loggedIn && !isInArray}>
+                <GridWrapper without={!loggedIn && isInArray}>
                     {children}
                 </GridWrapper>
                 <Footer />

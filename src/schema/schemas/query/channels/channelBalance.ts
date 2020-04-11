@@ -6,32 +6,29 @@ import { defaultParams } from '../../../helpers/defaultProps';
 import { ChannelBalanceType } from '../../types/QueryType';
 
 interface ChannelBalanceProps {
-    channel_balance: number;
-    pending_balance: number;
+  channel_balance: number;
+  pending_balance: number;
 }
 
 export const getChannelBalance = {
-    type: ChannelBalanceType,
-    args: defaultParams,
-    resolve: async (root: any, params: any, context: any) => {
-        await requestLimiter(context.ip, 'channelBalance');
+  type: ChannelBalanceType,
+  args: defaultParams,
+  resolve: async (root: any, params: any, context: any) => {
+    await requestLimiter(context.ip, 'channelBalance');
 
-        const lnd = getAuthLnd(params.auth);
+    const lnd = getAuthLnd(params.auth);
 
-        try {
-            const channelBalance: ChannelBalanceProps = await getLnChannelBalance(
-                {
-                    lnd,
-                },
-            );
-            return {
-                confirmedBalance: channelBalance.channel_balance,
-                pendingBalance: channelBalance.pending_balance,
-            };
-        } catch (error) {
-            params.logger &&
-                logger.error('Error getting channel balance: %o', error);
-            throw new Error(getErrorMsg(error));
-        }
-    },
+    try {
+      const channelBalance: ChannelBalanceProps = await getLnChannelBalance({
+        lnd,
+      });
+      return {
+        confirmedBalance: channelBalance.channel_balance,
+        pendingBalance: channelBalance.pending_balance,
+      };
+    } catch (error) {
+      params.logger && logger.error('Error getting channel balance: %o', error);
+      throw new Error(getErrorMsg(error));
+    }
+  },
 };

@@ -3,11 +3,11 @@ import { text } from '@storybook/addon-knobs';
 import { Link } from './Link';
 
 export default {
-    title: 'Link',
+  title: 'Link',
 };
 
 export const Default = () => {
-    const linkText = text('Link Text', 'This is a link');
+  const linkText = text('Link Text', 'This is a link');
 
-    return <Link href={'google.com'}>{linkText}</Link>;
+  return <Link href={'google.com'}>{linkText}</Link>;
 };

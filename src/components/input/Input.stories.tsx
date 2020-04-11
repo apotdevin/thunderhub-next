@@ -4,21 +4,21 @@ import { select, color, boolean, text } from '@storybook/addon-knobs';
 import { Input } from './Input';
 
 export default {
-    title: 'Input',
+  title: 'Input',
 };
 
 export const Default = () => {
-    const withColor = boolean('With Color', false);
+  const withColor = boolean('With Color', false);
 
-    const buttonColor = withColor ? { color: color('Color', 'yellow') } : {};
+  const buttonColor = withColor ? { color: color('Color', 'yellow') } : {};
 
-    return (
-        <Input
-            {...buttonColor}
-            placeholder={text('Placeholder', 'placeholder')}
-            fullWidth={boolean('Full Width', false)}
-            type={select('Type', ['normal', 'number'], 'normal')}
-            onChange={action('change')}
-        />
-    );
+  return (
+    <Input
+      {...buttonColor}
+      placeholder={text('Placeholder', 'placeholder')}
+      fullWidth={boolean('Full Width', false)}
+      type={select('Type', ['normal', 'number'], 'normal')}
+      onChange={action('change')}
+    />
+  );
 };

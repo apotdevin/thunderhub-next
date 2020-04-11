@@ -4,8 +4,8 @@ import { onChain } from './onchain';
 import { peers } from './peers';
 
 export const mutation = {
-    ...channels,
-    ...invoices,
-    ...onChain,
-    ...peers,
+  ...channels,
+  ...invoices,
+  ...onChain,
+  ...peers,
 };

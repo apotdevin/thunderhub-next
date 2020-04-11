@@ -1,18 +1,18 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import {
-    textColor,
-    colorButtonBorder,
-    inputBackgroundColor,
-    inputBorderColor,
+  textColor,
+  colorButtonBorder,
+  inputBackgroundColor,
+  inputBorderColor,
 } from '../../styles/Themes';
 
 interface InputProps {
-    color?: string;
-    withMargin?: string;
-    fullWidth?: boolean;
-    inputWidth?: string;
-    maxWidth?: string;
+  color?: string;
+  withMargin?: string;
+  fullWidth?: boolean;
+  inputWidth?: string;
+  maxWidth?: string;
 }
 
 export const StyledInput = styled.input`
@@ -26,12 +26,12 @@ export const StyledInput = styled.input`
     transition: all 0.5s ease;
     background-color: ${inputBackgroundColor};
     ${({ maxWidth }: InputProps) =>
-        maxWidth &&
-        css`
-            max-width: ${maxWidth};
-        `}
+      maxWidth &&
+      css`
+        max-width: ${maxWidth};
+      `}
     width: ${({ fullWidth, inputWidth }: InputProps) =>
-        fullWidth ? '100%' : inputWidth ? inputWidth : 'auto'};
+      fullWidth ? '100%' : inputWidth ? inputWidth : 'auto'};
     margin: ${({ withMargin }) => (withMargin ? withMargin : '0')};
 
     &:hover {
@@ -47,39 +47,39 @@ export const StyledInput = styled.input`
 `;
 
 interface InputCompProps {
-    type?: string;
-    value?: number | string;
-    placeholder?: string;
-    color?: string;
-    withMargin?: string;
-    fullWidth?: boolean;
-    width?: string;
-    maxWidth?: string;
-    onChange: (e: any) => void;
+  type?: string;
+  value?: number | string;
+  placeholder?: string;
+  color?: string;
+  withMargin?: string;
+  fullWidth?: boolean;
+  width?: string;
+  maxWidth?: string;
+  onChange: (e: any) => void;
 }
 
 export const Input = ({
-    type,
-    value,
-    placeholder,
-    color,
-    withMargin,
-    fullWidth = true,
-    width,
-    maxWidth,
-    onChange,
+  type,
+  value,
+  placeholder,
+  color,
+  withMargin,
+  fullWidth = true,
+  width,
+  maxWidth,
+  onChange,
 }: InputCompProps) => {
-    return (
-        <StyledInput
-            type={type}
-            placeholder={placeholder}
-            value={value}
-            color={color}
-            withMargin={withMargin}
-            onChange={(e) => onChange(e)}
-            fullWidth={fullWidth}
-            inputWidth={width}
-            maxWidth={maxWidth}
-        />
-    );
+  return (
+    <StyledInput
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      color={color}
+      withMargin={withMargin}
+      onChange={(e) => onChange(e)}
+      fullWidth={fullWidth}
+      inputWidth={width}
+      maxWidth={maxWidth}
+    />
+  );
 };

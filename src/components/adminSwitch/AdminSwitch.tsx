@@ -1,15 +1,15 @@
 import { useAccount } from '../../context/AccountContext';
 
 interface AdminSwitchProps {
-    children: any;
+  children: any;
 }
 
 export const AdminSwitch = ({ children }: AdminSwitchProps) => {
-    const { admin, sessionAdmin } = useAccount();
+  const { admin, sessionAdmin } = useAccount();
 
-    if (!admin && !sessionAdmin) {
-        return null;
-    }
+  if (!admin && !sessionAdmin) {
+    return null;
+  }
 
-    return children;
+  return children;
 };

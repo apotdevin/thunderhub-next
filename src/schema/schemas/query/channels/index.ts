@@ -6,10 +6,10 @@ import { getChannelFees } from './channelFees';
 import { getChannelReport } from './channelReport';
 
 export const channelQueries = {
-    getChannelBalance,
-    getChannels,
-    getClosedChannels,
-    getPendingChannels,
-    getChannelFees,
-    getChannelReport,
+  getChannelBalance,
+  getChannels,
+  getClosedChannels,
+  getPendingChannels,
+  getChannelFees,
+  getChannelReport,
 };

@@ -2,9 +2,9 @@ import React from 'react';
 import { AnimatedNumber } from './AnimatedNumber';
 
 export default {
-    title: 'Animated/Number',
+  title: 'Animated/Number',
 };
 
 export const Default = () => {
-    return <AnimatedNumber amount={100} />;
+  return <AnimatedNumber amount={100} />;
 };

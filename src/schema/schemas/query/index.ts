@@ -12,16 +12,16 @@ import { chainQueries } from './chain';
 import { hodlQueries } from './hodlhodl';
 
 export const query = {
-    ...channelQueries,
-    ...generalQueries,
-    ...invoiceQueries,
-    ...dataQueries,
-    ...reportQueries,
-    ...flowQueries,
-    ...backupQueries,
-    ...routeQueries,
-    ...peerQueries,
-    ...messageQueries,
-    ...chainQueries,
-    ...hodlQueries,
+  ...channelQueries,
+  ...generalQueries,
+  ...invoiceQueries,
+  ...dataQueries,
+  ...reportQueries,
+  ...flowQueries,
+  ...backupQueries,
+  ...routeQueries,
+  ...peerQueries,
+  ...messageQueries,
+  ...chainQueries,
+  ...hodlQueries,
 };
