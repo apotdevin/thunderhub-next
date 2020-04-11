@@ -91,7 +91,7 @@ export const NodeInfo = ({ isOpen, isBurger }: NodeInfoProps) => {
 
   const { loading, data } = useQuery(GET_NODE_INFO, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   const { theme, currency } = useSettings();

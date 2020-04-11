@@ -29,7 +29,7 @@ const TransactionsView = () => {
 
   const { loading, data, fetchMore } = useQuery(GET_RESUME, {
     variables: { auth, token: '' },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {

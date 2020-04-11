@@ -25,9 +25,7 @@ export const InterfaceSettings = () => {
 
   const { accounts } = useAccount();
 
-  const viewOnlyAccounts = accounts.filter(
-    (account) => account.viewOnly !== ''
-  );
+  const viewOnlyAccounts = accounts.filter(account => account.viewOnly !== '');
 
   const renderButton = (
     title: string,

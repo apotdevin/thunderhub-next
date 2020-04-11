@@ -54,5 +54,5 @@ export const Rating = ({
     }
   }
 
-  return <StyledRatings>{stars.map((star) => star)}</StyledRatings>;
+  return <StyledRatings>{stars.map(star => star)}</StyledRatings>;
 };

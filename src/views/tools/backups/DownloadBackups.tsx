@@ -18,7 +18,7 @@ export const DownloadBackups = () => {
 
   const [getBackups, { data, loading }] = useLazyQuery(GET_BACKUPS, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {

@@ -44,7 +44,7 @@ export const pay = {
         request: params.request,
       });
 
-      const hops = payment.hops.map((hop) => {
+      const hops = payment.hops.map(hop => {
         return {
           channel: hop.channel,
           channelCapacity: hop.channel_capacity,

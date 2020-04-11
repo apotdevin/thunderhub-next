@@ -52,7 +52,7 @@ export const CloseChannel = ({
   const [hour, setHour] = useState(0);
 
   const { data: feeData } = useQuery(GET_BITCOIN_FEES, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {
@@ -66,12 +66,12 @@ export const CloseChannel = ({
   }, [feeData]);
 
   const [closeChannel] = useMutation(CLOSE_CHANNEL, {
-    onCompleted: (data) => {
+    onCompleted: data => {
       if (data.closeChannel) {
         toast.success('Channel Closed');
       }
     },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
     refetchQueries: [
       'GetChannels',
       'GetPendingChannels',
@@ -170,7 +170,7 @@ export const CloseChannel = ({
             <Input
               placeholder={isType === 'target' ? 'Blocks' : 'Sats/Byte'}
               type={'number'}
-              onChange={(e) => setAmount(parseInt(e.target.value))}
+              onChange={e => setAmount(parseInt(e.target.value))}
             />
           </SingleLine>
         </>

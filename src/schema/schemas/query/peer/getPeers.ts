@@ -34,7 +34,7 @@ export const getPeers = {
 
       const getPeerList = () =>
         Promise.all(
-          peers.map(async (peer) => {
+          peers.map(async peer => {
             try {
               const nodeInfo = await getNode({
                 lnd,

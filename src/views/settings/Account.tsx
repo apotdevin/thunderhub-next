@@ -110,7 +110,7 @@ export const AccountSettings = () => {
               if (willAdd) {
                 setIsType('login');
               }
-              setWillAdd((prev) => !prev);
+              setWillAdd(prev => !prev);
             }}
           >
             {willAdd ? <XSvg /> : 'Add New Account'}

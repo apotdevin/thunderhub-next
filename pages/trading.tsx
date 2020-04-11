@@ -120,7 +120,7 @@ const TradingView = () => {
                 if (!result) return prev;
 
                 setFetching(false);
-                setPage((prev) => (prev += 1));
+                setPage(prev => (prev += 1));
                 return {
                   getOffers: [...prev.getOffers, ...result.getOffers],
                 };

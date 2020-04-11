@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 export const getErrorContent = (error: any): ReactNode => {
-  const errors = error.graphQLErrors.map((x) => x.message);
+  const errors = error.graphQLErrors.map(x => x.message);
 
   const renderMessage = errors.map((error, i) => {
     try {

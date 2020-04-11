@@ -39,7 +39,7 @@ export const ConnectLoginForm = ({ handleSet }: AuthProps) => {
     <>
       <Line>
         <StyledTitle>LND Connect Url:</StyledTitle>
-        <Input onChange={(e) => setUrl(e.target.value)} />
+        <Input onChange={e => setUrl(e.target.value)} />
       </Line>
       <RiskCheckboxAndConfirm
         disabled={!canConnect}

@@ -43,8 +43,8 @@ export const decodeRequest = {
         request: params.request,
       });
 
-      const routes = decode.routes.map((route) => {
-        route.map((nodeChannel) => {
+      const routes = decode.routes.map(route => {
+        route.map(nodeChannel => {
           const {
             base_fee_mtokens,
             channel,

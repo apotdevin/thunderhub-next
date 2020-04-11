@@ -23,7 +23,7 @@ export const ChainTransactions = () => {
 
   const { loading, data } = useQuery(GET_CHAIN_TRANSACTIONS, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (loading || !data || !data.getChainTransactions) {

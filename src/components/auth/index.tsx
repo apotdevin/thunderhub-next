@@ -56,8 +56,7 @@ export const Auth = ({ type, status, callback, setStatus }: AuthProps) => {
       cert ?? ''
     );
 
-    const accountExists =
-      accounts.findIndex((account) => account.id === id) > -1;
+    const accountExists = accounts.findIndex(account => account.id === id) > -1;
 
     if (accountExists) {
       toast.error('Account already exists.');

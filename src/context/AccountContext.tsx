@@ -117,7 +117,7 @@ const AccountProvider = ({ children }: any) => {
     const isCurrentAccount = current.id === settings.id;
 
     const changedAccounts = [...currentAccounts].filter(
-      (account) => account.id !== deleteId
+      account => account.id !== deleteId
     );
     const length = changedAccounts.length;
 

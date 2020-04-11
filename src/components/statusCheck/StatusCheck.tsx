@@ -22,7 +22,7 @@ export const StatusCheck = () => {
     variables: { auth },
     skip: !connected || !loggedIn,
     pollInterval: 10000,
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {

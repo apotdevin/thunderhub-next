@@ -46,7 +46,7 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
   const { fast, halfHour, hour } = useBitcoinState();
 
   const [openChannel] = useMutation(OPEN_CHANNEL, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
     onCompleted: () => {
       toast.success('Channel Opened');
       setOpenCard('none');
@@ -80,7 +80,7 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
           placeholder={'Public Key'}
           color={color}
           withMargin={width <= mediaDimensions.mobile ? '' : '0 0 0 8px'}
-          onChange={(e) => setPublicKey(e.target.value)}
+          onChange={e => setPublicKey(e.target.value)}
         />
       </ResponsiveLine>
       <ResponsiveLine>
@@ -97,7 +97,7 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
           color={color}
           withMargin={width <= mediaDimensions.mobile ? '' : '0 0 0 8px'}
           type={'number'}
-          onChange={(e) => setSize(parseInt(e.target.value))}
+          onChange={e => setSize(parseInt(e.target.value))}
         />
       </ResponsiveLine>
       <Separation />
@@ -140,7 +140,7 @@ export const OpenChannelCard = ({ color, setOpenCard }: OpenChannelProps) => {
             placeholder={'Sats/Byte'}
             color={color}
             type={'number'}
-            onChange={(e) => setFee(parseInt(e.target.value))}
+            onChange={e => setFee(parseInt(e.target.value))}
           />
           // </MultiButton>
         )}

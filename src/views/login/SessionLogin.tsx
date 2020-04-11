@@ -40,7 +40,7 @@ export const SessionLogin = () => {
             <Input
               type={'password'}
               withMargin={'0 0 0 16px'}
-              onChange={(e) => setPass(e.target.value)}
+              onChange={e => setPass(e.target.value)}
             />
           </SingleLine>
           {pass !== '' && (

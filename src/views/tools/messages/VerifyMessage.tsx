@@ -25,12 +25,12 @@ export const VerifyMessage = () => {
   const { host, viewOnly, cert, sessionAdmin } = useAccount();
   const auth = {
     host,
-    macaroon: viewOnly !== '' ? viewOnly : sessionAdmin,
     cert,
+    macaroon: viewOnly !== '' ? viewOnly : sessionAdmin,
   };
 
   const [signMessage, { data, loading }] = useLazyQuery(VERIFY_MESSAGE, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export const VerifyMessage = () => {
         </NoWrap>
         <Input
           withMargin={'8px 0 0'}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={e => setMessage(e.target.value)}
         />
       </SingleLine>
       <SingleLine>
@@ -56,7 +56,7 @@ export const VerifyMessage = () => {
         </NoWrap>
         <Input
           withMargin={'8px 0 0'}
-          onChange={(e) => setSignature(e.target.value)}
+          onChange={e => setSignature(e.target.value)}
         />
       </SingleLine>
       <ColorButton
@@ -95,7 +95,7 @@ export const VerifyMessage = () => {
           withMargin={'4px 0'}
           disabled={loading}
           arrow={!isPasting}
-          onClick={() => setIsPasting((prev) => !prev)}
+          onClick={() => setIsPasting(prev => !prev)}
         >
           {isPasting ? <XSvg /> : 'Verify'}
         </ColorButton>

@@ -47,7 +47,7 @@ export const parsePayment = {
         request: params.request,
       });
 
-      const routes = request.routes.map((route) => {
+      const routes = request.routes.map(route => {
         return {
           mTokenFee: route.base_fee_mtokens,
           channel: route.channel,

@@ -31,14 +31,14 @@ export const getChannelReport = {
 
       const maxOutgoing = Math.max.apply(
         Math,
-        channels.channels.map((o) => {
+        channels.channels.map(o => {
           return o.local_balance;
         })
       );
 
       const maxIncoming = Math.max.apply(
         Math,
-        channels.channels.map((o) => {
+        channels.channels.map(o => {
           return o.remote_balance;
         })
       );

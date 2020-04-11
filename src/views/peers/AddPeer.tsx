@@ -34,7 +34,7 @@ export const AddPeer = () => {
   const { width } = useSize();
 
   const [addPeer, { loading }] = useMutation(ADD_PEER, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
     onCompleted: () => {
       toast.success('Peer Added');
       setIsAdding(false);
@@ -65,7 +65,7 @@ export const AddPeer = () => {
           withMargin={
             width <= mediaDimensions.mobile ? '0 0 16px' : '0 0 0 24px'
           }
-          onChange={(e) => setKey(e.target.value)}
+          onChange={e => setKey(e.target.value)}
         />
       </ResponsiveLine>
       <ResponsiveLine>
@@ -75,7 +75,7 @@ export const AddPeer = () => {
           withMargin={
             width <= mediaDimensions.mobile ? '0 0 16px' : '0 0 0 24px'
           }
-          onChange={(e) => setSocket(e.target.value)}
+          onChange={e => setSocket(e.target.value)}
         />
       </ResponsiveLine>
       <SingleLine>
@@ -107,7 +107,7 @@ export const AddPeer = () => {
           <DarkSubTitle>Add Peer</DarkSubTitle>
           <ColorButton
             withMargin={'4px 0'}
-            onClick={() => setIsAdding((prev) => !prev)}
+            onClick={() => setIsAdding(prev => !prev)}
           >
             {isAdding ? <XSvg /> : 'Add'}
           </ColorButton>

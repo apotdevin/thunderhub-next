@@ -55,7 +55,7 @@ export const getChannels = {
 
       const getChannelList = () =>
         Promise.all(
-          channelList.channels.map(async (channel) => {
+          channelList.channels.map(async channel => {
             const nodeInfo = await getNode({
               lnd,
               is_omitting_channels: true,

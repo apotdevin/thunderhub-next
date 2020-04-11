@@ -28,10 +28,10 @@ export const RemovePeerModal = ({
   peerAlias,
 }: RemovePeerProps) => {
   const [removePeer, { loading }] = useMutation(REMOVE_PEER, {
-    onCompleted: (data) => {
+    onCompleted: data => {
       toast.success('Peer Removed');
     },
-    onError: (error) => {
+    onError: error => {
       toast.error(getErrorContent(error));
     },
     refetchQueries: ['GetPeers'],

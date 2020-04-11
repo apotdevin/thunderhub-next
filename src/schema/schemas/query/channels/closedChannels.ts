@@ -43,7 +43,7 @@ export const getClosedChannels = {
       const closedChannels: ChannelListProps = await getLnClosedChannels({
         lnd,
       });
-      const channels = closedChannels.channels.map(async (channel) => {
+      const channels = closedChannels.channels.map(async channel => {
         const nodeInfo = await getNode({
           lnd,
           is_omitting_channels: true,

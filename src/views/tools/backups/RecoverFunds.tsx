@@ -15,7 +15,7 @@ export const RecoverFunds = () => {
   const [isPasting, setIsPasting] = useState<boolean>(false);
 
   const [recoverFunds, { data, loading }] = useLazyQuery(RECOVER_FUNDS, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export const RecoverFunds = () => {
         <NoWrap>
           <DarkSubTitle>Backup String: </DarkSubTitle>
         </NoWrap>
-        <Input onChange={(e) => setBackupString(e.target.value)} />
+        <Input onChange={e => setBackupString(e.target.value)} />
       </SingleLine>
       <SecureButton
         fullWidth={true}
@@ -53,7 +53,7 @@ export const RecoverFunds = () => {
           withMargin={'4px 0'}
           disabled={loading}
           arrow={!isPasting}
-          onClick={() => setIsPasting((prev) => !prev)}
+          onClick={() => setIsPasting(prev => !prev)}
         >
           {isPasting ? <XSvg /> : 'Recover'}
         </ColorButton>

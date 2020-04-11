@@ -31,7 +31,7 @@ export const SignMessage = () => {
   };
 
   const [signMessage, { data, loading }] = useLazyQuery(SIGN_MESSAGE, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const SignMessage = () => {
         </NoWrap>
         <Input
           withMargin={'8px 0 0'}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={e => setMessage(e.target.value)}
         />
       </SingleLine>
       <SecureButton
@@ -88,7 +88,7 @@ export const SignMessage = () => {
           withMargin={'4px 0'}
           disabled={loading}
           arrow={!isPasting}
-          onClick={() => setIsPasting((prev) => !prev)}
+          onClick={() => setIsPasting(prev => !prev)}
         >
           {isPasting ? <XSvg /> : 'Sign'}
         </ColorButton>

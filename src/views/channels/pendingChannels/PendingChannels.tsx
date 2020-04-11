@@ -20,7 +20,7 @@ export const PendingChannels = () => {
 
   const { loading, data } = useQuery(GET_PENDING_CHANNELS, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (loading || !data || !data.getPendingChannels) {

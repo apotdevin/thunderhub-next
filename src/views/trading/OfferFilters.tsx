@@ -111,7 +111,7 @@ export const OfferFilters = ({ offerFilters }: FilterProps) => {
         );
       }
     }
-    return <>{activeFilters.map((filter) => filter)}</>;
+    return <>{activeFilters.map(filter => filter)}</>;
   };
 
   const renderLimitOptions = () => {
@@ -156,7 +156,7 @@ export const OfferFilters = ({ offerFilters }: FilterProps) => {
         <ResponsiveLine>
           <NoWrapTitle>Sort By:</NoWrapTitle>
           <ColorButton arrow={true} onClick={() => setModalType('sort')}>
-            {SortOptions.find((option) => option.name === filterState.sort.by)
+            {SortOptions.find(option => option.name === filterState.sort.by)
               ?.title ?? 'None'}
           </ColorButton>
         </ResponsiveLine>
@@ -215,7 +215,7 @@ export const OfferFilters = ({ offerFilters }: FilterProps) => {
         Filters
         <ColorButton
           arrow={!willApply}
-          onClick={() => setWillApply((prev) => !prev)}
+          onClick={() => setWillApply(prev => !prev)}
         >
           {willApply ? <XSvg /> : 'Apply'}
         </ColorButton>

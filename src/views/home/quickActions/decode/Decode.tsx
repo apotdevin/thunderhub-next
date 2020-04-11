@@ -30,7 +30,7 @@ export const DecodeCard = ({ color }: { color: string }) => {
   };
 
   const [decode, { data, loading }] = useMutation(DECODE_REQUEST, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   const renderData = () => {
@@ -73,7 +73,7 @@ export const DecodeCard = ({ color }: { color: string }) => {
           }
           color={color}
           value={request}
-          onChange={(e) => setRequest(e.target.value)}
+          onChange={e => setRequest(e.target.value)}
         />
         <ColorButton
           color={color}

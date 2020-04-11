@@ -86,7 +86,7 @@ export const Header = () => {
   const renderLoggedIn = () => {
     if (width <= mediaDimensions.mobile) {
       return (
-        <IconWrapper onClick={() => setOpen((prev) => !prev)}>
+        <IconWrapper onClick={() => setOpen(prev => !prev)}>
           {transitions.map(({ item, key, props }) =>
             item ? (
               <AnimatedClose key={key} style={props} size={'24px'} />

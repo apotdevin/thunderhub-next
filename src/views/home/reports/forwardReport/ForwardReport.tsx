@@ -48,7 +48,7 @@ export const ForwardReport = ({ isTime, isType }: Props) => {
 
   const { data, loading } = useQuery(GET_FORWARD_REPORT, {
     variables: { time: isTime, auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (!data || loading) {
@@ -121,7 +121,7 @@ export const ForwardReport = ({ isTime, isType }: Props) => {
                 grid: { stroke: chartGridColor[theme] },
                 axis: { stroke: 'transparent' },
               }}
-              tickFormat={(a) =>
+              tickFormat={a =>
                 isType === 'tokens'
                   ? format({ amount: a, breakNumber: true })
                   : a

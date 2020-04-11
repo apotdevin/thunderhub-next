@@ -86,7 +86,7 @@ export const LoginModal = ({
         <Input
           withMargin={width <= mediaDimensions.mobile ? '0' : '0 0 0 16px'}
           type={'password'}
-          onChange={(e) => setPass(e.target.value)}
+          onChange={e => setPass(e.target.value)}
         />
       </ResponsiveLine>
       <ResponsiveLine>

@@ -80,7 +80,7 @@ export const getForwards = {
 
     const getAlias = (array: any[], publicKey: string) =>
       Promise.all(
-        array.map(async (forward) => {
+        array.map(async forward => {
           const inNodeAlias = await getNodeAlias(
             forward.incoming_channel,
             publicKey

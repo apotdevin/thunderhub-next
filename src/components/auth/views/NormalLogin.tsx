@@ -60,7 +60,7 @@ export const LoginForm = ({ handleSet }: AuthProps) => {
         <StyledTitle>Host:</StyledTitle>
         <Input
           placeholder={'Url and port (e.g.: www.node.com:443)'}
-          onChange={(e) => setHost(e.target.value)}
+          onChange={e => setHost(e.target.value)}
         />
       </Line>
       {!isViewOnly && (
@@ -68,7 +68,7 @@ export const LoginForm = ({ handleSet }: AuthProps) => {
           <StyledTitle>Admin:</StyledTitle>
           <Input
             placeholder={'Base64 or HEX Admin macaroon'}
-            onChange={(e) => setAdmin(e.target.value)}
+            onChange={e => setAdmin(e.target.value)}
           />
         </Line>
       )}
@@ -76,14 +76,14 @@ export const LoginForm = ({ handleSet }: AuthProps) => {
         <StyledTitle>Readonly:</StyledTitle>
         <Input
           placeholder={'Base64 or HEX Readonly macaroon'}
-          onChange={(e) => setRead(e.target.value)}
+          onChange={e => setRead(e.target.value)}
         />
       </Line>
       <Line>
         <StyledTitle>Certificate:</StyledTitle>
         <Input
           placeholder={'Base64 or HEX TLS Certificate'}
-          onChange={(e) => setCert(e.target.value)}
+          onChange={e => setCert(e.target.value)}
         />
       </Line>
       <RiskCheckboxAndConfirm

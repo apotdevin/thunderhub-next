@@ -46,7 +46,7 @@ export const getChannelFees = {
 
       const getConsolidated = () =>
         Promise.all(
-          channels.channels.map(async (channel) => {
+          channels.channels.map(async channel => {
             const nodeInfo: NodeProps = await getNode({
               lnd,
               is_omitting_channels: true,
@@ -54,8 +54,7 @@ export const getChannelFees = {
             });
 
             const fees = channelFees.channels.find(
-              (channelFee) =>
-                channelFee.transaction_id === channel.transaction_id
+              channelFee => channelFee.transaction_id === channel.transaction_id
             );
             if (!fees) return;
             const {

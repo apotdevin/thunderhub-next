@@ -65,7 +65,7 @@ export const ConnectCard = () => {
 
   const { loading, data } = useQuery(GET_CONNECT_INFO, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (!data || loading) {

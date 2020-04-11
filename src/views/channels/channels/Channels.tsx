@@ -20,7 +20,7 @@ export const Channels = () => {
 
   const { loading, data } = useQuery(GET_CHANNELS, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (loading || !data || !data.getChannels) {

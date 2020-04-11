@@ -26,7 +26,7 @@ export const VerifyBackups = () => {
   };
 
   const [verifyBackup, { data, loading }] = useLazyQuery(VERIFY_BACKUPS, {
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const VerifyBackups = () => {
         </NoWrap>
         <Input
           withMargin={'8px 0 0'}
-          onChange={(e) => setBackupString(e.target.value)}
+          onChange={e => setBackupString(e.target.value)}
         />
       </SingleLine>
       <ColorButton
@@ -74,7 +74,7 @@ export const VerifyBackups = () => {
           withMargin={'4px 0'}
           disabled={loading}
           arrow={!isPasting}
-          onClick={() => setIsPasting((prev) => !prev)}
+          onClick={() => setIsPasting(prev => !prev)}
         >
           {isPasting ? <XSvg /> : 'Verify'}
         </ColorButton>

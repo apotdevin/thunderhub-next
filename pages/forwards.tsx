@@ -39,7 +39,7 @@ const ForwardsView = () => {
 
   const { loading, data } = useQuery(GET_FORWARDS, {
     variables: { auth, time },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (loading || !data || !data.getForwards) {

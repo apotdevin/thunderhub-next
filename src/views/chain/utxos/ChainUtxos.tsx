@@ -23,7 +23,7 @@ export const ChainUtxos = () => {
 
   const { loading, data } = useQuery(GET_UTXOS, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (loading || !data || !data.getUtxos) {

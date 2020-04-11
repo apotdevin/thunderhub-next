@@ -45,7 +45,7 @@ export const getPendingChannels = {
         }
       );
 
-      const channels = pendingChannels.pending_channels.map(async (channel) => {
+      const channels = pendingChannels.pending_channels.map(async channel => {
         const nodeInfo = await getNode({
           lnd,
           is_omitting_channels: true,

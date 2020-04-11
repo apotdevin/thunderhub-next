@@ -39,12 +39,12 @@ const FeesView = () => {
 
   const { loading, data } = useQuery(CHANNEL_FEES, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   const [updateFees] = useMutation(UPDATE_FEES, {
-    onError: (error) => toast.error(getErrorContent(error)),
-    onCompleted: (data) => {
+    onError: error => toast.error(getErrorContent(error)),
+    onCompleted: data => {
       setIsEdit(false);
       data.updateFees
         ? toast.success('Fees Updated')
@@ -65,7 +65,7 @@ const FeesView = () => {
           <Card>
             <SingleLine>
               <Sub4Title>Channel Fees</Sub4Title>
-              <ColorButton onClick={() => setIsEdit((prev) => !prev)}>
+              <ColorButton onClick={() => setIsEdit(prev => !prev)}>
                 {isEdit ? <XSvg /> : 'Update'}
               </ColorButton>
             </SingleLine>
@@ -77,7 +77,7 @@ const FeesView = () => {
                   <Input
                     placeholder={'Sats'}
                     type={'number'}
-                    onChange={(e) => setBaseFee(parseInt(e.target.value))}
+                    onChange={e => setBaseFee(parseInt(e.target.value))}
                   />
                 </ResponsiveLine>
                 <ResponsiveLine>
@@ -85,7 +85,7 @@ const FeesView = () => {
                   <Input
                     placeholder={'Sats/Million'}
                     type={'number'}
-                    onChange={(e) => setFeeRate(parseInt(e.target.value))}
+                    onChange={e => setFeeRate(parseInt(e.target.value))}
                   />
                 </ResponsiveLine>
                 <RightAlign>

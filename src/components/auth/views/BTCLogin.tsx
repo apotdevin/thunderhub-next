@@ -38,7 +38,7 @@ export const BTCLoginForm = ({ handleSet }: AuthProps) => {
     <>
       <Line>
         <StyledTitle>BTCPayServer Connect JSON:</StyledTitle>
-        <Input onChange={(e) => setJson(e.target.value)} />
+        <Input onChange={e => setJson(e.target.value)} />
       </Line>
       <RiskCheckboxAndConfirm
         disabled={!canConnect}

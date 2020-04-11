@@ -43,7 +43,7 @@ const BalanceView = () => {
 
   const { loading, data } = useQuery(GET_CHANNELS, {
     variables: { auth, active: true },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (minorVersion < 9) {
@@ -182,7 +182,7 @@ const BalanceView = () => {
             value={amount}
             placeholder={'Sats'}
             type={'number'}
-            onChange={(e) => {
+            onChange={e => {
               setAmount(parseInt(e.target.value));
             }}
             withMargin={'0 0 8px'}
@@ -201,7 +201,7 @@ const BalanceView = () => {
             value={maxFee}
             placeholder={'Sats (Leave empty to search all routes)'}
             type={'number'}
-            onChange={(e) => {
+            onChange={e => {
               setMaxFee(parseInt(e.target.value));
             }}
             withMargin={'0 0 24px'}

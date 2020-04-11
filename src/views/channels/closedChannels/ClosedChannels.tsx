@@ -20,7 +20,7 @@ export const ClosedChannels = () => {
 
   const { loading, data } = useQuery(GET_CLOSED_CHANNELS, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (loading || !data || !data.getClosedChannels) {

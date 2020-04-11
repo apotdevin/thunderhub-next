@@ -74,7 +74,7 @@ export const NetworkInfo = () => {
 
   const { loading, data } = useQuery(GET_NETWORK_INFO, {
     variables: { auth },
-    onError: (error) => toast.error(getErrorContent(error)),
+    onError: error => toast.error(getErrorContent(error)),
   });
 
   if (loading || !data || !data.getNetworkInfo) {
