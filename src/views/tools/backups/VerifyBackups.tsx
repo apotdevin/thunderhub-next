@@ -31,10 +31,10 @@ export const VerifyBackups = () => {
 
   useEffect(() => {
     if (!loading && data && data.verifyBackups) {
-      toast.success(`Valid Backup String`);
+      toast.success('Valid Backup String');
     }
     if (!loading && data && !data.verifyBackups) {
-      toast.error(`Invalid Backup String`);
+      toast.error('Invalid Backup String');
     }
   }, [data, loading]);
 

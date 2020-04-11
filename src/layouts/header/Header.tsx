@@ -92,11 +92,11 @@ export const Header = () => {
               <AnimatedClose key={key} style={props} size={'24px'} />
             ) : (
               <AnimatedBurger key={key} style={props} size={'24px'} />
-            )
+            ),
           )}
         </IconWrapper>
       );
-    } else {
+    } 
       return (
         <Circle
           size={'12px'}
@@ -104,7 +104,7 @@ export const Header = () => {
           fillcolor={syncedToChain ? '#95de64' : '#ff7875'}
         />
       );
-    }
+    
   };
 
   const renderLoggedOut = () => (

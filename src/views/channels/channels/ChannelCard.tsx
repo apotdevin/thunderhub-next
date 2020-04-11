@@ -131,7 +131,7 @@ export const ChannelCard = ({
         <Separation />
         {renderLine(
           'Balancedness:',
-          getPercent(local_balance, remote_balance) / 100
+          getPercent(local_balance, remote_balance) / 100,
         )}
         {renderLine('Local Balance:', formatLocal)}
         {renderLine('Remote Balance:', formatRemote)}
@@ -154,7 +154,7 @@ export const ChannelCard = ({
         {renderLine('Channel Count:', channel_count)}
         {renderLine(
           'Last Update:',
-          `${getDateDif(updated_at)} ago (${getFormatDate(updated_at)})`
+          `${getDateDif(updated_at)} ago (${getFormatDate(updated_at)})`,
         )}
         <AdminSwitch>
           <Separation />

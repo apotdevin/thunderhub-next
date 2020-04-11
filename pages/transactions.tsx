@@ -61,7 +61,7 @@ const TransactionsView = () => {
                   indexOpen={indexOpen}
                 />
               );
-            } else {
+            } 
               return (
                 <PaymentsCard
                   payment={entry}
@@ -71,7 +71,7 @@ const TransactionsView = () => {
                   indexOpen={indexOpen}
                 />
               );
-            }
+            
           })}
         </Card>
         <ColorButton

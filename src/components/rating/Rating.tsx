@@ -35,7 +35,7 @@ export const Rating = ({
   const amount = (correctRating - (correctRating % 2)) / 2;
   const hasHalf = correctRating % 2 > 0 ? true : false;
 
-  let stars = [];
+  const stars = [];
 
   const starConfig = {
     size,
@@ -45,7 +45,7 @@ export const Rating = ({
   for (let i = 0; i < 5; i++) {
     if (i < amount) {
       stars.push(
-        <StyledStar key={i} {...starConfig} fillcolor={themeColors.blue3} />
+        <StyledStar key={i} {...starConfig} fillcolor={themeColors.blue3} />,
       );
     } else if (hasHalf && i === amount) {
       stars.push(<StyledHalfStar key={i} {...starConfig} />);

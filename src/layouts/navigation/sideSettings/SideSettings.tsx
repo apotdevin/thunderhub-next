@@ -98,7 +98,7 @@ export const SideSettings = ({
     value: string,
     text: string,
     on: boolean = false,
-    Icon?: any
+    Icon?: any,
   ) => (
     <SelectedIcon
       selected={
@@ -133,12 +133,12 @@ export const SideSettings = ({
               getNextValue(themeArray, theme),
               '',
               true,
-              themeMap[getNextValue(themeArray, theme)]
+              themeMap[getNextValue(themeArray, theme)],
             )}
           </IconRow>
         </>
       );
-    } else {
+    } 
       return (
         <>
           <Separation lineColor={unSelectedNavButton} />
@@ -154,7 +154,7 @@ export const SideSettings = ({
           </IconRow>
         </>
       );
-    }
+    
   };
 
   if (isBurger) {

@@ -55,15 +55,14 @@ export const getForwardReport = {
         const reducedOrderedDay = reduceForwardArray(orderedDay);
 
         return JSON.stringify(reducedOrderedDay);
-      } else {
-        const orderedHour = groupBy(forwardsList.forwards, (item) => {
-          return 24 - differenceInHours(endDate, new Date(item.created_at));
-        });
-
-        const reducedOrderedHour = reduceForwardArray(orderedHour);
-
-        return JSON.stringify(reducedOrderedHour);
       }
+      const orderedHour = groupBy(forwardsList.forwards, (item) => {
+        return 24 - differenceInHours(endDate, new Date(item.created_at));
+      });
+
+      const reducedOrderedHour = reduceForwardArray(orderedHour);
+
+      return JSON.stringify(reducedOrderedHour);
     } catch (error) {
       params.logger && logger.error('Error getting forward report: %o', error);
       throw new Error(getErrorMsg(error));

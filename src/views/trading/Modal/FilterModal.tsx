@@ -83,7 +83,7 @@ export const FilterModal = ({
     }
     if (!loading && data && data.getCurrencies) {
       const filtered = data.getCurrencies.filter(
-        (currency: CurrencyType) => currency.type === 'fiat'
+        (currency: CurrencyType) => currency.type === 'fiat',
       );
 
       const currencyOptions = filtered.map((currency: CurrencyType) => {

@@ -117,7 +117,7 @@ export const ForwardChannelsReport = ({ isTime, isType, color }: Props) => {
   const getFormatString = (amount: number | string) => {
     if (typeof amount === 'string') return amount;
     if (isType !== 'amount') {
-      return format({ amount: amount });
+      return format({ amount });
     }
     return amount;
   };

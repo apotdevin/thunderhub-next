@@ -50,7 +50,7 @@ export const getPrice = (
     error: boolean;
     loading: boolean;
     prices?: { [key: string]: { last: number; symbol: string } };
-  }
+  },
 ) => ({
   amount,
   breakNumber = false,

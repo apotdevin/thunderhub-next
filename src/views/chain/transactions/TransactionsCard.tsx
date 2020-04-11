@@ -70,7 +70,7 @@ export const TransactionsCard = ({
         {renderLine('Fee: ', fee)}
         {renderLine('Output Addresses: ', output_addresses.length)}
         {output_addresses.map((address: any, index: number) =>
-          renderLine(`${index + 1}`, address, `${index}`)
+          renderLine(`${index + 1}`, address, `${index}`),
         )}
       </>
     );

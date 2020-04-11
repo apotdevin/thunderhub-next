@@ -76,7 +76,7 @@ export const FeeCard = ({
         <AdminSwitch>
           <ResponsiveLine>
             <NoWrapTitle>
-              <DarkSubTitle>{`Base Fee:`}</DarkSubTitle>
+              <DarkSubTitle>{'Base Fee:'}</DarkSubTitle>
             </NoWrapTitle>
             <Input
               placeholder={'Sats'}
@@ -87,7 +87,7 @@ export const FeeCard = ({
           </ResponsiveLine>
           <ResponsiveLine>
             <NoWrapTitle>
-              <DarkSubTitle>{`Fee Rate:`}</DarkSubTitle>
+              <DarkSubTitle>{'Fee Rate:'}</DarkSubTitle>
             </NoWrapTitle>
             <Input
               placeholder={'Sats/Million'}
@@ -129,7 +129,7 @@ export const FeeCard = ({
           <ColLine>
             <SingleLine>
               <NoWrapTitle>
-                <DarkSubTitle>{`Base Fee:`}</DarkSubTitle>
+                <DarkSubTitle>{'Base Fee:'}</DarkSubTitle>
               </NoWrapTitle>
               <SingleLine>
                 {baseFee}
@@ -138,7 +138,7 @@ export const FeeCard = ({
             </SingleLine>
             <SingleLine>
               <NoWrapTitle>
-                <DarkSubTitle>{`Fee Rate:`}</DarkSubTitle>
+                <DarkSubTitle>{'Fee Rate:'}</DarkSubTitle>
               </NoWrapTitle>
               <SingleLine>
                 {feeRate}

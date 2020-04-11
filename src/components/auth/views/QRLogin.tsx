@@ -45,7 +45,7 @@ export const QRLogin = ({ handleSet }: QRLoginProps) => {
 
       try {
         const { name, cert, admin, viewOnly, host } = getQRConfig(
-          completeString
+          completeString,
         );
 
         handleSet({

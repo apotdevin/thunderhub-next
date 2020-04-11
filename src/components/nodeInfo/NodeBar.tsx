@@ -27,7 +27,7 @@ export const NodeBar = () => {
   const tooltipType = getTooltipType(theme);
 
   const viewOnlyAccounts = accounts.filter(
-    (account) => account.viewOnly !== ''
+    (account) => account.viewOnly !== '',
   );
 
   const handleScroll = (decrease?: boolean) => {

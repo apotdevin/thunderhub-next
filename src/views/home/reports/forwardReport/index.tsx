@@ -37,7 +37,7 @@ const availableTimes = ['day', 'week', 'month'];
 const mappedTimes = ['Day', 'Week', 'Month'];
 const availableTypes = ['amount', 'fee', 'tokens'];
 const mappedTypes = ['Amount', 'Fees', 'Value'];
-const buttonBorder = `#6938f1`;
+const buttonBorder = '#6938f1';
 
 export const ForwardBox = () => {
   const { width } = useSize();

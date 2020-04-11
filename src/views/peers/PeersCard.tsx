@@ -113,7 +113,7 @@ export const PeersCard = ({
         {renderLine('Channel Count:', channel_count)}
         {renderLine(
           'Last Update:',
-          `${getDateDif(updated_at)} ago (${getFormatDate(updated_at)})`
+          `${getDateDif(updated_at)} ago (${getFormatDate(updated_at)})`,
         )}
         <AdminSwitch>
           <Separation />

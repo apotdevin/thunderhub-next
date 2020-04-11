@@ -69,7 +69,7 @@ export const parsePayment = {
         isExpired: request.is_expired,
         mTokens: request.mtokens,
         network: request.network,
-        routes: routes,
+        routes,
         tokens: request.tokens,
       };
     } catch (error) {

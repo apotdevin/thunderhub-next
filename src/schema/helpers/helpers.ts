@@ -28,10 +28,10 @@ export const getAuthLnd = (auth: {
   const params =
     encodedCert !== ''
       ? {
-          cert,
-          macaroon,
-          socket,
-        }
+        cert,
+        macaroon,
+        socket,
+      }
       : { macaroon, socket };
 
   const { lnd } = authenticatedLndGrpc(params);
@@ -56,7 +56,7 @@ export const getErrorMsg = (error: any[]): string => {
   const code = error[0];
   const msg = error[1];
 
-  let details = getErrorDetails(error);
+  const details = getErrorDetails(error);
 
   return JSON.stringify({ code, msg, details });
 };

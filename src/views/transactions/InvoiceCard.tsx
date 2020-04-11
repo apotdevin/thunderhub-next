@@ -67,15 +67,15 @@ export const InvoiceCard = ({
         {is_confirmed &&
           renderLine(
             'Confirmed:',
-            `${getDateDif(confirmed_at)} ago (${getFormatDate(confirmed_at)})`
+            `${getDateDif(confirmed_at)} ago (${getFormatDate(confirmed_at)})`,
           )}
         {renderLine(
           'Created:',
-          `${getDateDif(created_at)} ago (${getFormatDate(created_at)})`
+          `${getDateDif(created_at)} ago (${getFormatDate(created_at)})`,
         )}
         {renderLine(
           'Expires:',
-          `${getDateDif(expires_at)} ago (${getFormatDate(expires_at)})`
+          `${getDateDif(expires_at)} ago (${getFormatDate(expires_at)})`,
         )}
         {renderLine('Id:', id)}
         {renderLine('Chain Address:', chain_address)}

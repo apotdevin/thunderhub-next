@@ -64,8 +64,8 @@ export const countArray = (list: ForwardProps[], type: boolean) => {
       channelInfo.push({
         name: key,
         amount: element.length,
-        fee: fee,
-        tokens: tokens,
+        fee,
+        tokens,
       });
     }
   }
@@ -92,8 +92,8 @@ export const countRoutes = (list: ForwardProps[]) => {
         in: element[0].incoming_channel,
         out: element[0].outgoing_channel,
         amount: element.length,
-        fee: fee,
-        tokens: tokens,
+        fee,
+        tokens,
       });
     }
   }

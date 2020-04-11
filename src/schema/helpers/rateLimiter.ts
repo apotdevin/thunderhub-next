@@ -16,7 +16,7 @@ export const requestLimiter = async (rate: string, field: string) => {
       context: rate,
       info: { fieldName: field } as any,
     },
-    { max, window }
+    { max, window },
   );
   if (errorMessage) throw new Error(errorMessage);
 };

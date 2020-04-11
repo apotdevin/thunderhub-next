@@ -65,7 +65,7 @@ export const NodeCard = ({ account, accountId }: NodeCardProps) => {
           </SingleLine>
         </>
       );
-    } else if (
+    }  if (
       loading ||
       !data ||
       !data.getNodeInfo ||

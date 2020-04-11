@@ -110,14 +110,14 @@ const PrivacyView = () => {
           <b>Github</b> - Github's{' '}
           {renderLinks(
             'https://help.github.com/en/articles/github-privacy-statement',
-            'https://help.github.com/en/articles/github-terms-of-service'
+            'https://help.github.com/en/articles/github-terms-of-service',
           )}
         </BulletPoint>
         <BulletPoint>
           <b>AWS</b> - AWS's{' '}
           {renderLinks(
             'https://aws.amazon.com/privacy/',
-            'https://aws.amazon.com/service-terms/'
+            'https://aws.amazon.com/service-terms/',
           )}
         </BulletPoint>
         <Text>
@@ -130,14 +130,14 @@ const PrivacyView = () => {
           <b>Earn.com's Bitcoin Fee API</b> - Earn.com's{' '}
           {renderLinks(
             'https://earn.com/privacy/',
-            'https://earn.com/terms-of-use/'
+            'https://earn.com/terms-of-use/',
           )}
         </BulletPoint>
         <BulletPoint>
           <b>Blockchain Explorer and Price API</b> - Blockchain's{' '}
           {renderLinks(
             'https://www.blockchain.com/legal/privacy',
-            'https://www.blockchain.com/legal/terms'
+            'https://www.blockchain.com/legal/terms',
           )}
         </BulletPoint>
       </Section>

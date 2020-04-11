@@ -85,7 +85,7 @@ export const CloseChannel = ({
   const renderButton = (
     onClick: () => void,
     text: string,
-    selected: boolean
+    selected: boolean,
   ) => (
     <SingleButton selected={selected} onClick={onClick}>
       {text}
@@ -122,7 +122,7 @@ export const CloseChannel = ({
   const renderContent = () => (
     <>
       <SingleLine>
-        <SubTitle>{`Close Channel`}</SubTitle>
+        <SubTitle>{'Close Channel'}</SubTitle>
         <Sub4Title>{`${channelName} [${channelId}]`}</Sub4Title>
       </SingleLine>
       <Separation />
@@ -143,18 +143,18 @@ export const CloseChannel = ({
             {renderButton(
               () => setAmount(fast),
               `Fastest (${fast} sats)`,
-              amount === fast
+              amount === fast,
             )}
             {halfHour !== fast &&
               renderButton(
                 () => setAmount(halfHour),
                 `Half Hour (${halfHour} sats)`,
-                amount === halfHour
+                amount === halfHour,
               )}
             {renderButton(
               () => setAmount(hour),
               `Hour (${hour} sats)`,
-              amount === hour
+              amount === hour,
             )}
           </MultiButton>
         </>
@@ -179,8 +179,8 @@ export const CloseChannel = ({
         <Sub4Title>Force Close Channel:</Sub4Title>
       </SingleLine>
       <MultiButton>
-        {renderButton(() => setIsForce(true), `Yes`, isForce)}
-        {renderButton(() => setIsForce(false), `No`, !isForce)}
+        {renderButton(() => setIsForce(true), 'Yes', isForce)}
+        {renderButton(() => setIsForce(false), 'No', !isForce)}
       </MultiButton>
       <Separation />
       <CenterLine>

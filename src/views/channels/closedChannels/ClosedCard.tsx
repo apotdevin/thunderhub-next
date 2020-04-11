@@ -62,7 +62,7 @@ export const ClosedCard = ({
   const formatCapacity = <Price amount={capacity} />;
 
   const getCloseType = (): string => {
-    let types: string[] = [];
+    const types: string[] = [];
 
     if (is_breach_close) {
       types.push('Breach');
@@ -101,7 +101,7 @@ export const ClosedCard = ({
         {renderLine('Transaction Vout:', transaction_vout)}
         {renderLine(
           'Close Transaction Id:',
-          getTransactionLink(close_transaction_id)
+          getTransactionLink(close_transaction_id),
         )}
         {renderLine('Close Confirm Height:', close_confirm_height)}
         {renderLine('Final Local Balance:', final_local_balance)}

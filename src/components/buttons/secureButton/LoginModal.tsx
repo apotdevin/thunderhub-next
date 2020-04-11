@@ -70,7 +70,7 @@ export const LoginModal = ({
   const renderButton = (
     onClick: () => void,
     text: string,
-    selected: boolean
+    selected: boolean,
   ) => (
     <ColorButton color={color} onClick={onClick}>
       <Circle size={'10px'} fillcolor={selected ? textColorMap[theme] : ''} />

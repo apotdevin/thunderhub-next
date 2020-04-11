@@ -55,7 +55,7 @@ const useBitcoinState = () => {
   const context = useContext(StateContext);
   if (context === undefined) {
     throw new Error(
-      'useBitcoinState must be used within a BitcoinInfoProvider'
+      'useBitcoinState must be used within a BitcoinInfoProvider',
     );
   }
   return context;
@@ -65,7 +65,7 @@ const useBitcoinDispatch = () => {
   const context = useContext(DispatchContext);
   if (context === undefined) {
     throw new Error(
-      'useBitcoinDispatch must be used within a BitcoinInfoProvider'
+      'useBitcoinDispatch must be used within a BitcoinInfoProvider',
     );
   }
   return context;

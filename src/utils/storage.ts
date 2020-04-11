@@ -5,7 +5,7 @@ export const saveAccounts = (accounts: any[]) => {
 export const deleteAccountPermissions = (
   id: string,
   accounts: any[],
-  admin?: boolean
+  admin?: boolean,
 ): void => {
   const changedAccounts = [...accounts];
   changedAccounts.find((account, index) => {

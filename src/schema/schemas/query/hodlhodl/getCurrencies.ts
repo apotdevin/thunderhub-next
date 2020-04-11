@@ -25,9 +25,9 @@ export const getCurrencies = {
       if (json) {
         const { currencies } = json;
         return currencies;
-      } else {
+      } 
         throw new Error('Problem getting HodlHodl currencies.');
-      }
+      
     } catch (error) {
       params.logger &&
         logger.error('Error getting HodlHodl currencies: %o', error);

@@ -73,7 +73,7 @@ const FeesView = () => {
               <>
                 <Separation />
                 <ResponsiveLine>
-                  <DarkSubTitle>{`Base Fee (Sats):`}</DarkSubTitle>
+                  <DarkSubTitle>{'Base Fee (Sats):'}</DarkSubTitle>
                   <Input
                     placeholder={'Sats'}
                     type={'number'}
@@ -81,7 +81,7 @@ const FeesView = () => {
                   />
                 </ResponsiveLine>
                 <ResponsiveLine>
-                  <DarkSubTitle>{`Fee Rate (Sats/Million):`}</DarkSubTitle>
+                  <DarkSubTitle>{'Fee Rate (Sats/Million):'}</DarkSubTitle>
                   <Input
                     placeholder={'Sats/Million'}
                     type={'number'}

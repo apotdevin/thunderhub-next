@@ -16,7 +16,7 @@ const availableTypes = ['amount', 'tokens'];
 const mappedTypes = ['Amount', 'Value'];
 // const availableGraphs = ['waterfall', 'bar'];
 // const mappedGraphs = ['Waterfall', 'Bar'];
-const buttonBorder = `#FD5F00`;
+const buttonBorder = '#FD5F00';
 
 export const ButtonRow = ({
   isTime,
@@ -41,7 +41,7 @@ ButtonProps) => {
     setFn: (text: string) => void,
     array: string[],
     mapped: string[],
-    index: number
+    index: number,
   ) => {
     return (
       <ColorButton

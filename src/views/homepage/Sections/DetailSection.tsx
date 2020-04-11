@@ -67,32 +67,32 @@ export const DetailSection = () => {
         {detailCardContent(
           'Make Payments',
           'Send and receive both Lightning and On-Chain payments.',
-          Send
+          Send,
         )}
         {detailCardContent(
           'Multiple Nodes',
           'Connect to multiple nodes and quickly switch between them.',
-          Server
+          Server,
         )}
         {detailCardContent(
           'View-Only Mode',
-          `Check the status of your node any time without risk.`,
-          Eye
+          'Check the status of your node any time without risk.',
+          Eye,
         )}
         {detailCardContent(
           'AES Encryption',
           'Your Macaroon is AES encrypted with a password only you know.',
-          Key
+          Key,
         )}
         {detailCardContent(
           'Open Source',
-          `Don't trust anyone. Verify the code yourself.`,
-          Users
+          "Don't trust anyone. Verify the code yourself.",
+          Users,
         )}
         {detailCardContent(
           'Manage Channels',
           'Open, close and monitor channel status and liquidity',
-          Sliders
+          Sliders,
         )}
       </DetailLine>
     </Section>

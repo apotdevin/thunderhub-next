@@ -57,7 +57,7 @@ export const pay = {
       return {
         fee: payment.fee,
         feeMTokens: payment.fee_mtokens,
-        hops: hops,
+        hops,
         id: payment.id,
         isConfirmed: payment.is_confirmed,
         isOutgoing: payment.is_outgoing,

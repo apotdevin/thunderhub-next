@@ -24,9 +24,9 @@ export const getBitcoinFees = {
           halfHour: halfHourFee,
           hour: hourFee,
         };
-      } else {
-        throw new Error('Problem getting Bitcoin fees.');
       }
+      throw new Error('Problem getting Bitcoin fees.');
+
     } catch (error) {
       params.logger && logger.error('Error getting bitcoin fees: %o', error);
       throw new Error('Problem getting Bitcoin fees.');

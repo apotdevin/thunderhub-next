@@ -2,7 +2,7 @@ import { PeriodProps, WaterfallProps } from '.';
 
 export const getWaterfall = (
   invoices: PeriodProps[],
-  payments: PeriodProps[]
+  payments: PeriodProps[],
 ): WaterfallProps[] => {
   const initialInvoicePeriod = invoices[0]?.period;
   const initialPaymentPeriod = payments[0]?.period;
@@ -14,7 +14,7 @@ export const getWaterfall = (
 
   const lastPeriod = Math.max(lastInvoicePeriod, lastPaymentPeriod);
 
-  let waterfall = [];
+  const waterfall = [];
 
   let previousAmount = 0;
   let previousTokens = 0;

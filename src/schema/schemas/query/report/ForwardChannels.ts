@@ -125,7 +125,8 @@ export const getForwardChannelsReport = {
           .reverse()
           .slice(0, 10);
         return JSON.stringify(sortedRoute);
-      } else if (params.type === 'incoming') {
+      }
+      if (params.type === 'incoming') {
         const incomingCount = countArray(forwardsList.forwards, true);
         const incomingAlias = await getAlias(
           incomingCount,
@@ -135,17 +136,16 @@ export const getForwardChannelsReport = {
           .reverse()
           .slice(0, 10);
         return JSON.stringify(sortedInCount);
-      } else {
-        const outgoingCount = countArray(forwardsList.forwards, false);
-        const outgoingAlias = await getAlias(
-          outgoingCount,
-          walletInfo.public_key
-        );
-        const sortedOutCount = sortBy(outgoingAlias, params.order)
-          .reverse()
-          .slice(0, 10);
-        return JSON.stringify(sortedOutCount);
       }
+      const outgoingCount = countArray(forwardsList.forwards, false);
+      const outgoingAlias = await getAlias(
+        outgoingCount,
+        walletInfo.public_key
+      );
+      const sortedOutCount = sortBy(outgoingAlias, params.order)
+        .reverse()
+        .slice(0, 10);
+      return JSON.stringify(sortedOutCount);
     } catch (error) {
       params.logger &&
         logger.error('Error getting forward channel report: %o', error);

@@ -37,7 +37,7 @@ export const getChainTransactions = {
 
       const transactions = sortBy(
         transactionList.transactions,
-        'created_at'
+        'created_at',
       ).reverse();
       return transactions;
     } catch (error) {

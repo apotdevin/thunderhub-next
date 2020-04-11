@@ -46,7 +46,7 @@ export const RemovePeerModal = ({
       <SecureButton
         callback={removePeer}
         variables={{
-          publicKey: publicKey,
+          publicKey,
         }}
         color={'red'}
         disabled={loading}

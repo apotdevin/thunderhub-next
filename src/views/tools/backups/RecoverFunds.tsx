@@ -20,7 +20,7 @@ export const RecoverFunds = () => {
 
   useEffect(() => {
     if (!loading && data && data.recoverFunds) {
-      toast.success(`Recovery Succesfull`);
+      toast.success('Recovery Succesfull');
     }
   }, [data, loading]);
 

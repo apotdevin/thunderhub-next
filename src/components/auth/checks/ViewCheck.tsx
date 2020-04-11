@@ -49,7 +49,7 @@ export const ViewCheck = ({
   const content = () => {
     if (loading) {
       return <ScaleLoader height={20} color={themeColors.blue3} />;
-    } else if (data?.getNodeInfo.alias && viewOnly) {
+    }  if (data?.getNodeInfo.alias && viewOnly) {
       return <Check />;
     }
     return <XSvg />;
@@ -95,7 +95,7 @@ export const ViewCheck = ({
   const renderTitle = () => {
     if (!confirmed) {
       return 'Go Back';
-    } else if (adminChecked && !viewOnly && admin) {
+    }  if (adminChecked && !viewOnly && admin) {
       return 'Connect (Admin-Only)';
     } else if (!adminChecked && viewOnly) {
       return 'Connect (View-Only)';
