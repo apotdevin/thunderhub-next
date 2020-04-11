@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-    CardTitle,
-    ColorButton,
-} from '../../../../src/components/generic/Styled';
+import { CardTitle, ColorButton } from '../../../../components/generic/Styled';
 
 interface ButtonProps {
     isTime: string;
