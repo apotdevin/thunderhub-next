@@ -4,12 +4,12 @@ import { ChainTransactions } from '../src/views/chain/transactions/ChainTransact
 import { ChainUtxos } from '../src/views/chain/utxos/ChainUtxos';
 
 const ChainView = () => {
-    return (
-        <>
-            <ChainUtxos />
-            <ChainTransactions />
-        </>
-    );
+  return (
+    <>
+      <ChainUtxos />
+      <ChainTransactions />
+    </>
+  );
 };
 
 export default ChainView;

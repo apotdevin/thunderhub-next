@@ -20,47 +20,45 @@ import { useRouter } from 'next/router';
 const withoutGrid = ['/faq', '/privacy', '/terms'];
 
 const Wrapper: React.FC = ({ children }) => {
-    const { theme } = useSettings();
-    const { loggedIn } = useAccount();
-    const { pathname } = useRouter();
+  const { theme } = useSettings();
+  const { loggedIn } = useAccount();
+  const { pathname } = useRouter();
 
-    const isInArray = withoutGrid.includes(pathname);
+  const isInArray = withoutGrid.includes(pathname);
 
-    const renderGetters = () => (
-        <>
-            <BitcoinPrice />
-            <BitcoinFees />
-        </>
-    );
+  const renderGetters = () => (
+    <>
+      <BitcoinPrice />
+      <BitcoinFees />
+    </>
+  );
 
-    return (
-        <ThemeProvider theme={{ mode: theme }}>
-            <ModalProvider backgroundComponent={BaseModalBackground}>
-                <GlobalStyles />
-                {loggedIn && renderGetters()}
-                <Header />
-                <GridWrapper without={!loggedIn && isInArray}>
-                    {children}
-                </GridWrapper>
-                <Footer />
-            </ModalProvider>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={{ mode: theme }}>
+      <ModalProvider backgroundComponent={BaseModalBackground}>
+        <GlobalStyles />
+        {loggedIn && renderGetters()}
+        <Header />
+        <GridWrapper without={!loggedIn && isInArray}>{children}</GridWrapper>
+        <Footer />
+      </ModalProvider>
+    </ThemeProvider>
+  );
 };
 
 class MyApp extends App<any> {
-    render() {
-        const { Component, pageProps, apollo } = this.props;
-        return (
-            <ApolloProvider client={apollo}>
-                <ContextProvider>
-                    <Wrapper>
-                        <Component {...pageProps} />
-                    </Wrapper>
-                </ContextProvider>
-            </ApolloProvider>
-        );
-    }
+  render() {
+    const { Component, pageProps, apollo } = this.props;
+    return (
+      <ApolloProvider client={apollo}>
+        <ContextProvider>
+          <Wrapper>
+            <Component {...pageProps} />
+          </Wrapper>
+        </ContextProvider>
+      </ApolloProvider>
+    );
+  }
 }
 
 export default withApollo(MyApp);

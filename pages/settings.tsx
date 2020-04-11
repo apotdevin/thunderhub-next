@@ -9,32 +9,32 @@ import { CurrentSettings } from '../src/views/settings/Current';
 import { SyncSettings } from '../src/views/settings/Sync';
 
 export const ButtonRow = styled.div`
-    width: auto;
-    display: flex;
+  width: auto;
+  display: flex;
 `;
 
 export const SettingsLine = styled(SingleLine)`
-    margin: 8px 0;
+  margin: 8px 0;
 `;
 
 export const SettingsButton = styled(SimpleButton)`
-    padding: 8px;
+  padding: 8px;
 
-    &:hover {
-        border: 1px solid ${textColor};
-    }
+  &:hover {
+    border: 1px solid ${textColor};
+  }
 `;
 
 const SettingsView = () => {
-    return (
-        <>
-            <InterfaceSettings />
-            <SyncSettings />
-            <CurrentSettings />
-            <AccountSettings />
-            <DangerView />
-        </>
-    );
+  return (
+    <>
+      <InterfaceSettings />
+      <SyncSettings />
+      <CurrentSettings />
+      <AccountSettings />
+      <DangerView />
+    </>
+  );
 };
 
 export default SettingsView;

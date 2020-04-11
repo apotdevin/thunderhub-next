@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "tslint": "tslint -p . -c tslint.json",
-    "prettier": "prettier --write src/**/*.{ts,tsx,js,css,html}"
+    "prettier": "prettier --write **/*.{ts,tsx,js,css,html}"
   },
   "keywords": [],
   "author": "",
@@ -66,12 +66,6 @@
     "tslint-config-airbnb": "^5.11.2",
     "tslint-react-hooks": "^2.2.2",
     "typescript": "^3.8.3"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "printWidth": 80
   },
   "husky": {
     "hooks": {
