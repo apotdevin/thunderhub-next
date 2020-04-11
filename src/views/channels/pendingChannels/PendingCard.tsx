@@ -29,8 +29,32 @@ import {
 import { getPrice } from '../../../components/price/Price';
 import { usePriceState } from '../../../context/PriceContext';
 
+interface ChannelProps {
+  close_transaction_id: string;
+  is_active: boolean;
+  is_closing: boolean;
+  is_opening: boolean;
+  local_balance: number;
+  local_reserve: number;
+  partner_public_key: string;
+  received: number;
+  remote_balance: number;
+  remote_reserve: number;
+  sent: number;
+  transaction_fee: number;
+  transaction_id: string;
+  transaction_vout: number;
+  partner_node_info: {
+    alias: string;
+    capacity: string;
+    channelCount: string;
+    color: string;
+    updated_at: string;
+  };
+}
+
 interface PendingCardProps {
-  channelInfo: any;
+  channelInfo: ChannelProps;
   index: number;
   setIndexOpen: (index: number) => void;
   indexOpen: number;

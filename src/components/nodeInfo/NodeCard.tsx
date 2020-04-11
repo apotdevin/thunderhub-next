@@ -20,6 +20,22 @@ interface NodeCardProps {
   accountId: string;
 }
 
+interface QueryData {
+  getNodeInfo: {
+    active_channels_count: number;
+    closed_channels_count: number;
+    alias: string;
+    pending_channels_count: number;
+    is_synced_to_chain: boolean;
+  };
+  getChannelBalance: {
+    confirmedBalance: number;
+    pendingBalance: number;
+  };
+  getChainBalance: number;
+  getPendingChainBalance: number;
+}
+
 export const NodeCard = ({ account, accountId }: NodeCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +51,7 @@ export const NodeCard = ({ account, accountId }: NodeCardProps) => {
     cert,
   };
 
-  const { data, loading, error } = useQuery(GET_NODE_INFO, {
+  const { data, loading, error } = useQuery<QueryData>(GET_NODE_INFO, {
     variables: { auth },
     skip: !inView,
     pollInterval: 10000,

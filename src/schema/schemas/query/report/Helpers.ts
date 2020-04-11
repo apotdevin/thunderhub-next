@@ -11,12 +11,15 @@ export const reduceForwardArray = (list: ListProps) => {
   for (const key in list) {
     if (list.hasOwnProperty(key)) {
       const element: ForwardProps[] = list[key];
-      const reducedArray: ReduceObjectProps = reduce(element, (a, b) => {
-        return {
-          fee: a.fee + b.fee,
-          tokens: a.tokens + b.tokens,
-        };
-      });
+      const reducedArray: ReduceObjectProps = reduce(
+        element,
+        (a: ReduceObjectProps, b: ReduceObjectProps) => {
+          return {
+            fee: a.fee + b.fee,
+            tokens: a.tokens + b.tokens,
+          };
+        }
+      );
       reducedOrder.push({
         period: Number(key),
         amount: element.length,
@@ -33,9 +36,12 @@ export const reduceInOutArray = (list: InOutListProps) => {
   for (const key in list) {
     if (list.hasOwnProperty(key)) {
       const element: InOutProps[] = list[key];
-      const reducedArray: InOutProps = reduce(element, (a, b) => ({
-        tokens: a.tokens + b.tokens,
-      }));
+      const reducedArray: InOutProps = reduce(
+        element,
+        (a: ReduceObjectProps, b: ReduceObjectProps) => ({
+          tokens: a.tokens + b.tokens,
+        })
+      );
       reducedOrder.push({
         period: Number(key),
         amount: element.length,
@@ -55,11 +61,13 @@ export const countArray = (list: ForwardProps[], type: boolean) => {
     if (grouped.hasOwnProperty(key)) {
       const element = grouped[key];
 
-      const fee = element.map(forward => forward.fee).reduce((p, c) => p + c);
+      const fee = element
+        .map(forward => forward.fee)
+        .reduce((p: number, c: number) => p + c);
 
       const tokens = element
         .map(forward => forward.tokens)
-        .reduce((p, c) => p + c);
+        .reduce((p: number, c: number) => p + c);
 
       channelInfo.push({
         name: key,
@@ -81,11 +89,13 @@ export const countRoutes = (list: ForwardProps[]) => {
     if (grouped.hasOwnProperty(key)) {
       const element = grouped[key];
 
-      const fee = element.map(forward => forward.fee).reduce((p, c) => p + c);
+      const fee = element
+        .map(forward => forward.fee)
+        .reduce((p: number, c: number) => p + c);
 
       const tokens = element
         .map(forward => forward.tokens)
-        .reduce((p, c) => p + c);
+        .reduce((p: number, c: number) => p + c);
 
       channelInfo.push({
         route: key,
