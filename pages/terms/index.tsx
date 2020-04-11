@@ -2,7 +2,7 @@ import React from 'react';
 import { Section } from '../../src/components/section/Section';
 import { themeColors, fontColors } from '../../src/styles/Themes';
 import { Title, Question, Text } from '../../src/components/typography/Styled';
-import { ContactSection } from '../../views/entry/homepage/Sections/ContactSection';
+import { ContactSection } from '../../src/views/homepage/Sections/ContactSection';
 import { Link } from '../../src/components/link/Link';
 
 const TermsView = () => {

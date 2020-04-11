@@ -11,7 +11,7 @@ import { Link } from '../../components/link/Link';
 import { Emoji } from '../../components/emoji/Emoji';
 import { useAccount } from '../../context/AccountContext';
 import RouterLink from 'next/link';
-import { HomeButton } from '../../../views/entry/homepage/HomePage.styled';
+import { HomeButton } from '../../views/homepage/HomePage.styled';
 import { Zap } from '../../components/generic/Icons';
 
 const FooterStyle = styled.div`

@@ -7,7 +7,7 @@ import {
     mediaWidths,
     mediaDimensions,
 } from '../../styles/Themes';
-import { HomeButton } from '../../../views/entry/homepage/HomePage.styled';
+import { HomeButton } from '../../views/homepage/HomePage.styled';
 // import { Link } from 'react-router-dom';
 import { useAccount } from '../../context/AccountContext';
 import { SingleLine, ResponsiveLine } from '../../components/generic/Styled';

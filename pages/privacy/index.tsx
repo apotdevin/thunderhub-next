@@ -7,7 +7,7 @@ import {
     Text,
     BulletPoint,
 } from '../../src/components/typography/Styled';
-import { ContactSection } from '../../views/entry/homepage/Sections/ContactSection';
+import { ContactSection } from '../../src/views/homepage/Sections/ContactSection';
 
 import { Link } from '../../src/components/link/Link';
 

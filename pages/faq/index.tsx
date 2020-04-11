@@ -8,7 +8,7 @@ import {
     Question,
     Text,
 } from '../../src/components/typography/Styled';
-import { ContactSection } from '../../views/entry/homepage/Sections/ContactSection';
+import { ContactSection } from '../../src/views/homepage/Sections/ContactSection';
 import styled from 'styled-components';
 
 const FaqTitle = styled(Title)`
